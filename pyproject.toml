@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organism-sim"
+version = "0.3.0"
+description = "Artificial-life simulation of autonomous state-machine agents: local state vectors, noise-driven repair, entropy-triggered mutation, message-passing populations, hash-chained telemetry."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.4.0"]
+
+[project.scripts]
+organism-sim = "organism_sim.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["organism_sim*"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --tb=short"

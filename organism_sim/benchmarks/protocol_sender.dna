@@ -1,0 +1,12 @@
+// Fixed signalling protocol for the split 6-multiplexer: the sender sees the two
+// address bits and forwards one of four symbols to B. Each gene is an LCS rule:
+// condition (ternary) + action (DSL).
+ORGANISM PROTOCOL_SENDER {
+    META { version: "0.1.0", domain: "benchmark" }
+    GENOME {
+        GENE addr00 { id: "R0", condition: "00", action: "(send B s0)", expression: 1.0 }
+        GENE addr01 { id: "R1", condition: "01", action: "(send B s1)", expression: 1.0 }
+        GENE addr10 { id: "R2", condition: "10", action: "(send B s2)", expression: 1.0 }
+        GENE addr11 { id: "R3", condition: "11", action: "(send B s3)", expression: 1.0 }
+    }
+}
