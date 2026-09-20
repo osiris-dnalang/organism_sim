@@ -177,6 +177,7 @@ class LCSAgent(Processor):
     def mutate(self, org: Organism, reason: str) -> None:
         if self.structural:
             self.engine.gp_mutate(donor=self.donor.engine if self.donor else None)
+            self.engine.shock()
         for src, hist in list(self.pressure_in.items()):
             if len(hist) >= self.pressure_window and float(np.mean(hist)) > self.sever_pressure:
                 self._sever(src, "high_pressure")

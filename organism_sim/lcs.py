@@ -219,7 +219,11 @@ class RuleEngine:
         self.match_set = self.match(register)
         pa = self.prediction_array(self.match_set)
         if explore is None:
-            explore = bool(self.rng.random() < self.p.p_explore)
+            p_exp = self.p.p_explore
+            if getattr(self, "_explore_boost", 0) > 0:
+                self._explore_boost -= 1
+                p_exp = max(p_exp, 0.8)
+            explore = bool(self.rng.random() < p_exp)
         self.last_explore = explore
         keys = sorted(pa)
         if self.p.mode == "reinforce" and explore:
@@ -425,6 +429,21 @@ class RuleEngine:
         self._delete_excess()
         self.counters["mutate"] += applied
         return applied
+
+    def shock(self, error_floor: Optional[float] = None, explore_boost: int = 200) -> int:
+        """Structural shock response: rules whose error exceeds ``error_floor`` have
+        their experience reset (so Widrow–Hoff re-learns at rate 1/exp) and fitness
+        cut; exploration is boosted for ``explore_boost`` trials. Returns rules reset."""
+        floor = self.p.eps0 * 10 if error_floor is None else error_floor
+        n = 0
+        for r in self.rules:
+            if r.experience > 0 and r.error > floor:
+                r.experience = 0
+                r.fitness *= 0.1
+                n += 1
+        self._explore_boost = explore_boost
+        self.counters["shock"] = self.counters.get("shock", 0) + 1
+        return n
 
     def strengths(self) -> np.ndarray:
         """Per-rule fitness (used by the organism substrate as its expression vector)."""

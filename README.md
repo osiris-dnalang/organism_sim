@@ -50,10 +50,41 @@ equilibrium** (one symbol reused for two addresses) on others — the known outc
 signalling games with > 2 states. Accuracy-based fitness alone never breaks the pooling
 symmetry; the sender needs state-specific cumulative strength (`mode="reinforce"`).
 
+**Signalling reliability (50 seeds, 15k trials, `results/signalling_sweep_50seeds.json`):**
+9/50 reach a full injective protocol (≥ 0.95), 36/50 partial (3 symbols, ≈ 0.87),
+5/50 pool; median eval accuracy 0.867.
+
 **Measured, not assumed:** the organism-level structural hooks (fitness erosion under
 unrepaired noise, compaction on repair, GP mutation on collapse) *hurt* an XCS receiver —
 B plateaus at 0.93 with them on vs 1.0 with them off (3 seeds). They exist, are tested,
 and default to **off** for `LCSAgent` (`structural=True` to enable).
+
+## Shifting-logic (concept drift) test — pre-registered, FAILED
+
+`benchmarks/drift.py`: the 6-mux truth table is perturbed every 3,000 trials
+(`invert`, `addr_swap`, `data_perm`, unannounced). Two groups on identical seeds and
+engines; only the organism's structural hooks differ (`LCSAgent(structural=…)`). The
+organism response on sustained error: rule-set compaction, GP variants, and a *shock*
+(reset experience of high-error rules, exploration boost).
+
+Pre-registered criterion: organism median recovery ≤ 0.75 × plain **and** disjoint IQRs.
+Trigger profile tuned on held-out seeds 100–104 (`results/drift_tuning_seeds100-104.json`),
+then evaluated once on seeds 0–29 (`results/drift_eval30_seeds0-29.json`):
+
+| 150 shifts / group | plain XCS | organism |
+|---|---|---|
+| median recovery (trials to ≥ 0.95) | 500 | 400 |
+| Q1–Q3 | 200–700 | 200–700 |
+| mean area-under-error | 123.0 | 117.4 |
+
+Ratio 0.80, IQRs identical → **FAIL** on both halves. Per kind (exploratory): `invert`
+200 → 100, `addr_swap` 700 → 600, `data_perm` 700 → 700. Conclusion: on a task the base
+learner can relearn by itself, the organism layer is redundant with XCS's own GA,
+deletion and subsumption. It stays available and tested but is telemetry-only by default.
+Two bugs found on the way and fixed: the drift probe set was one repeated input, and
+repair was scaling a *measured* error rate as if compaction had reduced it (it cannot).
+
+`python -m organism_sim.cli bench drift --compare 30 --repair-threshold-drift 0.25` reruns it.
 
 ## Substrate reference numbers
 

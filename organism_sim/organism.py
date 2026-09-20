@@ -278,11 +278,16 @@ class Organism:
 
     def _repair(self) -> None:
         """Silent repair: noise_rate · e^{−repair_gain}; removed load goes to the sink;
-        prediction cache is reset so stale error does not re-enter."""
+        prediction cache is reset so stale error does not re-enter.
+
+        With a processor, ``noise_rate`` is a *measured* error rate that compaction
+        cannot lower, so it is left untouched: sustained error then accumulates as
+        unrepaired excess and reaches the mutation trigger."""
         s, tr = self.state, self.triggers
         before = s.noise_rate
-        s.noise_rate = max(0.0, before * math.exp(-tr.repair_gain))
-        self.sink_load += before - s.noise_rate
+        if self.processor is None:
+            s.noise_rate = max(0.0, before * math.exp(-tr.repair_gain))
+            self.sink_load += before - s.noise_rate
         self._cache = None
         self.counters["repair"] += 1
         self._events.append("repair")
