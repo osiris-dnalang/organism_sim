@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "organism_sim: rule-evolving agents with a routed bus and pre-registered benchmarks"
+message: "If you use this software, please cite it. Negative results are part of the record."
+type: software
+authors:
+  - family-names: Davis
+    given-names: Devin Phillip
+    email: osiris.dnalang@gmail.com
+version: 0.3.0
+date-released: 2026-09-20
+license: Apache-2.0
+repository-code: https://github.com/osiris-dnalang/organism_sim
+abstract: >-
+  Artificial-life simulation of autonomous rule-evolving agents: an XCS-lineage
+  Learning Classifier System with a closed s-expression action DSL, a routed
+  Payload(content, pressure) message bus with cross-agent credit, and hash-chained
+  telemetry. Pre-registered benchmarks with their data: emergent signalling rate
+  (18% full, 50 seeds), concept drift on 6-mux (FAIL for the organism layer),
+  relay-failure recovery (dead PASS - local trigger 2x faster than a global
+  supervisor, 0 false alarms; poisoned FAIL 20/30, CUSUM 24/30).
