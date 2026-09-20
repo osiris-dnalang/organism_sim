@@ -1,5 +1,8 @@
 # organism_sim
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22862567.svg)](https://doi.org/10.5281/zenodo.22862567)  
+Snapshot 2026-09-20 of the three repositories with their pre-registered results: [10.5281/zenodo.22862567](https://doi.org/10.5281/zenodo.22862567) (concept DOI 10.5281/zenodo.22862566).
+
 Artificial-life simulation of autonomous **rule-evolving** agents. The organism is
 the computation: a Learning Classifier System (XCS lineage) whose rules are ternary
 conditions plus action bodies in a closed DSL, governed by a noise-driven state
