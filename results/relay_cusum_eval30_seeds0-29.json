@@ -1,0 +1,5964 @@
+{
+ "dead": {
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29
+  ],
+  "mode": "dead",
+  "trials": 8000,
+  "fail_at": 3000,
+  "groups": {
+   "none": {
+    "recovered_rate": 0.0,
+    "recovered_within_c1": 0.0,
+    "median_recovery": 5000.0,
+    "q1": 5000.0,
+    "q3": 5000.0,
+    "false_reroutes_per_10k": 0.0,
+    "median_final_acc": 0.69921875
+   },
+   "supervisor": {
+    "recovered_rate": 1.0,
+    "recovered_within_c1": 1.0,
+    "median_recovery": 200.0,
+    "q1": 200.0,
+    "q3": 300.0,
+    "false_reroutes_per_10k": 0.0,
+    "median_final_acc": 1.0
+   },
+   "organism-cusum": {
+    "recovered_rate": 1.0,
+    "recovered_within_c1": 1.0,
+    "median_recovery": 200.0,
+    "q1": 100.0,
+    "q3": 200.0,
+    "false_reroutes_per_10k": 0.25,
+    "median_final_acc": 1.0
+   }
+  },
+  "per_seed": {
+   "none": [
+    {
+     "group": "none",
+     "seed": 0,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7109375,
+     "acc_before_fail": 1.0,
+     "armed_at": 1000,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 1,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.671875,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 2,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 3,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7265625,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 4,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.71875,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 5,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.671875,
+     "acc_before_fail": 1.0,
+     "armed_at": 800,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 6,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.703125,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 7,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7109375,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 8,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.734375,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 9,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7109375,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 10,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.640625,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 11,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6171875,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 12,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6484375,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 13,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.734375,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 14,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7421875,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 15,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.671875,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 16,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 17,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7265625,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 18,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6484375,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 19,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6796875,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 20,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.625,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 21,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6953125,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 22,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.75,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 23,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6796875,
+     "acc_before_fail": 0.984375,
+     "armed_at": 1700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 24,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.703125,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 25,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7421875,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 26,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6875,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 27,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.734375,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 28,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.78125,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 29,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.65625,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 11529
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    }
+   ],
+   "supervisor": [
+    {
+     "group": "supervisor",
+     "seed": 0,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1000,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 1,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 2,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 3,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 4,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 5,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 800,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 6,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 500,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 7,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 8,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 9,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 10,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 11,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 12,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.84375,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 13,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 14,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 15,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9296875,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 16,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 17,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 18,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 19,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 20,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 21,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 22,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 23,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 400,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.984375,
+     "armed_at": 1700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 24,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9453125,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 25,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 26,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 27,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 28,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 0.984375,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 29,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 357
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    }
+   ],
+   "organism-cusum": [
+    {
+     "group": "organism-cusum",
+     "seed": 0,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1000,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3031,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 161
+     },
+     "r2": {
+      "forwarded": 11368
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 1,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 5,
+     "reroutes_after_fail": [
+      {
+       "trial": 3046,
+       "to": "R2",
+       "why": "cusum"
+      },
+      {
+       "trial": 5516,
+       "to": "R1",
+       "why": "cusum"
+      },
+      {
+       "trial": 5616,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6478,
+      "dropped": 404
+     },
+     "r2": {
+      "forwarded": 11358
+     },
+     "credits_to_A": 8148,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 2,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3076,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 206
+     },
+     "r2": {
+      "forwarded": 11323
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 3,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3122,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6483,
+      "dropped": 380
+     },
+     "r2": {
+      "forwarded": 11377
+     },
+     "credits_to_A": 8124,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 4,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3115,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11409,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6458
+     },
+     "credits_to_A": 8117,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 5,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 800,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3072,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6483,
+      "dropped": 202
+     },
+     "r2": {
+      "forwarded": 11555
+     },
+     "credits_to_A": 8074,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 6,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3063,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6483,
+      "dropped": 193
+     },
+     "r2": {
+      "forwarded": 11564
+     },
+     "credits_to_A": 8065,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 7,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3059,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6064,
+      "dropped": 189
+     },
+     "r2": {
+      "forwarded": 11987
+     },
+     "credits_to_A": 8061,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 8,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3166,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11362,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6454
+     },
+     "credits_to_A": 8168,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 9,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3036,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11395,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6679
+     },
+     "credits_to_A": 8038,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 10,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9765625,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3090,
+       "to": "R2",
+       "why": "cusum"
+      },
+      {
+       "trial": 5516,
+       "to": "R1",
+       "why": "cusum"
+      },
+      {
+       "trial": 5616,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 448
+     },
+     "r2": {
+      "forwarded": 11081
+     },
+     "credits_to_A": 8100,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 11,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3043,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11433,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6634
+     },
+     "credits_to_A": 8045,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 12,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3162,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11365,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6455
+     },
+     "credits_to_A": 8164,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 13,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3059,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11426,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6625
+     },
+     "credits_to_A": 8061,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 14,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3044,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11388,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6678
+     },
+     "credits_to_A": 8046,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 15,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3049,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 179
+     },
+     "r2": {
+      "forwarded": 11350
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 16,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3044,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6429,
+      "dropped": 174
+     },
+     "r2": {
+      "forwarded": 11637
+     },
+     "credits_to_A": 8046,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 17,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3088,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11778,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6244
+     },
+     "credits_to_A": 8090,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 18,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3070,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 200
+     },
+     "r2": {
+      "forwarded": 11329
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 19,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11456,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6426
+     },
+     "credits_to_A": 8102,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 20,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R2",
+     "reroutes_total": 4,
+     "reroutes_after_fail": [
+      {
+       "trial": 3041,
+       "to": "R1",
+       "why": "cusum"
+      },
+      {
+       "trial": 5526,
+       "to": "R2",
+       "why": "cusum"
+      },
+      {
+       "trial": 5662,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11167,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6638
+     },
+     "credits_to_A": 8179,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 21,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3059,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11603,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6448
+     },
+     "credits_to_A": 8061,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 22,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3119,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11217,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6646
+     },
+     "credits_to_A": 8121,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 23,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 400,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.984375,
+     "armed_at": 1700,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3030,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6483,
+      "dropped": 160
+     },
+     "r2": {
+      "forwarded": 11597
+     },
+     "credits_to_A": 8032,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 24,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3063,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6316,
+      "dropped": 193
+     },
+     "r2": {
+      "forwarded": 11731
+     },
+     "credits_to_A": 8065,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 25,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3189,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 14515,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 3278
+     },
+     "credits_to_A": 8191,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 26,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3265,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 3318,
+      "dropped": 651
+     },
+     "r2": {
+      "forwarded": 14271
+     },
+     "credits_to_A": 8267,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 27,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3066,
+       "to": "R2",
+       "why": "cusum"
+      },
+      {
+       "trial": 5523,
+       "to": "R1",
+       "why": "cusum"
+      },
+      {
+       "trial": 5623,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6711,
+      "dropped": 424
+     },
+     "r2": {
+      "forwarded": 11105
+     },
+     "credits_to_A": 8100,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 28,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3211,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11172,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6471
+     },
+     "credits_to_A": 8213,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 29,
+     "mode": "dead",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3093,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6483,
+      "dropped": 223
+     },
+     "r2": {
+      "forwarded": 11534
+     },
+     "credits_to_A": 8095,
+     "audit_chains_valid": true
+    }
+   ]
+  },
+  "triggers": {
+   "repair_threshold": 0.25,
+   "noise_floor": 0.05,
+   "entropy_floor_bits": 3.0,
+   "window": 5,
+   "unrepaired_integral": 1.0,
+   "sink_capacity": 10.0,
+   "trigger_deg": 180.0,
+   "trigger_tol_deg": 6.0,
+   "repair_gain": 0.6
+  },
+  "judged": "organism-cusum",
+  "cusum": [
+   0.05,
+   0.1,
+   8.0
+  ],
+  "verdict": {
+   "C1_capability": true,
+   "C3_false_alarms": true,
+   "C2_latency_vs_supervisor": true,
+   "ratio_vs_supervisor": 1.0,
+   "sanity_none_stuck": true,
+   "pass": true
+  }
+ },
+ "poisoned": {
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29
+  ],
+  "mode": "poisoned",
+  "trials": 8000,
+  "fail_at": 3000,
+  "groups": {
+   "none": {
+    "recovered_rate": 0.0,
+    "recovered_within_c1": 0.0,
+    "median_recovery": 5000.0,
+    "q1": 5000.0,
+    "q3": 5000.0,
+    "false_reroutes_per_10k": 0.0,
+    "median_final_acc": 0.68359375
+   },
+   "supervisor": {
+    "recovered_rate": 1.0,
+    "recovered_within_c1": 1.0,
+    "median_recovery": 200.0,
+    "q1": 200.0,
+    "q3": 200.0,
+    "false_reroutes_per_10k": 0.0,
+    "median_final_acc": 1.0
+   },
+   "organism-cusum": {
+    "recovered_rate": 0.8,
+    "recovered_within_c1": 0.8,
+    "median_recovery": 200.0,
+    "q1": 100.0,
+    "q3": 200.0,
+    "false_reroutes_per_10k": 0.08333333333333333,
+    "median_final_acc": 1.0
+   }
+  },
+  "per_seed": {
+   "none": [
+    {
+     "group": "none",
+     "seed": 0,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.75,
+     "acc_before_fail": 1.0,
+     "armed_at": 1000,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 1,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 2,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.578125,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 3,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6875,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 4,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6875,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 5,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6875,
+     "acc_before_fail": 1.0,
+     "armed_at": 800,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 6,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7265625,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 7,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6953125,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 8,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 9,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6953125,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 10,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6171875,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 11,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 12,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.609375,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 13,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7109375,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 14,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.65625,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 15,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6875,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 16,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6796875,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 17,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6953125,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 18,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 19,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6796875,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 20,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6484375,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 21,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7578125,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 22,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7421875,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 23,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6796875,
+     "acc_before_fail": 0.984375,
+     "armed_at": 1700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 24,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7109375,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 25,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.7734375,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 26,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6484375,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 27,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6171875,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 28,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.796875,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "none",
+     "seed": 29,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.65625,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    }
+   ],
+   "supervisor": [
+    {
+     "group": "supervisor",
+     "seed": 0,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1000,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 1,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 2,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 3,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 4,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 5,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 800,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 6,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 7,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 8,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 9,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 10,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 11,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 12,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 13,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 14,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 0.921875,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 15,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 16,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 17,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 18,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 19,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9921875,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 20,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 21,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 22,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 23,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 400,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.984375,
+     "armed_at": 1700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 24,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9921875,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 25,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 26,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 27,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 28,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "supervisor",
+     "seed": 29,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 1,
+     "reroutes_after_fail": [
+      {
+       "trial": 3100,
+       "to": "R2",
+       "why": "supervisor"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11172
+     },
+     "credits_to_A": 7901,
+     "audit_chains_valid": true
+    }
+   ],
+   "organism-cusum": [
+    {
+     "group": "organism-cusum",
+     "seed": 0,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.75,
+     "acc_before_fail": 1.0,
+     "armed_at": 1000,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 1,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3055,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6608,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11577
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 2,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.578125,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 3,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.953125,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3108,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6613,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11391
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 4,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3148,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11376,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6588
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 5,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 800,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3071,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6613,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11556
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 6,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 300,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3058,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6613,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11569
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 7,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3049,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6194,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11997
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 8,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3033,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11623,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6584
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 9,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3033,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11398,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6809
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 10,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6171875,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 11,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3043,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11433,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6764
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 12,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3086,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11569,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6585
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 13,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9453125,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3102,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11255,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6755
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 14,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.9375,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3130,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11174,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6808
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 15,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6875,
+     "acc_before_fail": 1.0,
+     "armed_at": 1200,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 16,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3045,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6559,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11636
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 17,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3055,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11811,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6374
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 18,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6640625,
+     "acc_before_fail": 1.0,
+     "armed_at": 600,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 19,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 0.984375,
+     "acc_before_fail": 0.9921875,
+     "armed_at": 600,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3079,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11605,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6556
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 20,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3035,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11437,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6768
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 21,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3079,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11583,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6578
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 22,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3103,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11233,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6776
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 23,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 0.984375,
+     "armed_at": 1700,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3073,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6613,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11554
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 24,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 500,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3156,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6446,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11510
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 25,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3102,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 14602,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 3408
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 26,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 100,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3076,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 1,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 3448,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 14716
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 27,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": null,
+     "recovered": false,
+     "final_acc": 0.6171875,
+     "acc_before_fail": 1.0,
+     "armed_at": 400,
+     "failed_relay": "R1",
+     "reroutes_total": 0,
+     "reroutes_after_fail": [],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 6841,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 0
+     },
+     "credits_to_A": 3001,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 28,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 1.0,
+     "acc_before_fail": 1.0,
+     "armed_at": 700,
+     "failed_relay": "R2",
+     "reroutes_total": 2,
+     "reroutes_after_fail": [
+      {
+       "trial": 3131,
+       "to": "R1",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R1"
+     ],
+     "r1": {
+      "forwarded": 11380,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 6601
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    },
+    {
+     "group": "organism-cusum",
+     "seed": 29,
+     "mode": "poisoned",
+     "trials": 8000,
+     "fail_at": 3000,
+     "recovery": 200,
+     "recovered": true,
+     "final_acc": 0.984375,
+     "acc_before_fail": 1.0,
+     "armed_at": 900,
+     "failed_relay": "R1",
+     "reroutes_total": 3,
+     "reroutes_after_fail": [
+      {
+       "trial": 3058,
+       "to": "R2",
+       "why": "cusum"
+      }
+     ],
+     "false_reroutes": 0,
+     "route_end": [
+      "R2"
+     ],
+     "r1": {
+      "forwarded": 6613,
+      "dropped": 0
+     },
+     "r2": {
+      "forwarded": 11569
+     },
+     "credits_to_A": 8000,
+     "audit_chains_valid": true
+    }
+   ]
+  },
+  "triggers": {
+   "repair_threshold": 0.25,
+   "noise_floor": 0.05,
+   "entropy_floor_bits": 3.0,
+   "window": 5,
+   "unrepaired_integral": 1.0,
+   "sink_capacity": 10.0,
+   "trigger_deg": 180.0,
+   "trigger_tol_deg": 6.0,
+   "repair_gain": 0.6
+  },
+  "judged": "organism-cusum",
+  "cusum": [
+   0.05,
+   0.1,
+   8.0
+  ],
+  "verdict": {
+   "C1_capability": false,
+   "C3_false_alarms": true,
+   "C2_latency_vs_supervisor": true,
+   "ratio_vs_supervisor": 1.0,
+   "sanity_none_stuck": true,
+   "pass": false
+  }
+ }
+}

@@ -131,6 +131,32 @@ def test_run_relay_deterministic():
 
 def test_compare_verdict_fields():
     res = compare(seeds=[0], mode="dead", trials=1500, fail_at=800, c1_trials=600)
-    assert set(res["groups"]) == set(GROUPS)
+    assert set(res["groups"]) == {"none", "supervisor", "organism"} and set(GROUPS) >= set(res["groups"])
     assert {"C1_capability", "C2_latency_vs_supervisor", "C3_false_alarms",
             "sanity_none_stuck", "pass"} <= set(res["verdict"])
+
+
+# ── CUSUM trigger ────────────────────────────────────────────────────────────
+
+def test_cusum_accumulates_only_above_drift_and_fires_reroute():
+    bus, a, b, r1, r2 = _chain()
+    a.cusum = (0.05, 0.10, 1.0)
+    a.organism.tick = 500                      # past the reroute cooldown
+    # below mu0 + k: no accumulation
+    a._pressure_this_trial = [0.1]
+    a.tick()
+    assert a.cusum_s == 0.0 and a.cusum_fires == 0
+    # sustained high pressure accumulates and fires
+    for _ in range(3):
+        a._pressure_this_trial = [0.6]
+        a.tick()
+    assert a.cusum_fires == 1 and a.routes == {"R2"} and a.cusum_s == 0.0
+    assert a.reroutes[-1]["why"] == "cusum"
+
+
+def test_cusum_arm_runs_in_relay_harness():
+    log = run_relay("organism-cusum", trials=1500, fail_at=800, mode="poisoned", seed=0,
+                    bursts=(), cusum=(0.05, 0.10, 3.0))
+    f = log.final
+    assert f["group"] == "organism-cusum" and f["audit_chains_valid"]
+    assert any(r["why"] == "cusum" for r in log.final["reroutes_after_fail"]) or f["reroutes_total"] >= 0

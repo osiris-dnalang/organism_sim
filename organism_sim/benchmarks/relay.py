@@ -36,7 +36,7 @@ import io
 import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
@@ -47,7 +47,7 @@ from ..spec import Triggers, parse_dna
 from .mux import SYMBOLS, _inputs, mux6
 
 SENDER_DNA = Path(__file__).with_name("relay_sender.dna")
-GROUPS = ("none", "supervisor", "organism")
+GROUPS = ("none", "supervisor", "organism", "organism-cusum")
 
 
 @dataclass
@@ -106,7 +106,8 @@ def run_relay(group: str = "organism", trials: int = 8000, fail_at: int = 3000,
               recovered_at: float = 0.95, bursts: Sequence[int] = (1500, 5500),
               burst_len: int = 20, params: Optional[Params] = None,
               triggers: Optional[Triggers] = None, sup_threshold: float = 0.8,
-              sup_patience: int = 2) -> RelayLog:
+              sup_patience: int = 2,
+              cusum: Tuple[float, float, float] = (0.05, 0.10, 3.0)) -> RelayLog:
     if group not in GROUPS:
         raise ValueError(f"group must be one of {GROUPS}")
     rng = np.random.default_rng(seed)
@@ -117,7 +118,8 @@ def run_relay(group: str = "organism", trials: int = 8000, fail_at: int = 3000,
                                     unrepaired_integral=1.0, window=5)
     a = LCSAgent("A", input_len=2, actions=[f"(send * {s})" for s in SYMBOLS],
                  rules=genome.rules(), seed=seed, bus=bus, frozen=True,
-                 structural=(group == "organism"), triggers=triggers)
+                 structural=(group == "organism"), triggers=triggers,
+                 cusum=cusum if group == "organism-cusum" else None)
     b = LCSAgent("B", input_len=4, actions=["(emit 0)", "(emit 1)"], symbols=SYMBOLS,
                  params=params or Params(p_explore=0.3), seed=seed + 1, bus=bus)
     r1 = Relay("R1", bus, SYMBOLS, seed=seed + 11)
@@ -188,6 +190,7 @@ def run_relay(group: str = "organism", trials: int = 8000, fail_at: int = 3000,
         "armed_at": armed_at, "failed_relay": failed_relay,
         "reroutes_total": len(a.reroutes),
         "reroutes_after_fail": [dict(rr) for rr in a.reroutes if rr["trial"] >= fail_at][:5],
+        "cusum_fires": a.cusum_fires,
         "false_reroutes": false_reroutes,
         "route_end": sorted(a.routes), "r1": {"forwarded": r1.forwarded, "dropped": r1.dropped},
         "r2": {"forwarded": r2.forwarded}, "credits_to_A": a.credits_received,
@@ -200,12 +203,15 @@ def compare(seeds: Sequence[int] = range(30), mode: str = "dead", trials: int = 
             fail_at: int = 3000, c1_trials: int = 1500, c1_rate: float = 0.9,
             c2_ratio: float = 1.25, c3_per_10k: float = 1.0, recovered_at: float = 0.95,
             triggers: Optional[Triggers] = None, params: Optional[Params] = None,
-            groups: Sequence[str] = GROUPS) -> Dict[str, Any]:
+            groups: Sequence[str] = ("none", "supervisor", "organism"),
+            cusum: Tuple[float, float, float] = (0.05, 0.10, 3.0),
+            judged: str = "organism") -> Dict[str, Any]:
+    """``judged`` names the arm the C1–C3 verdict is computed for."""
     per: Dict[str, List[Dict[str, Any]]] = {g: [] for g in groups}
     for sd in seeds:
         for g in groups:
             log = run_relay(g, trials, fail_at, mode, sd, recovered_at=recovered_at,
-                            triggers=triggers, params=params)
+                            triggers=triggers, params=params, cusum=cusum)
             per[g].append(log.final)
     out: Dict[str, Any] = {"seeds": list(seeds), "mode": mode, "trials": trials,
                            "fail_at": fail_at, "groups": {}, "per_seed": per,
@@ -223,7 +229,9 @@ def compare(seeds: Sequence[int] = range(30), mode: str = "dead", trials: int = 
             "false_reroutes_per_10k": 1e4 * sum(f["false_reroutes"] for f in per[g]) / (len(per[g]) * trials),
             "median_final_acc": float(np.median([f["final_acc"] for f in per[g]])),
         }
-    o, s, n = out["groups"].get("organism"), out["groups"].get("supervisor"), out["groups"].get("none")
+    o, s, n = out["groups"].get(judged), out["groups"].get("supervisor"), out["groups"].get("none")
+    out["judged"] = judged
+    out["cusum"] = list(cusum)
     v: Dict[str, Any] = {}
     if o is not None:
         v["C1_capability"] = o["recovered_within_c1"] >= c1_rate

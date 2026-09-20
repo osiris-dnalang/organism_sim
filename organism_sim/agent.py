@@ -21,7 +21,7 @@ from __future__ import annotations
 import math
 from collections import deque
 from dataclasses import replace
-from typing import Any, Deque, Dict, List, Optional, Sequence, Set
+from typing import Any, Deque, Dict, List, Optional, Sequence, Set, Tuple
 
 import numpy as np
 
@@ -44,7 +44,8 @@ class LCSAgent(Processor):
                  triggers: Optional[Triggers] = None, seed: int = 0,
                  rules: Sequence[Gene] = (), bus: Optional[RoutedBus] = None,
                  pressure_window: int = 20, sever_pressure: float = 0.8,
-                 structural: bool = False, frozen: bool = False):
+                 structural: bool = False, frozen: bool = False,
+                 cusum: Optional[Tuple[float, float, float]] = None):
         self.name = name
         self.structural = structural    # False → organism repair/mutation leave the rule set alone
         self.frozen = frozen            # True → never learns; always exploits (fixed protocol)
@@ -84,6 +85,13 @@ class LCSAgent(Processor):
         self.credits_received = 0
         self.peers: List[str] = []              # known alternative targets for rerouting
         self.reroutes: List[Dict[str, Any]] = []
+        # Optional CUSUM change-point detector on the per-trial upstream pressure:
+        # (mu0, k, h): S ← max(0, S + (e − mu0 − k)); fire when S > h. Its false-alarm
+        # rate is a designed quantity (average run length), unlike a level threshold.
+        self.cusum = cusum
+        self.cusum_s = 0.0
+        self.cusum_fires = 0
+        self._pressure_this_trial: List[float] = []
         self.reroute_cooldown = 100             # trials before another reroute may fire
         self._last_reroute = -10 ** 9
 
@@ -99,6 +107,7 @@ class LCSAgent(Processor):
                 payload.pressure)
         elif payload.kind == "credit":
             self.credits_received += 1
+            self._pressure_this_trial.append(payload.pressure)
             reward = payload.content.get("reward", 1.0 - payload.pressure) \
                 if isinstance(payload.content, dict) else 1.0 - payload.pressure
             if not self.frozen:
@@ -176,7 +185,18 @@ class LCSAgent(Processor):
                                       kind="credit"))
 
     def tick(self):
-        """Advance the organism state machine one tick (after reward)."""
+        """Advance the organism state machine one tick (after reward). If a CUSUM detector
+        is configured, update it on this trial's mean upstream pressure and reroute on a
+        detected upward shift."""
+        if self.cusum is not None:
+            mu0, k, h = self.cusum
+            e = float(np.mean(self._pressure_this_trial)) if self._pressure_this_trial else 0.0
+            self.cusum_s = max(0.0, self.cusum_s + (e - mu0 - k))
+            if self.cusum_s > h:
+                self.cusum_fires += 1
+                if self.reroute("cusum") is not None:
+                    self.cusum_s = 0.0
+        self._pressure_this_trial = []
         return self.organism.step()
 
     # ── Processor interface (called by the organism) ─────────────────────────

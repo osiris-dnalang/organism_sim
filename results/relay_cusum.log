@@ -1,0 +1,86 @@
+{"k": 0.1, "h": 4.0, "median": 100.0, "q3": 200.0, "c1_rate": 1.0, "false_per_10k": 1.4375}
+{"k": 0.1, "h": 6.0, "median": 150.0, "q3": 200.0, "c1_rate": 0.95, "false_per_10k": 0.5}
+{"k": 0.1, "h": 8.0, "median": 200.0, "q3": 300.0, "c1_rate": 0.9, "false_per_10k": 0.0625}
+{"k": 0.15, "h": 4.0, "median": 100.0, "q3": 200.0, "c1_rate": 0.95, "false_per_10k": 1.0}
+{"k": 0.15, "h": 6.0, "median": 200.0, "q3": 1625.0, "c1_rate": 0.75, "false_per_10k": 0.375}
+{"k": 0.15, "h": 8.0, "median": 400.0, "q3": 5000.0, "c1_rate": 0.7, "false_per_10k": 0.0}
+SELECTED {"k": 0.1, "h": 8.0, "median": 200.0, "q3": 300.0, "c1_rate": 0.9, "false_per_10k": 0.0625}
+dead {
+ "groups": {
+  "none": {
+   "recovered_rate": 0.0,
+   "recovered_within_c1": 0.0,
+   "median_recovery": 5000.0,
+   "q1": 5000.0,
+   "q3": 5000.0,
+   "false_reroutes_per_10k": 0.0,
+   "median_final_acc": 0.69921875
+  },
+  "supervisor": {
+   "recovered_rate": 1.0,
+   "recovered_within_c1": 1.0,
+   "median_recovery": 200.0,
+   "q1": 200.0,
+   "q3": 300.0,
+   "false_reroutes_per_10k": 0.0,
+   "median_final_acc": 1.0
+  },
+  "organism-cusum": {
+   "recovered_rate": 1.0,
+   "recovered_within_c1": 1.0,
+   "median_recovery": 200.0,
+   "q1": 100.0,
+   "q3": 200.0,
+   "false_reroutes_per_10k": 0.25,
+   "median_final_acc": 1.0
+  }
+ },
+ "verdict": {
+  "C1_capability": true,
+  "C3_false_alarms": true,
+  "C2_latency_vs_supervisor": true,
+  "ratio_vs_supervisor": 1.0,
+  "sanity_none_stuck": true,
+  "pass": true
+ }
+}
+poisoned {
+ "groups": {
+  "none": {
+   "recovered_rate": 0.0,
+   "recovered_within_c1": 0.0,
+   "median_recovery": 5000.0,
+   "q1": 5000.0,
+   "q3": 5000.0,
+   "false_reroutes_per_10k": 0.0,
+   "median_final_acc": 0.68359375
+  },
+  "supervisor": {
+   "recovered_rate": 1.0,
+   "recovered_within_c1": 1.0,
+   "median_recovery": 200.0,
+   "q1": 200.0,
+   "q3": 200.0,
+   "false_reroutes_per_10k": 0.0,
+   "median_final_acc": 1.0
+  },
+  "organism-cusum": {
+   "recovered_rate": 0.8,
+   "recovered_within_c1": 0.8,
+   "median_recovery": 200.0,
+   "q1": 100.0,
+   "q3": 200.0,
+   "false_reroutes_per_10k": 0.08333333333333333,
+   "median_final_acc": 1.0
+  }
+ },
+ "verdict": {
+  "C1_capability": false,
+  "C3_false_alarms": true,
+  "C2_latency_vs_supervisor": true,
+  "ratio_vs_supervisor": 1.0,
+  "sanity_none_stuck": true,
+  "pass": false
+ }
+}
+DONE 2183s

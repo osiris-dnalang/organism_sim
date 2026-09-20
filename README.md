@@ -113,6 +113,17 @@ false alarms. Poisoning fails because B learns to ignore random symbols and sett
 ≈ 0.31 error, marginal against the 0.25 threshold — fires on some seeds, not others; the
 5-seed tuning set did not expose it. Not retuned on evaluation seeds.
 
+**Follow-up (pre-registered): CUSUM change-point trigger.** `LCSAgent(cusum=(μ₀, k, h))`
+replaces the level threshold with a one-sided CUSUM on per-trial upstream pressure —
+its false-alarm rate is a designed quantity. `(0.05, 0.10, 8)` tuned on seeds 100–109
+(`results/relay_cusum_tuning_seeds100-109.json`), evaluated once on 0–29
+(`results/relay_cusum_eval30_seeds0-29.json`): `dead` median 200, 30/30, 0.25 false/10k →
+PASS; `poisoned` median 200, **24/30**, 0.08 false/10k → **FAIL** (C1 0.80 < 0.90).
+Change-point detection lifts poisoning from 20/30 to 24/30 inside the false-alarm budget
+but doubles silent-failure latency (h must exceed what a burst can accumulate). A ~0.17
+mean-pressure shift against 20-trial bursts is near the detectability limit for any local
+statistic on this scalar; passing needs a richer downstream signal, not a better detector.
+
 Design decisions that the harness forced (each was a bug or an unfairness found by
 running it): a frozen genome has no entropy trigger; the relay A is *using* is the one that
 fails; false alarms are counted only after B has converged; reroutes have a cooldown;
