@@ -18,6 +18,16 @@ python -m organism_sim.cli run   --ticks 100                      # substrate on
 python -m organism_sim.cli swarm --n 8 --ticks 200 --ramp 0.005 --csv pop.csv
 ```
 
+## Contracts and guards
+
+* `schemas/telemetry_row.schema.json`, `schemas/payload.schema.json` — the telemetry-row and
+  bus-payload contracts (JSON Schema, draft-07). Tests validate every emitted row and every
+  checked-in `results/**/*.jsonl` against them.
+* `python -m organism_sim.benchmarks.ci_guard` — run on every push: steady-state latency of a
+  full LCS trial at a 400-rule population must stay under budget (167 µs measured after the
+  condition-matrix cache; 600 µs budget for CI runners), and the dead-relay organism arm must
+  recover on every seed with median ≤ 150 trials and 0 false reroutes.
+
 ## Layers
 
 | Module | Role |

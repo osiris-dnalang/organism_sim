@@ -1,0 +1,26 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request: { branches: [main] }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { python-version: ["3.9", "3.12"] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python-version }}" }
+      - run: pip install -e ".[dev]" jsonschema
+      - run: ruff check --select E,F,W,I --ignore E501 organism_sim tests
+      - run: pytest -q
+  guards:
+    # latency budget + the pre-registered dead-relay PASS, on every push to main
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - run: python -m organism_sim.benchmarks.ci_guard --latency-us 600 --relay-median 150 --seeds 5

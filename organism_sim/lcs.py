@@ -49,6 +49,10 @@ from .rules import (
 WILD = 2  # encoding of '#'
 
 
+def _enc(cond: str) -> np.ndarray:
+    return np.array([WILD if c == "#" else int(c) for c in cond], dtype=np.int8)
+
+
 @dataclass
 class Params:
     N: int = 400               # max population (sum of numerosities)
@@ -92,19 +96,17 @@ class Rule:
     as_size: float = 1.0
     id: int = 0
     key: str = field(default="", repr=False)
+    enc: np.ndarray = field(default=None, repr=False, compare=False)
 
     def __post_init__(self):
         self.key = action_key(self.action)
+        self.enc = _enc(self.condition)
 
     def to_dict(self) -> Dict[str, Any]:
         return {"id": self.id, "condition": self.condition, "action": self.action,
                 "prediction": round(self.prediction, 4), "error": round(self.error, 4),
                 "fitness": round(self.fitness, 4), "experience": self.experience,
                 "numerosity": self.numerosity}
-
-
-def _enc(cond: str) -> np.ndarray:
-    return np.array([WILD if c == "#" else int(c) for c in cond], dtype=np.int8)
 
 
 class RuleEngine:
@@ -121,6 +123,9 @@ class RuleEngine:
         self.interp = Interpreter(self.p.step_budget)
         self.rules: List[Rule] = []
         self._next_id = 0
+        self._pop_version = 0            # bumped on every population change
+        self._matrix_version = -1
+        self._matrix: Optional[np.ndarray] = None
         self.t = 0
         self.match_set: List[Rule] = []
         self.action_set: List[Rule] = []
@@ -144,12 +149,26 @@ class RuleEngine:
                     fitness=self.p.f_init if f is None else f,
                     time_stamp=self.t, id=self._next_id)
 
+    def _bump(self) -> None:
+        self._pop_version += 1
+
+    def _cond_matrix(self) -> np.ndarray:
+        """(|P| × L) int8 matrix of encoded conditions, rebuilt only when the population
+        changed (rules are immutable once created; only membership changes)."""
+        if self._matrix_version != self._pop_version or self._matrix is None \
+                or len(self._matrix) != len(self.rules):
+            self._matrix = np.stack([r.enc for r in self.rules]) if self.rules else np.zeros(
+                (0, self.cond_len), dtype=np.int8)
+            self._matrix_version = self._pop_version
+        return self._matrix
+
     def _insert(self, r: Rule) -> None:
         for q in self.rules:
             if q.condition == r.condition and q.key == r.key:
                 q.numerosity += r.numerosity
                 return
         self.rules.append(r)
+        self._bump()
 
     @property
     def size(self) -> int:
@@ -172,6 +191,7 @@ class RuleEngine:
             self.rules[i].numerosity -= 1
             if self.rules[i].numerosity <= 0:
                 self.rules.pop(i)
+                self._bump()
             self.counters["delete"] += 1
 
     # ── trial ────────────────────────────────────────────────────────────────
@@ -180,7 +200,7 @@ class RuleEngine:
         if len(register) != self.cond_len:
             raise ValueError(f"register length {len(register)} != {self.cond_len}")
         if self.rules:
-            conds = np.stack([_enc(r.condition) for r in self.rules])
+            conds = self._cond_matrix()
             reg = _enc(register)
             ok = ((conds == WILD) | (conds == reg)).all(axis=1)
             m = [r for r, k in zip(self.rules, ok) if k]
@@ -313,6 +333,7 @@ class RuleEngine:
                 aset.remove(r)
                 if r in self.rules:
                     self.rules.remove(r)
+                    self._bump()
                 self.counters["subsume"] += 1
 
     # ── GA ───────────────────────────────────────────────────────────────────
@@ -394,6 +415,7 @@ class RuleEngine:
         # prune
         self.rules = [r for r in self.rules
                       if r.fitness >= p.fitness_floor or r.experience <= p.theta_del]
+        self._bump()
         self.counters["compact"] += 1
         return before - len(self.rules)
 

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/osiris-dnalang/organism_sim/schemas/payload.schema.json",
+  "title": "organism_sim bus payload",
+  "description": "Message on the routed bus. content and pressure are the two semantic fields; the rest is routing. Credit payloads carry {reward, explore} in content and exploit-only error as pressure.",
+  "type": "object",
+  "required": ["content", "pressure", "sender", "recipient", "kind", "tick", "id", "reply_to"],
+  "additionalProperties": false,
+  "properties": {
+    "content": {"type": ["string", "object", "array"]},
+    "pressure": {"type": "number", "minimum": 0},
+    "sender": {"type": "string", "minLength": 1},
+    "recipient": {"type": ["string", "null"]},
+    "kind": {"type": "string", "enum": ["signal", "result", "credit", "state"]},
+    "tick": {"type": "integer", "minimum": 0},
+    "id": {"type": "integer", "minimum": 1},
+    "reply_to": {"type": ["integer", "null"]}
+  }
+}

@@ -405,13 +405,18 @@ class TelemetryRecord:
     prev_hash: str
     hash: str = ""
 
+    _FIELDS = ("tick", "timestamp", "state", "metrics", "decision", "confidence", "events",
+               "generation", "sink_load", "prev_hash")
+
     def payload(self) -> str:
-        d = asdict(self)
-        d.pop("hash", None)
+        # flat record: build the dict directly (dataclasses.asdict deep-copies recursively)
+        d = {k: getattr(self, k) for k in self._FIELDS}
         return json.dumps(d, sort_keys=True, separators=(",", ":"))
 
     def to_dict(self) -> Dict[str, Any]:
-        return asdict(self)
+        d = {k: getattr(self, k) for k in self._FIELDS}
+        d["hash"] = self.hash
+        return d
 
 
 @dataclass

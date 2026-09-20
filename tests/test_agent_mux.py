@@ -140,7 +140,8 @@ def test_phase_b_protocol_sender_isolated_vs_coupled(seed):
     cpl = run_split(6000, seed=seed, coupled=True, log_every=6000, params=Params(p_explore=0.3))
     assert iso.final["eval_acc"] <= 0.75
     assert cpl.final["eval_acc"] >= 0.95
-    assert iso.rows[-1].credits == 0 and cpl.rows[-1].credits == 6000
+    # isolated: B consumes no symbol (its credit is silence-broadcast); coupled: 1 per trial
+    assert iso.final["B"]["credits"] == 0 and cpl.rows[-1].credits == 6000
     assert cpl.final["audit_chains_valid"]
 
 

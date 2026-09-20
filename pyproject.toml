@@ -13,7 +13,7 @@ authors = [{name = "Devin Phillip Davis", email = "osiris.dnalang@gmail.com"}]
 dependencies = ["numpy>=1.24.0"]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "ruff>=0.4.0"]
+dev = ["pytest>=7.0", "ruff>=0.4.0", "jsonschema>=4.0"]
 
 [project.scripts]
 organism-sim = "organism_sim.cli:main"
