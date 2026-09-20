@@ -86,6 +86,39 @@ repair was scaling a *measured* error rate as if compaction had reduced it (it c
 
 `python -m organism_sim.cli bench drift --compare 30 --repair-threshold-drift 0.25` reruns it.
 
+## Relay-failure recovery — pre-registered, split result
+
+`benchmarks/relay.py`: split 6-mux over A → relay → B with a spare relay unrouted. At trial
+3,000 the relay A is using fails (`dead`: drops signals; `poisoned`: random symbols at
+pressure 1.0). Transient 20-trial reward-corruption bursts occur elsewhere and must not
+trigger reroutes. Groups on identical seeds: `none` (no rerouting), `supervisor`
+(centralized monitor with global probe access, reroutes after two probes < 0.8),
+`organism` (A's local trigger only: credit pressure → noise → sustained unrepaired excess
+→ sever + route to an unrouted peer). Criteria stated first: C1 recover ≥ 0.95 within
+1,500 trials on ≥ 90 % of seeds; C2 median ≤ 1.25 × supervisor; C3 ≤ 1 false reroute per
+10k trials. Profile tuned on seeds 100–104 (`results/relay_tuning_seeds100-104.json`:
+`repair_threshold 0.25, ∫excess 10, window 100`), evaluated on 0–29
+(`results/relay_eval30_seeds0-29.json`).
+
+| 30 seeds | `dead` | `poisoned` |
+|---|---|---|
+| none | stuck 0.70 | stuck 0.68 |
+| supervisor | median 200, 30/30 | median 200, 30/30 |
+| organism | **median 100, 30/30, 0 false** | median 200, **20/30**, 0 false |
+| verdict | **PASS** (ratio 0.5 vs supervisor) | **FAIL** (C1 = 0.67) |
+
+Silent failure is the first positive result for the organism layer: a job the base learner
+cannot do at all, done twice as fast as a monitor with strictly more information, with no
+false alarms. Poisoning fails because B learns to ignore random symbols and settles at
+≈ 0.31 error, marginal against the 0.25 threshold — fires on some seeds, not others; the
+5-seed tuning set did not expose it. Not retuned on evaluation seeds.
+
+Design decisions that the harness forced (each was a bug or an unfairness found by
+running it): a frozen genome has no entropy trigger; the relay A is *using* is the one that
+fails; false alarms are counted only after B has converged; reroutes have a cooldown;
+upstream ``credit`` pressure carries exploit-trial error only (exploration misses are the
+downstream agent's own choice, not evidence about the link).
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):

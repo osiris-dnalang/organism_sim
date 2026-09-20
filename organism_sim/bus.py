@@ -14,7 +14,9 @@ import itertools
 import json
 from collections import deque
 from dataclasses import asdict, dataclass, field
-from typing import Any, Deque, Dict, List, Optional, Protocol, Set, Union
+from typing import Any, Deque, Dict, List, Optional, Protocol, Sequence, Set, Union
+
+import numpy as np
 
 Content = Union[str, Dict[str, Any], List[Any]]
 _ids = itertools.count(1)
@@ -48,6 +50,48 @@ class Receiver(Protocol):
     routes: Set[str]
 
     def receive(self, payload: Payload) -> None: ...
+
+
+class Relay:
+    """Dumb forwarding node. ``signal`` payloads are re-sent to every route; ``credit``
+    payloads are forwarded to the upstream sender of the last signal. Modes:
+    ``ok`` (forward), ``dead`` (drop everything), ``poisoned`` (forward a random
+    symbol at pressure 1.0)."""
+
+    def __init__(self, name: str, bus: "RoutedBus", symbols: Sequence[str] = (),
+                 seed: int = 0):
+        self.name = name
+        self.bus = bus
+        self.routes: Set[str] = set()
+        self.symbols = list(symbols)
+        self.rng = np.random.default_rng(seed)
+        self.mode = "ok"
+        self.upstream: Optional[str] = None
+        self.forwarded = 0
+        self.dropped = 0
+        self.credits = 0
+
+    def receive(self, payload: Payload) -> None:
+        if payload.kind == "credit":
+            self.credits += 1
+            if self.upstream:
+                self.bus.send(Payload(content=payload.content, pressure=payload.pressure,
+                                      sender=self.name, recipient=self.upstream, kind="credit"))
+            return
+        if payload.kind != "signal":
+            return
+        self.upstream = payload.sender
+        if self.mode == "dead":
+            self.dropped += 1
+            return
+        content, pressure = payload.content, payload.pressure
+        if self.mode == "poisoned" and self.symbols:
+            content = self.symbols[int(self.rng.integers(len(self.symbols)))]
+            pressure = 1.0
+        for t in sorted(self.routes):
+            self.bus.send(Payload(content=content, pressure=pressure, sender=self.name,
+                                  recipient=t, kind="signal"))
+            self.forwarded += 1
 
 
 class RoutedBus:
@@ -124,4 +168,4 @@ class RoutedBus:
         return json.dumps(self.describe(), indent=indent)
 
 
-__all__ = ["Payload", "RoutedBus", "Receiver", "KINDS"]
+__all__ = ["Payload", "RoutedBus", "Relay", "Receiver", "KINDS"]

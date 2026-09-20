@@ -88,7 +88,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("dump-spec", help="print the reference spec as JSON")
 
     be = sub.add_parser("bench", help="run a benchmark")
-    be.add_argument("name", choices=("mux", "drift"))
+    be.add_argument("name", choices=("mux", "drift", "relay"))
     be.add_argument("--phase", choices=("A", "B"), default="A")
     dg = be.add_argument_group("drift")
     dg.add_argument("--shift-every", type=int, default=3000)
@@ -98,6 +98,10 @@ def build_parser() -> argparse.ArgumentParser:
     dg.add_argument("--repair-threshold-drift", type=float, default=None)
     dg.add_argument("--integral-drift", type=float, default=None)
     dg.add_argument("--window-drift", type=int, default=None)
+    rg = be.add_argument_group("relay")
+    rg.add_argument("--group", choices=("none", "supervisor", "organism"), default="organism")
+    rg.add_argument("--mode", choices=("dead", "poisoned"), default="dead")
+    rg.add_argument("--fail-at", type=int, default=3000)
     be.add_argument("--sender", choices=("protocol", "learn"), default="protocol")
     be.add_argument("--isolated", action="store_true", help="phase B: sever the A→B route")
     be.add_argument("--trials", type=int, default=5000)
@@ -122,6 +126,34 @@ def main(argv=None) -> int:
         from .benchmarks.mux import run_single, run_split
         from .lcs import Params
         params = Params(p_explore=args.p_explore) if args.p_explore is not None else None
+        if args.name == "relay":
+            from .benchmarks.relay import compare as rcompare
+            from .benchmarks.relay import run_relay
+            tkw = {"noise_floor": 0.05, "repair_threshold": 0.15, "unrepaired_integral": 10.0,
+                   "window": 100}
+            if args.repair_threshold_drift is not None:
+                tkw["repair_threshold"] = args.repair_threshold_drift
+            if args.integral_drift is not None:
+                tkw["unrepaired_integral"] = args.integral_drift
+            if args.window_drift is not None:
+                tkw["window"] = args.window_drift
+            triggers = Triggers(**tkw)
+            if args.compare:
+                res = rcompare(seeds=range(args.compare), mode=args.mode, trials=args.trials,
+                               fail_at=args.fail_at, triggers=triggers, params=params)
+                if args.json_log:
+                    Path(args.json_log).write_text(json.dumps(res, indent=2))
+                print(json.dumps({"groups": res["groups"], "verdict": res["verdict"],
+                                  "triggers": res["triggers"]}, indent=2))
+                return 0
+            log = run_relay(args.group, args.trials, args.fail_at, args.mode, args.seed,
+                            probe_every=args.log_every, triggers=triggers, params=params)
+            if args.csv:
+                Path(args.csv).write_text(log.to_csv())
+            if args.json_log:
+                Path(args.json_log).write_text(log.to_json())
+            print(json.dumps(log.final, indent=2, default=str))
+            return 0
         if args.name == "drift":
             from .benchmarks.drift import compare, compare_csv, run_drift
             tkw = {"noise_floor": 0.05, "repair_threshold": 0.45}

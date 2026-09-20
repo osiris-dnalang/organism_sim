@@ -1,0 +1,11 @@
+// Protocol sender for the relay benchmark: broadcast the address symbol to every
+// currently routed peer ('*'), so rerouting needs no rule change.
+ORGANISM RELAY_SENDER {
+    META { version: "0.1.0", domain: "benchmark" }
+    GENOME {
+        GENE addr00 { id: "R0", condition: "00", action: "(send * s0)", expression: 1.0 }
+        GENE addr01 { id: "R1", condition: "01", action: "(send * s1)", expression: 1.0 }
+        GENE addr10 { id: "R2", condition: "10", action: "(send * s2)", expression: 1.0 }
+        GENE addr11 { id: "R3", condition: "11", action: "(send * s3)", expression: 1.0 }
+    }
+}

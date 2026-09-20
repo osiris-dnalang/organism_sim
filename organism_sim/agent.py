@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import math
 from collections import deque
+from dataclasses import replace
 from typing import Any, Deque, Dict, List, Optional, Sequence, Set
 
 import numpy as np
@@ -56,6 +57,9 @@ class LCSAgent(Processor):
                                              prediction=g.expression, error=0.0, fitness=g.expression)
                                         for g in rules if g.is_rule])
         self.triggers = triggers or Triggers(noise_floor=QUIET["noise_floor"], repair_threshold=0.45)
+        if frozen and self.triggers.entropy_floor_bits > 0:
+            # a frozen genome cannot collapse; only the noise-integral trigger applies
+            self.triggers = replace(self.triggers, entropy_floor_bits=0.0)
         genes = [Gene(id=g.id, name=g.name, expression=g.expression, condition=g.condition,
                       action=g.action) for g in rules] or [Gene(id="G0", name="engine")]
         spec = OrganismSpec(name=name, genome=Genome(genes=genes), domain="lcs",
@@ -78,6 +82,10 @@ class LCSAgent(Processor):
         self.sever_pressure = sever_pressure
         self.severed: List[Dict[str, Any]] = []
         self.credits_received = 0
+        self.peers: List[str] = []              # known alternative targets for rerouting
+        self.reroutes: List[Dict[str, Any]] = []
+        self.reroute_cooldown = 100             # trials before another reroute may fire
+        self._last_reroute = -10 ** 9
 
     # ── bus side ─────────────────────────────────────────────────────────────
 
@@ -91,8 +99,10 @@ class LCSAgent(Processor):
                 payload.pressure)
         elif payload.kind == "credit":
             self.credits_received += 1
+            reward = payload.content.get("reward", 1.0 - payload.pressure) \
+                if isinstance(payload.content, dict) else 1.0 - payload.pressure
             if not self.frozen:
-                self.engine.reward(1.0 - payload.pressure, self.last_register, terminal=True)
+                self.engine.reward(float(reward), self.last_register, terminal=True)
             self.organism.inject_noise(payload.pressure)
 
     def encode_symbol(self, sym: Optional[str]) -> str:
@@ -124,9 +134,11 @@ class LCSAgent(Processor):
             self.outputs.append(Payload(content=sym, pressure=0.0, sender=self.name,
                                         recipient="env", kind="result"))
         for target, sym in ctx.sends:
-            if target in self.routes:
+            targets = sorted(self.routes) if target == "*" else (
+                [target] if target in self.routes else [])
+            for t in targets:
                 self.outputs.append(Payload(content=sym, pressure=0.0, sender=self.name,
-                                            recipient=target, kind="signal"))
+                                            recipient=t, kind="signal"))
         for target in ctx.severs:
             self._sever(target, "action")
         for target in ctx.routes:
@@ -150,9 +162,18 @@ class LCSAgent(Processor):
             self.engine.reward(r, self.last_register, terminal=True)
         if not self.engine.last_explore:
             self.organism.inject_noise(1.0 - r)
-        if self.consumed_from and self.bus is not None and self.consumed_from in self.bus.nodes:
-            self.bus.send(Payload(content={"reward": r}, pressure=1.0 - r, sender=self.name,
-                                  recipient=self.consumed_from, kind="credit"))
+        if self.bus is not None:
+            if self.consumed_from and self.consumed_from in self.bus.nodes:
+                targets = [self.consumed_from]
+            else:
+                targets = [t for t in sorted(self.routes) if t in self.bus.nodes]
+            # pressure carries only *exploit* error: exploration misses are this
+            # agent's deliberate choice, not a signal about the upstream link
+            pressure = 0.0 if self.engine.last_explore else 1.0 - r
+            for t in targets:
+                self.bus.send(Payload(content={"reward": r, "explore": self.engine.last_explore},
+                                      pressure=pressure, sender=self.name, recipient=t,
+                                      kind="credit"))
 
     def tick(self):
         """Advance the organism state machine one tick (after reward)."""
@@ -175,12 +196,33 @@ class LCSAgent(Processor):
             self.engine.compact()
 
     def mutate(self, org: Organism, reason: str) -> None:
-        if self.structural:
+        if self.structural and not self.frozen:
             self.engine.gp_mutate(donor=self.donor.engine if self.donor else None)
             self.engine.shock()
+        if self.structural and self.peers:
+            self.reroute(reason)
         for src, hist in list(self.pressure_in.items()):
             if len(hist) >= self.pressure_window and float(np.mean(hist)) > self.sever_pressure:
                 self._sever(src, "high_pressure")
+
+    def reroute(self, why: str = "manual") -> Optional[str]:
+        """Topological mutation: drop the current relay route, route to an unrouted peer."""
+        alternatives = [p for p in self.peers if p not in self.routes]
+        now = self.organism.tick
+        if not alternatives or now - self._last_reroute < self.reroute_cooldown:
+            return None
+        self._last_reroute = now
+        for old in sorted(self.routes):
+            if old in self.peers:
+                self.routes.discard(old)
+        new = alternatives[int(self.organism.rng.integers(len(alternatives)))]
+        self.routes.add(new)
+        self.reroutes.append({"trial": now, "to": new, "why": why})
+        self._excess_reset()
+        return new
+
+    def _excess_reset(self) -> None:
+        self.organism._excess.clear()
 
     def _sever(self, target: str, why: str) -> None:
         if self.bus is not None and target in self.bus.nodes:
