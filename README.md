@@ -18,6 +18,23 @@ python -m organism_sim.cli run   --ticks 100                      # substrate on
 python -m organism_sim.cli swarm --n 8 --ticks 200 --ramp 0.005 --csv pop.csv
 ```
 
+## Terminal (local routing, no model in the loop)
+
+```bash
+python -m organism_sim.cli chat                       # REPL
+python -m organism_sim.cli ask "what were the false alarm rates on the last dead relay run"
+python -m organism_sim.cli ask --dry "run the poisoned relay eval on 30 seeds with cusum"
+python -m organism_sim.cli ask "scaffold: replace XCS subsumption with a Q-learning router"
+```
+
+Natural language is a *routing* layer: a deterministic keyword-and-slot matcher
+(`terminal/intent.py`) maps a sentence to one of seven intents — run a benchmark (shown as
+the exact `organism_sim.cli` argv before it runs), run the CI guard, query the checked-in
+results (`terminal/state.py`: false-alarm rates, recovery medians, signalling rate, the full
+scorecard, commits), print a contract, or **scaffold**: package the commits, the scorecard,
+the hard constraints and the telemetry-row schema into `scaffold.md` (and the clipboard) as
+a prompt for an external reasoner. The reasoner stays outside the execution loop.
+
 ## Contracts and guards
 
 * `schemas/telemetry_row.schema.json`, `schemas/payload.schema.json` — the telemetry-row and

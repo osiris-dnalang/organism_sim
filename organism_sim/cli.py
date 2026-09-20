@@ -87,6 +87,14 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("dump-spec", help="print the reference spec as JSON")
 
+    ch = sub.add_parser("chat", help="local natural-language terminal (deterministic routing)")
+    ch.add_argument("--dry", action="store_true", help="show what would run, never execute")
+    ask = sub.add_parser("ask", help="route one sentence and exit")
+    ask.add_argument("text", nargs="+")
+    ask.add_argument("--dry", action="store_true")
+    ask.add_argument("--json", action="store_true")
+    sub.add_parser("guard", help="latency budget + dead-relay regression guard")
+
     be = sub.add_parser("bench", help="run a benchmark")
     be.add_argument("name", choices=("mux", "drift", "relay"))
     be.add_argument("--phase", choices=("A", "B"), default="A")
@@ -119,6 +127,17 @@ def main(argv=None) -> int:
     if args.cmd == "dump-spec":
         print(build_alpha_spec().to_json())
         return 0
+    if args.cmd == "chat":
+        from .terminal.repl import repl
+        return repl(dry=args.dry)
+    if args.cmd == "ask":
+        from .terminal.repl import handle, render
+        res = handle(" ".join(args.text), dry=args.dry)
+        print(json.dumps(res, indent=1, default=str) if args.json else render(res))
+        return int(res.get("exit", 0) or 0)
+    if args.cmd == "guard":
+        from .benchmarks.ci_guard import main as guard_main
+        return guard_main([])
     if args.cmd is None:
         ap.print_help()
         return 2
