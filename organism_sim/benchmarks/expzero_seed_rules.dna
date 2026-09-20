@@ -1,0 +1,29 @@
+// Experiment Zero — structural priors for the generalised-multiplexer family.
+// Written once from the FAMILY definition only (two unknown address positions, four
+// unknown data positions, optional inversion). Positions and values are guesses.
+// Generated deterministically with seed 999; never edited after any instance was seen.
+ORGANISM EXPZERO_PRIORS {
+    META { version: "1.0.0", domain: "benchmark" }
+    GENOME {
+        GENE shape_12_0 { id: "S0", condition: "110###", action: "(emit 1)", expression: 1.0 }
+        GENE shape_42_5 { id: "S1", condition: "##1#01", action: "(emit 1)", expression: 1.0 }
+        GENE shape_01_2 { id: "S2", condition: "111###", action: "(emit 1)", expression: 1.0 }
+        GENE shape_42_0 { id: "S3", condition: "0#0#1#", action: "(emit 0)", expression: 1.0 }
+        GENE shape_30_5 { id: "S4", condition: "1##1#1", action: "(emit 1)", expression: 1.0 }
+        GENE shape_21_4 { id: "S5", condition: "#10#1#", action: "(emit 1)", expression: 1.0 }
+        GENE shape_04_2 { id: "S6", condition: "0#0#0#", action: "(emit 0)", expression: 1.0 }
+        GENE shape_52_3 { id: "S7", condition: "##01#0", action: "(emit 1)", expression: 1.0 }
+        GENE shape_40_3 { id: "S8", condition: "0##01#", action: "(emit 0)", expression: 1.0 }
+        GENE shape_25_1 { id: "S9", condition: "#11##0", action: "(emit 1)", expression: 1.0 }
+        GENE shape_32_0 { id: "S10", condition: "1#10##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_20_3 { id: "S11", condition: "0#11##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_12_5 { id: "S12", condition: "#00##1", action: "(emit 1)", expression: 1.0 }
+        GENE shape_23_5 { id: "S13", condition: "##11#0", action: "(emit 0)", expression: 1.0 }
+        GENE shape_15_3 { id: "S14", condition: "#1#1#0", action: "(emit 1)", expression: 1.0 }
+        GENE shape_01_3 { id: "S15", condition: "01#0##", action: "(emit 0)", expression: 1.0 }
+        GENE shape_04_2 { id: "S16", condition: "0#1#0#", action: "(emit 1)", expression: 1.0 }
+        GENE shape_03_1 { id: "S17", condition: "11#1##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_04_3 { id: "S18", condition: "0##00#", action: "(emit 0)", expression: 1.0 }
+        GENE shape_01_5 { id: "S19", condition: "01###0", action: "(emit 0)", expression: 1.0 }
+    }
+}

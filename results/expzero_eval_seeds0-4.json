@@ -1,0 +1,229 @@
+{
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "trials": 15000,
+ "shift_every": 3000,
+ "seed_rules_sha": "819ac39930b0c4fc",
+ "pooled_median": {
+  "random": 1000.0,
+  "informed": 1000.0,
+  "control": 900.0
+ },
+ "rows": [
+  {
+   "seed": 0,
+   "arms": {
+    "random": {
+     "initial": 500,
+     "recoveries": [
+      1400,
+      800,
+      1100,
+      1000
+     ],
+     "median": 1000.0,
+     "mean": 960.0,
+     "unrecovered": 0
+    },
+    "informed": {
+     "initial": 1000,
+     "recoveries": [
+      900,
+      900,
+      600,
+      700
+     ],
+     "median": 900.0,
+     "mean": 820.0,
+     "unrecovered": 0
+    },
+    "control": {
+     "initial": 1100,
+     "recoveries": [
+      700,
+      800,
+      700,
+      600
+     ],
+     "median": 700.0,
+     "mean": 780.0,
+     "unrecovered": 0
+    }
+   }
+  },
+  {
+   "seed": 1,
+   "arms": {
+    "random": {
+     "initial": 600,
+     "recoveries": [
+      1700,
+      1400,
+      1200,
+      800
+     ],
+     "median": 1200.0,
+     "mean": 1140.0,
+     "unrecovered": 0
+    },
+    "informed": {
+     "initial": 500,
+     "recoveries": [
+      1200,
+      1000,
+      1500,
+      600
+     ],
+     "median": 1000.0,
+     "mean": 960.0,
+     "unrecovered": 0
+    },
+    "control": {
+     "initial": 1500,
+     "recoveries": [
+      1500,
+      500,
+      1700,
+      1000
+     ],
+     "median": 1500.0,
+     "mean": 1240.0,
+     "unrecovered": 0
+    }
+   }
+  },
+  {
+   "seed": 2,
+   "arms": {
+    "random": {
+     "initial": 800,
+     "recoveries": [
+      2200,
+      600,
+      1800,
+      1500
+     ],
+     "median": 1500.0,
+     "mean": 1380.0,
+     "unrecovered": 0
+    },
+    "informed": {
+     "initial": 1100,
+     "recoveries": [
+      700,
+      1200,
+      1000,
+      1000
+     ],
+     "median": 1000.0,
+     "mean": 1000.0,
+     "unrecovered": 0
+    },
+    "control": {
+     "initial": 1800,
+     "recoveries": [
+      800,
+      800,
+      700,
+      1100
+     ],
+     "median": 800.0,
+     "mean": 1040.0,
+     "unrecovered": 0
+    }
+   }
+  },
+  {
+   "seed": 3,
+   "arms": {
+    "random": {
+     "initial": 1100,
+     "recoveries": [
+      1000,
+      1700,
+      800,
+      700
+     ],
+     "median": 1000.0,
+     "mean": 1060.0,
+     "unrecovered": 0
+    },
+    "informed": {
+     "initial": 1500,
+     "recoveries": [
+      500,
+      1400,
+      700,
+      700
+     ],
+     "median": 700.0,
+     "mean": 960.0,
+     "unrecovered": 0
+    },
+    "control": {
+     "initial": 900,
+     "recoveries": [
+      900,
+      600,
+      700,
+      900
+     ],
+     "median": 900.0,
+     "mean": 800.0,
+     "unrecovered": 0
+    }
+   }
+  },
+  {
+   "seed": 4,
+   "arms": {
+    "random": {
+     "initial": 700,
+     "recoveries": [
+      1500,
+      1000,
+      1000,
+      1700
+     ],
+     "median": 1000.0,
+     "mean": 1180.0,
+     "unrecovered": 0
+    },
+    "informed": {
+     "initial": 500,
+     "recoveries": [
+      1000,
+      900,
+      1000,
+      1600
+     ],
+     "median": 1000.0,
+     "mean": 1000.0,
+     "unrecovered": 0
+    },
+    "control": {
+     "initial": 1200,
+     "recoveries": [
+      1000,
+      1300,
+      600,
+      1200
+     ],
+     "median": 1200.0,
+     "mean": 1060.0,
+     "unrecovered": 0
+    }
+   }
+  }
+ ],
+ "verdict": {
+  "informed_wins": 2,
+  "n": 5,
+  "pass": false
+ }
+}

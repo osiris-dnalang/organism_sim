@@ -160,6 +160,27 @@ fails; false alarms are counted only after B has converged; reroutes have a cool
 upstream ``credit`` pressure carries exploit-trial error only (exploration misses are the
 downstream agent's own choice, not evidence about the link).
 
+## Experiment Zero — offline structural priors vs random init, pre-registered, FAIL
+
+`benchmarks/expzero.py`: a hidden *generalised* 6-input multiplexer per seed (unknown address
+positions, data order and inversion), switching to a fresh instance every 3,000 trials. Arms
+on identical seeds: **A** covering only; **B** + 20 family-shaped rules written once from the
+family definition (`expzero_seed_rules.dna`, sha `819ac399…`), injected at start and at each
+shift as zero-experience hypotheses; **C** + 20 *random* well-formed rules, same schedule.
+Metric: trials to ≥ 0.95 for the initial window and each of 4 recoveries. Criterion stated
+first: B beats both A and C on the per-seed median on ≥ 4/5 seeds (seeds 0–4, nothing tuned).
+
+| arm | pooled median |
+|---|---|
+| A random | 1000 |
+| B informed | 1000 |
+| C control (random seeding) | 900 |
+
+Informed wins 2/5 → **FAIL** (`results/expzero_eval_seeds0-4.{json,csv}`). B beats A on 4/5
+seeds, but C does at least as well: injecting fresh hypotheses at each shift helps
+re-convergence; the *information* in the priors adds nothing measurable. Without the control
+arm this would have read as a win.
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):
