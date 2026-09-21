@@ -21,6 +21,13 @@ python -m organism_sim.cli run   --ticks 100                      # substrate on
 python -m organism_sim.cli swarm --n 8 --ticks 200 --ramp 0.005 --csv pop.csv
 ```
 
+## Program
+
+`docs/PROGRAM.md` — the research program: an operational target (open-ended, auditable
+competence growth), what the original dnalang genomes were actually specifying (gene
+regulation and development — the unbuilt half), a five-layer architecture, and a seven-rung
+milestone ladder with a kill criterion on every rung. Next build: M1, regulatory genes.
+
 ## Terminal (local routing, no model in the loop)
 
 ```bash
