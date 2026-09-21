@@ -181,6 +181,32 @@ seeds, but C does at least as well: injecting fresh hypotheses at each shift hel
 re-convergence; the *information* in the priors adds nothing measurable. Without the control
 arm this would have read as a win.
 
+## Experiment One — detector-triggered random injection under drift, pre-registered, PASS
+
+`benchmarks/expone.py`: same hidden drifting family as Experiment Zero, but the agent is
+not told when shifts happen. Arms: `plain` XCS; `cusum` — one-sided CUSUM on the agent's own
+exploit error, arming only after first convergence, on detection inject N random
+zero-experience rules (cooldown 300); `periodic` — N random rules every 500 trials, no
+detector; `oracle` — inject at the true shift. Criterion stated first: cusum median
+recovery (≥ 0.95) < plain on ≥ 4/5 seeds **and** ≤ 1 false injection per 10k trials.
+Profile `(μ₀ 0.05, k 0.10, h 8, N 40)` from seeds 100–104
+(`results/expone_tuning_seeds100-104.json`), evaluated once on 0–4
+(`results/expone_eval_seeds0-4.{json,csv}`):
+
+| arm | median to ≥ 0.95 | to ≥ 0.99 | injections / 15k | false / 10k |
+|---|---|---|---|---|
+| plain | 1250 | 1700 | 0 | — |
+| cusum | **950** | 1500 | 4.6 | 0.27 |
+| oracle | 900 | 1450 | 4.0 | 0 |
+| periodic | 650 | 1050 | 30 | — |
+
+C1 4/5, C2 met → **PASS**. Exploratory: blind periodic injection is faster still (4/5 seeds)
+at 6× the injections. So the claim is narrow: **detection buys parsimony, not speed** — most
+of the diversity benefit with ~5 injections instead of 30, which matters only where an
+injection costs something (e.g. hardware shots). The mechanism is *random immigrants*
+(Grefenstette 1992; Cobb & Grefenstette 1993) with a change detector; the contribution here
+is the pre-registered measurement with blind-periodic and oracle controls, not the mechanism.
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):

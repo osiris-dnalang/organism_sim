@@ -1,0 +1,119 @@
+{
+ "plain_medians": {
+  "100": 1150.0,
+  "101": 1150.0,
+  "102": 1150.0,
+  "103": 1400.0,
+  "104": 900.0
+ },
+ "grid": [
+  {
+   "k": 0.05,
+   "h": 2.0,
+   "N": 20,
+   "median95": 950.0,
+   "wins_vs_plain": 4,
+   "false_per_10k": 4.133333333333334,
+   "injections": 13.6
+  },
+  {
+   "k": 0.05,
+   "h": 2.0,
+   "N": 40,
+   "median95": 600.0,
+   "wins_vs_plain": 5,
+   "false_per_10k": 3.3333333333333335,
+   "injections": 12.2
+  },
+  {
+   "k": 0.05,
+   "h": 4.0,
+   "N": 20,
+   "median95": 850.0,
+   "wins_vs_plain": 4,
+   "false_per_10k": 1.3333333333333333,
+   "injections": 8.4
+  },
+  {
+   "k": 0.05,
+   "h": 4.0,
+   "N": 40,
+   "median95": 800.0,
+   "wins_vs_plain": 5,
+   "false_per_10k": 1.0666666666666667,
+   "injections": 7.2
+  },
+  {
+   "k": 0.05,
+   "h": 8.0,
+   "N": 20,
+   "median95": 1050.0,
+   "wins_vs_plain": 4,
+   "false_per_10k": 1.4666666666666666,
+   "injections": 7.2
+  },
+  {
+   "k": 0.05,
+   "h": 8.0,
+   "N": 40,
+   "median95": 750.0,
+   "wins_vs_plain": 5,
+   "false_per_10k": 1.0666666666666667,
+   "injections": 6.2
+  },
+  {
+   "k": 0.1,
+   "h": 2.0,
+   "N": 20,
+   "median95": 900.0,
+   "wins_vs_plain": 4,
+   "false_per_10k": 3.3333333333333335,
+   "injections": 11.8
+  },
+  {
+   "k": 0.1,
+   "h": 2.0,
+   "N": 40,
+   "median95": 800.0,
+   "wins_vs_plain": 5,
+   "false_per_10k": 2.1333333333333333,
+   "injections": 10.2
+  },
+  {
+   "k": 0.1,
+   "h": 4.0,
+   "N": 20,
+   "median95": 1000.0,
+   "wins_vs_plain": 4,
+   "false_per_10k": 1.2,
+   "injections": 7.2
+  },
+  {
+   "k": 0.1,
+   "h": 4.0,
+   "N": 40,
+   "median95": 750.0,
+   "wins_vs_plain": 5,
+   "false_per_10k": 1.3333333333333333,
+   "injections": 6.0
+  },
+  {
+   "k": 0.1,
+   "h": 8.0,
+   "N": 20,
+   "median95": 950.0,
+   "wins_vs_plain": 4,
+   "false_per_10k": 0.13333333333333333,
+   "injections": 4.6
+  },
+  {
+   "k": 0.1,
+   "h": 8.0,
+   "N": 40,
+   "median95": 750.0,
+   "wins_vs_plain": 5,
+   "false_per_10k": 0.26666666666666666,
+   "injections": 4.6
+  }
+ ]
+}

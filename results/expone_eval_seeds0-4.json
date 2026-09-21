@@ -1,0 +1,438 @@
+{
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "trials": 15000,
+ "shift_every": 3000,
+ "n_inject": 40,
+ "cusum": [
+  0.05,
+  0.1,
+  8.0
+ ],
+ "cooldown": 300,
+ "period": 500,
+ "pooled": {
+  "plain": {
+   "median95": 1250.0,
+   "median99": 1700.0,
+   "injections": 0.0
+  },
+  "cusum": {
+   "median95": 950.0,
+   "median99": 1500.0,
+   "injections": 4.6
+  },
+  "periodic": {
+   "median95": 650.0,
+   "median99": 1050.0,
+   "injections": 30.0
+  },
+  "oracle": {
+   "median95": 900.0,
+   "median99": 1450.0,
+   "injections": 4.0
+  }
+ },
+ "rows": [
+  {
+   "seed": 0,
+   "arms": {
+    "plain": {
+     "recoveries95": [
+      1400,
+      800,
+      1100,
+      1000
+     ],
+     "recoveries99": [
+      1700,
+      2200,
+      1100,
+      1100
+     ],
+     "median95": 1050.0,
+     "median99": 1400.0,
+     "injections": 0,
+     "false_injections": 0
+    },
+    "cusum": {
+     "recoveries95": [
+      1400,
+      900,
+      1300,
+      700
+     ],
+     "recoveries99": [
+      2900,
+      1700,
+      1600,
+      2100
+     ],
+     "median95": 1100.0,
+     "median99": 1900.0,
+     "injections": 5,
+     "false_injections": 1
+    },
+    "periodic": {
+     "recoveries95": [
+      600,
+      900,
+      700,
+      400
+     ],
+     "recoveries99": [
+      800,
+      1300,
+      2500,
+      500
+     ],
+     "median95": 650.0,
+     "median99": 1050.0,
+     "injections": 30,
+     "false_injections": 26
+    },
+    "oracle": {
+     "recoveries95": [
+      700,
+      900,
+      600,
+      500
+     ],
+     "recoveries99": [
+      1900,
+      1700,
+      1200,
+      800
+     ],
+     "median95": 650.0,
+     "median99": 1450.0,
+     "injections": 4,
+     "false_injections": 0
+    }
+   }
+  },
+  {
+   "seed": 1,
+   "arms": {
+    "plain": {
+     "recoveries95": [
+      1700,
+      1400,
+      1200,
+      800
+     ],
+     "recoveries99": [
+      1700,
+      2000,
+      1700,
+      1400
+     ],
+     "median95": 1300.0,
+     "median99": 1700.0,
+     "injections": 0,
+     "false_injections": 0
+    },
+    "cusum": {
+     "recoveries95": [
+      1100,
+      1300,
+      1800,
+      700
+     ],
+     "recoveries99": [
+      2100,
+      2300,
+      1900,
+      800
+     ],
+     "median95": 1200.0,
+     "median99": 2000.0,
+     "injections": 4,
+     "false_injections": 0
+    },
+    "periodic": {
+     "recoveries95": [
+      800,
+      700,
+      800,
+      300
+     ],
+     "recoveries99": [
+      800,
+      1100,
+      1100,
+      900
+     ],
+     "median95": 750.0,
+     "median99": 1000.0,
+     "injections": 30,
+     "false_injections": 26
+    },
+    "oracle": {
+     "recoveries95": [
+      1200,
+      1400,
+      1100,
+      300
+     ],
+     "recoveries99": [
+      1400,
+      2800,
+      1200,
+      800
+     ],
+     "median95": 1150.0,
+     "median99": 1300.0,
+     "injections": 4,
+     "false_injections": 0
+    }
+   }
+  },
+  {
+   "seed": 2,
+   "arms": {
+    "plain": {
+     "recoveries95": [
+      2200,
+      600,
+      1800,
+      1500
+     ],
+     "recoveries99": [
+      2600,
+      700,
+      2400,
+      1800
+     ],
+     "median95": 1650.0,
+     "median99": 2100.0,
+     "injections": 0,
+     "false_injections": 0
+    },
+    "cusum": {
+     "recoveries95": [
+      400,
+      800,
+      800,
+      1100
+     ],
+     "recoveries99": [
+      1400,
+      2200,
+      900,
+      1500
+     ],
+     "median95": 800.0,
+     "median99": 1450.0,
+     "injections": 5,
+     "false_injections": 1
+    },
+    "periodic": {
+     "recoveries95": [
+      1300,
+      700,
+      700,
+      1000
+     ],
+     "recoveries99": [
+      1600,
+      1200,
+      1300,
+      1100
+     ],
+     "median95": 850.0,
+     "median99": 1250.0,
+     "injections": 30,
+     "false_injections": 26
+    },
+    "oracle": {
+     "recoveries95": [
+      500,
+      700,
+      1100,
+      1100
+     ],
+     "recoveries99": [
+      900,
+      800,
+      1700,
+      1900
+     ],
+     "median95": 900.0,
+     "median99": 1300.0,
+     "injections": 4,
+     "false_injections": 0
+    }
+   }
+  },
+  {
+   "seed": 3,
+   "arms": {
+    "plain": {
+     "recoveries95": [
+      1000,
+      1700,
+      800,
+      700
+     ],
+     "recoveries99": [
+      1300,
+      1800,
+      1200,
+      1400
+     ],
+     "median95": 900.0,
+     "median99": 1350.0,
+     "injections": 0,
+     "false_injections": 0
+    },
+    "cusum": {
+     "recoveries95": [
+      700,
+      1000,
+      600,
+      1200
+     ],
+     "recoveries99": [
+      1500,
+      1700,
+      1500,
+      1400
+     ],
+     "median95": 850.0,
+     "median99": 1500.0,
+     "injections": 5,
+     "false_injections": 0
+    },
+    "periodic": {
+     "recoveries95": [
+      800,
+      500,
+      500,
+      600
+     ],
+     "recoveries99": [
+      1000,
+      1300,
+      500,
+      800
+     ],
+     "median95": 550.0,
+     "median99": 900.0,
+     "injections": 30,
+     "false_injections": 26
+    },
+    "oracle": {
+     "recoveries95": [
+      900,
+      1200,
+      900,
+      1400
+     ],
+     "recoveries99": [
+      1300,
+      1900,
+      2600,
+      1900
+     ],
+     "median95": 1050.0,
+     "median99": 1900.0,
+     "injections": 4,
+     "false_injections": 0
+    }
+   }
+  },
+  {
+   "seed": 4,
+   "arms": {
+    "plain": {
+     "recoveries95": [
+      1500,
+      1000,
+      1000,
+      1700
+     ],
+     "recoveries99": [
+      2000,
+      1700,
+      1400,
+      2000
+     ],
+     "median95": 1250.0,
+     "median99": 1850.0,
+     "injections": 0,
+     "false_injections": 0
+    },
+    "cusum": {
+     "recoveries95": [
+      1000,
+      900,
+      500,
+      1300
+     ],
+     "recoveries99": [
+      1100,
+      1600,
+      1200,
+      null
+     ],
+     "median95": 950.0,
+     "median99": 1400.0,
+     "injections": 4,
+     "false_injections": 0
+    },
+    "periodic": {
+     "recoveries95": [
+      700,
+      900,
+      400,
+      400
+     ],
+     "recoveries99": [
+      1500,
+      1500,
+      700,
+      900
+     ],
+     "median95": 550.0,
+     "median99": 1200.0,
+     "injections": 30,
+     "false_injections": 26
+    },
+    "oracle": {
+     "recoveries95": [
+      800,
+      1800,
+      900,
+      600
+     ],
+     "recoveries99": [
+      1500,
+      null,
+      1700,
+      1300
+     ],
+     "median95": 850.0,
+     "median99": 1600.0,
+     "injections": 4,
+     "false_injections": 0
+    }
+   }
+  }
+ ],
+ "verdict": {
+  "C1_count": 4,
+  "C1": true,
+  "false_per_10k": 0.26666666666666666,
+  "C2": true,
+  "n": 5,
+  "pass": true,
+  "exploratory_cusum_beats_periodic": 1,
+  "exploratory_cusum_vs_oracle_ratio": 1.0555555555555556
+ }
+}

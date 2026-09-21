@@ -45,7 +45,8 @@ class LCSAgent(Processor):
                  rules: Sequence[Gene] = (), bus: Optional[RoutedBus] = None,
                  pressure_window: int = 20, sever_pressure: float = 0.8,
                  structural: bool = False, frozen: bool = False,
-                 cusum: Optional[Tuple[float, float, float]] = None):
+                 cusum: Optional[Tuple[float, float, float]] = None,
+                 cusum_signal: str = "pressure", cusum_on=None):
         self.name = name
         self.structural = structural    # False → organism repair/mutation leave the rule set alone
         self.frozen = frozen            # True → never learns; always exploits (fixed protocol)
@@ -89,9 +90,13 @@ class LCSAgent(Processor):
         # (mu0, k, h): S ← max(0, S + (e − mu0 − k)); fire when S > h. Its false-alarm
         # rate is a designed quantity (average run length), unlike a level threshold.
         self.cusum = cusum
+        self.cusum_signal = cusum_signal        # "pressure" (upstream credit) | "error" (own exploit error)
+        self.cusum_on = cusum_on                # handler(agent) on detection; default: reroute
         self.cusum_s = 0.0
         self.cusum_fires = 0
+        self.cusum_fire_trials: List[int] = []
         self._pressure_this_trial: List[float] = []
+        self._own_error_this_trial: Optional[float] = None
         self.reroute_cooldown = 100             # trials before another reroute may fire
         self._last_reroute = -10 ** 9
 
@@ -171,6 +176,7 @@ class LCSAgent(Processor):
             self.engine.reward(r, self.last_register, terminal=True)
         if not self.engine.last_explore:
             self.organism.inject_noise(1.0 - r)
+            self._own_error_this_trial = 1.0 - r
         if self.bus is not None:
             if self.consumed_from and self.consumed_from in self.bus.nodes:
                 targets = [self.consumed_from]
@@ -190,13 +196,22 @@ class LCSAgent(Processor):
         detected upward shift."""
         if self.cusum is not None:
             mu0, k, h = self.cusum
-            e = float(np.mean(self._pressure_this_trial)) if self._pressure_this_trial else 0.0
-            self.cusum_s = max(0.0, self.cusum_s + (e - mu0 - k))
+            if self.cusum_signal == "error":
+                e = self._own_error_this_trial          # None on explore trials → no update
+            else:
+                e = float(np.mean(self._pressure_this_trial)) if self._pressure_this_trial else 0.0
+            if e is not None:
+                self.cusum_s = max(0.0, self.cusum_s + (e - mu0 - k))
             if self.cusum_s > h:
                 self.cusum_fires += 1
-                if self.reroute("cusum") is not None:
+                self.cusum_fire_trials.append(self.organism.tick + 1)
+                if self.cusum_on is not None:
+                    self.cusum_on(self)
+                    self.cusum_s = 0.0
+                elif self.reroute("cusum") is not None:
                     self.cusum_s = 0.0
         self._pressure_this_trial = []
+        self._own_error_this_trial = None
         return self.organism.step()
 
     # ── Processor interface (called by the organism) ─────────────────────────
