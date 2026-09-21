@@ -33,7 +33,7 @@ parameters; ``crossover`` swaps whole clusters.
 from __future__ import annotations
 
 import re
-from typing import Dict, List, Sequence, Set, Tuple
+from typing import Dict, List, Optional, Sequence, Set, Tuple
 
 import numpy as np
 
@@ -88,9 +88,10 @@ class GRN:
             if not g.is_rule:
                 validate(parse_sexpr(g.action))
 
-    def _topo(self) -> List[str]:
-        ids = [g.id for g in self.genome.genes]
-        deps = {g.id: [d for d in g.dependencies if d in ids] for g in self.genome.genes}
+    def _topo(self, genes: Optional[Sequence[Gene]] = None) -> List[str]:
+        genes = self.genome.genes if genes is None else list(genes)
+        ids = [g.id for g in genes]
+        deps = {g.id: [d for d in g.dependencies if d in ids] for g in genes}
         out, seen = [], set()
 
         def visit(i, stack=()):
@@ -103,6 +104,49 @@ class GRN:
         for i in ids:
             visit(i)
         return out
+
+    # ── runtime extension ────────────────────────────────────────────────────
+
+    def add_genes(self, genes: Sequence[Gene]) -> List[str]:
+        """Extend the live genome with *genes* atomically: every check runs on the merged
+        genome first; on any failure ``ValueError`` is raised and nothing changes. Returns
+        the added ids. Detector state, board, expression counts and the agent are untouched;
+        the genome version increments (the fingerprint therefore changes)."""
+        new = list(genes)
+        if not new:
+            return []
+        merged = list(self.genome.genes) + new
+        ids = [g.id for g in merged]
+        dup = sorted({i for i in ids if ids.count(i) > 1})
+        if dup:
+            raise ValueError(f"duplicate gene id(s) {dup}")
+        known = set(ids)
+        triggers: Dict[str, Trigger] = {}
+        for g in new:
+            t = Trigger.parse(g.trigger)                       # ValueError on bad syntax
+            if t.kind == "when" and t.ref not in METRICS:
+                raise ValueError(f"gene {g.id}: unknown metric {t.ref!r}; runtime metrics are {METRICS}")
+            if t.kind == "after" and t.ref not in known:
+                raise ValueError(f"gene {g.id}: 'after' refers to unknown gene {t.ref!r}")
+            for d in g.dependencies:
+                if d not in known:
+                    raise ValueError(f"gene {g.id}: depends on unknown gene {d!r}")
+            if not g.is_rule:
+                validate(parse_sexpr(g.action))                # DSLError (a ValueError)
+            triggers[g.id] = t
+        cycle = _find_cycle(merged)
+        if cycle:
+            raise ValueError("dependency cycle: " + " -> ".join(cycle))
+        order = self._topo(merged)
+        # commit
+        self.genome = Genome(genes=merged, version=self.genome.version + 1,
+                             purpose=self.genome.purpose)
+        self.triggers.update(triggers)
+        self.by_id = {g.id: g for g in merged}
+        self.order = order
+        for g in new:
+            self.expressions.setdefault(g.id, 0)
+        return [g.id for g in new]
 
     # ── per-trial update ─────────────────────────────────────────────────────
 
@@ -218,6 +262,33 @@ class GRN:
         genes = [Gene.from_dict(g.to_dict()) for g in a.genes if take_a[g.cluster]] + \
                 [Gene.from_dict(g.to_dict()) for g in b.genes if not take_a[g.cluster]]
         return Genome(genes=genes, version=max(a.version, b.version) + 1, purpose=a.purpose)
+
+
+def _find_cycle(genes: Sequence[Gene]) -> List[str]:
+    """First dependency cycle among *genes* as an id path (empty if acyclic)."""
+    deps = {g.id: list(g.dependencies) for g in genes}
+    WHITE, GREY, BLACK = 0, 1, 2
+    colour = {i: WHITE for i in deps}
+
+    def visit(i: str, path: List[str]) -> List[str]:
+        colour[i] = GREY
+        for d in deps.get(i, ()):
+            if d not in deps:
+                continue
+            if colour[d] == GREY:
+                return path + [i, d]
+            if colour[d] == WHITE:
+                found = visit(d, path + [i])
+                if found:
+                    return found
+        colour[i] = BLACK
+        return []
+    for i in deps:
+        if colour[i] == WHITE:
+            found = visit(i, [])
+            if found:
+                return found
+    return []
 
 
 _ADJ = re.compile(r"\(adjust (\w+) (-?[0-9.]+)\)")
