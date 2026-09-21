@@ -76,8 +76,8 @@ OACG; failing one ends that branch and is published.
 
 | # | milestone | mechanism (prior art) | metric | kill criterion |
 |---|---|---|---|---|
-| M1 | **Regulatory genes** — dnalang v0.2 interpreter: genes with `trigger`, `dependencies`, `outputs`; staged expression; compiles to an L1 rule set | artificial GRNs (Banzhaf; Bongard) | on the drifting hidden-mux family, a GRN-encoded organism vs a flat LCS at equal evaluations | GRN not faster to re-converge on ≥ 4/5 seeds → regulation buys nothing here; try a task needing structure before abandoning |
-| M2 | **Content must matter** — priors vs random injection on a 12–16-bit family where random rules almost never match | Experiment Zero, widened | B (informed) vs C (random) vs periodic, as before | informed ≤ random on ≥ 3/5 seeds → the LLM-prior branch stays closed |
+| M1 | **Regulatory genes** — dnalang v0.2 interpreter: genes with `trigger`, `dependencies`, `outputs`; staged expression; compiles to an L1 rule set | artificial GRNs (Banzhaf; Bongard) | on the drifting hidden-mux family, a GRN-encoded organism vs a flat LCS at equal evaluations | **FAIL (specification gaming; hand cascade 4/5 exploratory).** Language built (`dnalang` 0.2) |
+| M2 | **Content must matter** — priors vs random injection on a 12–16-bit family where random rules almost never match | Experiment Zero, widened | B (informed) vs C (random) vs periodic, as before | **FAIL (0/5 vs shape-matched control).** LLM-prior branch closed |
 | M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | ANNECS curve not above the fixed-stream curve with disjoint IQRs at the compute budget → no open-endedness |
 | M4 | **Library learning** — evolved DSL programs are abstracted into new primitives when they recur; the DSL grows | DreamCoder (Ellis et al. 2021); ADFs (Koza) | held-out task solve rate and description length before/after abstraction | no gain in solve rate on held-out families → abstraction adds nothing |
 | M5 | **Division of labour** — populations on the bus with the signalling result (18 % full protocols, 50 seeds) as baseline; tasks that require ≥ 2 agents | emergent communication; Lewis signalling | fraction of communication-dependent tasks solved; protocol injectivity rate | no rise over the 18 % baseline with structure (M1) present → communication is not helped by regulation |
@@ -88,9 +88,14 @@ OACG; failing one ends that branch and is published.
 regulatory genome disabled detection and maximised injection (284 injections / 15k, 169
 false / 10k) because fitness priced recovery speed only — specification gaming. Rule
 adopted for every rung from here: *fitness must price interventions* (injections,
-reroutes, evaluations). M2 is now the decisive test: on a family wide enough that random
-injection stops being free, does anything structural help? M3 and M7 are where OACG lives
-or dies. M6 is funded by the
+reroutes, evaluations). **M2 result (2026-09-21): FAIL.** On the 16-bit family, family-shaped priors carry no
+signal (0/5 vs a shape-matched random control; the action coupling is wrong for inverted
+instances), and blind injection *hurts* (0/5 vs none) — Experiment One's diversity mechanism
+is a small-space effect. The only mover was specificity (shape-matched random rules beat
+none 5/5, exploratory). Vector 1 (LLM/offline priors) is closed on this substrate. What the
+substrate has measurably contributed: topological self-repair (relay dead) and small-space
+diversity injection. M3 is built on that base and on the search itself; M3 and M7 are where
+OACG lives or dies. M6 is funded by the
 proposal if it is accepted, and is the only rung with a physical environment.
 
 ## 4. What this is not

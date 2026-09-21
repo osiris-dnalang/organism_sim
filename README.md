@@ -252,6 +252,30 @@ free; and the hand-composed cascade beat the single mechanism on 4/5 seeds (expl
 Design rule recorded for the ladder: **any evolved learner's fitness must price its
 interventions.**
 
+## M2 — do priors matter when injection stops being free? Pre-registered, FAIL
+
+`benchmarks/m2.py`: 16-bit hidden family (3 address positions selecting one of 8 data
+positions, 5 irrelevant, optional inversion), N = 1000, fresh instance every 30k trials, 3
+scored shifts. Arms: `none`; `informed` (40 family-shaped rules, action = guessed data bit,
+`m2_seed_rules.dna` sha `033cbaa2…`); `shape` (same specificity, random content — isolates
+shape from content); `random` (p# 0.5); `periodic` (blind, every 500). Criteria first:
+informed < shape on ≥ 4/5 **and** informed < random on ≥ 4/5.
+
+| arm | pooled median recovery |
+|---|---|
+| none | 9500 |
+| informed | 9500 |
+| shape | 8250 |
+| random | 9000 |
+| periodic | 10500 |
+
+C1 0/5, C2 2/5 → **FAIL** (`results/m2_eval_seeds0-4.{json,csv}`). The priors carry no
+signal; the action coupling is wrong for every inverted instance (half of them), so the
+shape-matched control with random actions beats it 5/5 — a prior true less often than chance
+is worse than none. Exploratory: blind injection now *hurts* (periodic < none 0/5: the
+Experiment One mechanism is a small-space effect); specificity alone helps (shape > none
+5/5, ≈ 13 %) — a candidate for its own pre-registration, about the search, not the layer.
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):
