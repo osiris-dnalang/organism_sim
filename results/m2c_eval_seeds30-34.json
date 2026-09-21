@@ -1,0 +1,818 @@
+{
+  "experiment": "m2c",
+  "seeds": [
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "harness": "m2b (unchanged)",
+  "families": {
+    "6bit": {
+      "config": {
+        "k": 2,
+        "width": 6,
+        "N": 400,
+        "shift_every": 3000,
+        "trials": 15000,
+        "probe_every": 100,
+        "n_inject": 20
+      },
+      "pooled_median": {
+        "covering": 1050.0,
+        "periodic": 700.0,
+        "shape": 1000.0,
+        "covering-matched": 950.0
+      },
+      "pooled_per_shift_median": {
+        "covering": 1100.0,
+        "periodic": 750.0,
+        "shape": 900.0,
+        "covering-matched": 1000.0
+      },
+      "rows": [
+        {
+          "seed": 30,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                500,
+                1500,
+                2100,
+                1000
+              ],
+              "scores": [
+                500,
+                1500,
+                2100,
+                1000
+              ],
+              "median": 1250.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                700,
+                1000,
+                700,
+                600
+              ],
+              "scores": [
+                700,
+                1000,
+                700,
+                600
+              ],
+              "median": 700.0,
+              "injections": 30,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                400,
+                500,
+                1400,
+                800
+              ],
+              "scores": [
+                400,
+                500,
+                1400,
+                800
+              ],
+              "median": 650.0,
+              "injections": 5,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                900,
+                1000,
+                1600,
+                600
+              ],
+              "scores": [
+                900,
+                1000,
+                1600,
+                600
+              ],
+              "median": 950.0,
+              "injections": 0,
+              "p_wild": 0.5
+            }
+          }
+        },
+        {
+          "seed": 31,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                400,
+                1300,
+                600,
+                1400
+              ],
+              "scores": [
+                400,
+                1300,
+                600,
+                1400
+              ],
+              "median": 950.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                300,
+                800,
+                600,
+                800
+              ],
+              "scores": [
+                300,
+                800,
+                600,
+                800
+              ],
+              "median": 700.0,
+              "injections": 30,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                800,
+                1500,
+                1300,
+                800
+              ],
+              "scores": [
+                800,
+                1500,
+                1300,
+                800
+              ],
+              "median": 1050.0,
+              "injections": 5,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                400,
+                2200,
+                500,
+                900
+              ],
+              "scores": [
+                400,
+                2200,
+                500,
+                900
+              ],
+              "median": 700.0,
+              "injections": 0,
+              "p_wild": 0.5
+            }
+          }
+        },
+        {
+          "seed": 32,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                1200,
+                1200,
+                1200,
+                1400
+              ],
+              "scores": [
+                1200,
+                1200,
+                1200,
+                1400
+              ],
+              "median": 1200.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                1500,
+                1300,
+                1200,
+                700
+              ],
+              "scores": [
+                1500,
+                1300,
+                1200,
+                700
+              ],
+              "median": 1250.0,
+              "injections": 30,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                1000,
+                1200,
+                800,
+                1200
+              ],
+              "scores": [
+                1000,
+                1200,
+                800,
+                1200
+              ],
+              "median": 1100.0,
+              "injections": 5,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                1400,
+                1400,
+                1000,
+                1000
+              ],
+              "scores": [
+                1400,
+                1400,
+                1000,
+                1000
+              ],
+              "median": 1200.0,
+              "injections": 0,
+              "p_wild": 0.5
+            }
+          }
+        },
+        {
+          "seed": 33,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                1000,
+                1700,
+                800,
+                1100
+              ],
+              "scores": [
+                1000,
+                1700,
+                800,
+                1100
+              ],
+              "median": 1050.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                400,
+                1300,
+                500,
+                800
+              ],
+              "scores": [
+                400,
+                1300,
+                500,
+                800
+              ],
+              "median": 650.0,
+              "injections": 30,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                700,
+                1600,
+                1200,
+                800
+              ],
+              "scores": [
+                700,
+                1600,
+                1200,
+                800
+              ],
+              "median": 1000.0,
+              "injections": 5,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                400,
+                1000,
+                1500,
+                700
+              ],
+              "scores": [
+                400,
+                1000,
+                1500,
+                700
+              ],
+              "median": 850.0,
+              "injections": 0,
+              "p_wild": 0.5
+            }
+          }
+        },
+        {
+          "seed": 34,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                1000,
+                700,
+                600,
+                1100
+              ],
+              "scores": [
+                1000,
+                700,
+                600,
+                1100
+              ],
+              "median": 850.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                1000,
+                600,
+                500,
+                800
+              ],
+              "scores": [
+                1000,
+                600,
+                500,
+                800
+              ],
+              "median": 700.0,
+              "injections": 30,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                1300,
+                700,
+                300,
+                1300
+              ],
+              "scores": [
+                1300,
+                700,
+                300,
+                1300
+              ],
+              "median": 1000.0,
+              "injections": 5,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                1100,
+                1300,
+                900,
+                1500
+              ],
+              "scores": [
+                1100,
+                1300,
+                900,
+                1500
+              ],
+              "median": 1200.0,
+              "injections": 0,
+              "p_wild": 0.5
+            }
+          }
+        }
+      ],
+      "verdict": {
+        "C1_shape_vs_covering": 3,
+        "C2_shape_vs_periodic": 2,
+        "n": 5,
+        "C1": false,
+        "C2": false,
+        "C3_tests": {
+          "shape_vs_covering": {
+            "mean_rank_a": 19.425,
+            "n_a": 20,
+            "n_b": 20,
+            "p_one_sided": 0.28703564821758915,
+            "median_a": 900.0,
+            "median_b": 1100.0
+          },
+          "shape_vs_periodic": {
+            "mean_rank_a": 23.45,
+            "n_a": 20,
+            "n_b": 20,
+            "p_one_sided": 0.9456527173641318,
+            "median_a": 900.0,
+            "median_b": 750.0
+          }
+        },
+        "C3": false,
+        "alpha": 0.05,
+        "exploratory_shape_vs_covering_matched": 3,
+        "exploratory_covering_matched_vs_covering": 3,
+        "pass": false
+      }
+    },
+    "16bit": {
+      "config": {
+        "k": 3,
+        "width": 16,
+        "N": 1000,
+        "shift_every": 30000,
+        "trials": 120000,
+        "probe_every": 250,
+        "n_inject": 40
+      },
+      "pooled_median": {
+        "covering": 9500.0,
+        "periodic": 11750.0,
+        "shape": 10750.0,
+        "covering-matched": 9750.0
+      },
+      "pooled_per_shift_median": {
+        "covering": 10000.0,
+        "periodic": 12000.0,
+        "shape": 10750.0,
+        "covering-matched": 9750.0
+      },
+      "rows": [
+        {
+          "seed": 30,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                8250,
+                5250,
+                10500
+              ],
+              "scores": [
+                8250,
+                5250,
+                10500
+              ],
+              "median": 8250.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                9250,
+                9750,
+                12500
+              ],
+              "scores": [
+                9250,
+                9750,
+                12500
+              ],
+              "median": 9750.0,
+              "injections": 240,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                7500,
+                11500,
+                12750
+              ],
+              "scores": [
+                7500,
+                11500,
+                12750
+              ],
+              "median": 11500.0,
+              "injections": 4,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                7500,
+                7000,
+                9500
+              ],
+              "scores": [
+                7500,
+                7000,
+                9500
+              ],
+              "median": 7500.0,
+              "injections": 0,
+              "p_wild": 0.75
+            }
+          }
+        },
+        {
+          "seed": 31,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                8250,
+                9500,
+                10000
+              ],
+              "scores": [
+                8250,
+                9500,
+                10000
+              ],
+              "median": 9500.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                11000,
+                11500,
+                12750
+              ],
+              "scores": [
+                11000,
+                11500,
+                12750
+              ],
+              "median": 11500.0,
+              "injections": 240,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                10250,
+                10750,
+                12000
+              ],
+              "scores": [
+                10250,
+                10750,
+                12000
+              ],
+              "median": 10750.0,
+              "injections": 4,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                9750,
+                12250,
+                9750
+              ],
+              "scores": [
+                9750,
+                12250,
+                9750
+              ],
+              "median": 9750.0,
+              "injections": 0,
+              "p_wild": 0.75
+            }
+          }
+        },
+        {
+          "seed": 32,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                10000,
+                10250,
+                12250
+              ],
+              "scores": [
+                10000,
+                10250,
+                12250
+              ],
+              "median": 10250.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                12750,
+                12500,
+                12750
+              ],
+              "scores": [
+                12750,
+                12500,
+                12750
+              ],
+              "median": 12750.0,
+              "injections": 240,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                11250,
+                9250,
+                10750
+              ],
+              "scores": [
+                11250,
+                9250,
+                10750
+              ],
+              "median": 10750.0,
+              "injections": 4,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                12250,
+                9750,
+                8750
+              ],
+              "scores": [
+                12250,
+                9750,
+                8750
+              ],
+              "median": 9750.0,
+              "injections": 0,
+              "p_wild": 0.75
+            }
+          }
+        },
+        {
+          "seed": 33,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                6750,
+                10500,
+                7250
+              ],
+              "scores": [
+                6750,
+                10500,
+                7250
+              ],
+              "median": 7250.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                12000,
+                13000,
+                7500
+              ],
+              "scores": [
+                12000,
+                13000,
+                7500
+              ],
+              "median": 12000.0,
+              "injections": 240,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                12250,
+                12000,
+                5500
+              ],
+              "scores": [
+                12250,
+                12000,
+                5500
+              ],
+              "median": 12000.0,
+              "injections": 4,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                12750,
+                9750,
+                10000
+              ],
+              "scores": [
+                12750,
+                9750,
+                10000
+              ],
+              "median": 10000.0,
+              "injections": 0,
+              "p_wild": 0.75
+            }
+          }
+        },
+        {
+          "seed": 34,
+          "arms": {
+            "covering": {
+              "recoveries": [
+                13000,
+                14000,
+                9000
+              ],
+              "scores": [
+                13000,
+                14000,
+                9000
+              ],
+              "median": 13000.0,
+              "injections": 0,
+              "p_wild": 0.33
+            },
+            "periodic": {
+              "recoveries": [
+                11750,
+                12000,
+                8500
+              ],
+              "scores": [
+                11750,
+                12000,
+                8500
+              ],
+              "median": 11750.0,
+              "injections": 240,
+              "p_wild": 0.33
+            },
+            "shape": {
+              "recoveries": [
+                8750,
+                12250,
+                8000
+              ],
+              "scores": [
+                8750,
+                12250,
+                8000
+              ],
+              "median": 8750.0,
+              "injections": 4,
+              "p_wild": 0.33
+            },
+            "covering-matched": {
+              "recoveries": [
+                12500,
+                11000,
+                7750
+              ],
+              "scores": [
+                12500,
+                11000,
+                7750
+              ],
+              "median": 11000.0,
+              "injections": 0,
+              "p_wild": 0.75
+            }
+          }
+        }
+      ],
+      "verdict": {
+        "C1_shape_vs_covering": 1,
+        "C2_shape_vs_periodic": 3,
+        "n": 5,
+        "C1": false,
+        "C2": false,
+        "C3_tests": {
+          "shape_vs_covering": {
+            "mean_rank_a": 17.166666666666668,
+            "n_a": 15,
+            "n_b": 15,
+            "p_one_sided": 0.855707214639268,
+            "median_a": 10750.0,
+            "median_b": 10000.0
+          },
+          "shape_vs_periodic": {
+            "mean_rank_a": 13.0,
+            "n_a": 15,
+            "n_b": 15,
+            "p_one_sided": 0.06269686515674217,
+            "median_a": 10750.0,
+            "median_b": 12000.0
+          }
+        },
+        "C3": false,
+        "alpha": 0.05,
+        "exploratory_shape_vs_covering_matched": 1,
+        "exploratory_covering_matched_vs_covering": 3,
+        "pass": false
+      }
+    }
+  },
+  "verdict": {
+    "pass": false,
+    "judged_on": "16bit",
+    "criterion": "C1 and C2 and C3"
+  }
+}

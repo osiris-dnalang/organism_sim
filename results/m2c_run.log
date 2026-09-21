@@ -1,0 +1,15 @@
+START m2c seeds=[30, 31, 32, 33, 34] harness=m2b arms=['covering', 'periodic', 'shape', 'covering-matched']
+6bit seed 30 {"covering": [[500, 1500, 2100, 1000], 1250.0], "periodic": [[700, 1000, 700, 600], 700.0], "shape": [[400, 500, 1400, 800], 650.0], "covering-matched": [[900, 1000, 1600, 600], 950.0]}
+6bit seed 31 {"covering": [[400, 1300, 600, 1400], 950.0], "periodic": [[300, 800, 600, 800], 700.0], "shape": [[800, 1500, 1300, 800], 1050.0], "covering-matched": [[400, 2200, 500, 900], 700.0]}
+6bit seed 32 {"covering": [[1200, 1200, 1200, 1400], 1200.0], "periodic": [[1500, 1300, 1200, 700], 1250.0], "shape": [[1000, 1200, 800, 1200], 1100.0], "covering-matched": [[1400, 1400, 1000, 1000], 1200.0]}
+6bit seed 33 {"covering": [[1000, 1700, 800, 1100], 1050.0], "periodic": [[400, 1300, 500, 800], 650.0], "shape": [[700, 1600, 1200, 800], 1000.0], "covering-matched": [[400, 1000, 1500, 700], 850.0]}
+6bit seed 34 {"covering": [[1000, 700, 600, 1100], 850.0], "periodic": [[1000, 600, 500, 800], 700.0], "shape": [[1300, 700, 300, 1300], 1000.0], "covering-matched": [[1100, 1300, 900, 1500], 1200.0]}
+6bit POOLED {"covering": 1050.0, "periodic": 700.0, "shape": 1000.0, "covering-matched": 950.0} VERDICT {"C1_shape_vs_covering": 3, "C2_shape_vs_periodic": 2, "n": 5, "C1": false, "C2": false, "C3": false, "alpha": 0.05, "exploratory_shape_vs_covering_matched": 3, "exploratory_covering_matched_vs_covering": 3, "pass": false} p(shape<covering)=0.2870 p(shape<periodic)=0.9457
+16bit seed 30 {"covering": [[8250, 5250, 10500], 8250.0], "periodic": [[9250, 9750, 12500], 9750.0], "shape": [[7500, 11500, 12750], 11500.0], "covering-matched": [[7500, 7000, 9500], 7500.0]}
+16bit seed 31 {"covering": [[8250, 9500, 10000], 9500.0], "periodic": [[11000, 11500, 12750], 11500.0], "shape": [[10250, 10750, 12000], 10750.0], "covering-matched": [[9750, 12250, 9750], 9750.0]}
+16bit seed 32 {"covering": [[10000, 10250, 12250], 10250.0], "periodic": [[12750, 12500, 12750], 12750.0], "shape": [[11250, 9250, 10750], 10750.0], "covering-matched": [[12250, 9750, 8750], 9750.0]}
+16bit seed 33 {"covering": [[6750, 10500, 7250], 7250.0], "periodic": [[12000, 13000, 7500], 12000.0], "shape": [[12250, 12000, 5500], 12000.0], "covering-matched": [[12750, 9750, 10000], 10000.0]}
+16bit seed 34 {"covering": [[13000, 14000, 9000], 13000.0], "periodic": [[11750, 12000, 8500], 11750.0], "shape": [[8750, 12250, 8000], 8750.0], "covering-matched": [[12500, 11000, 7750], 11000.0]}
+16bit POOLED {"covering": 9500.0, "periodic": 11750.0, "shape": 10750.0, "covering-matched": 9750.0} VERDICT {"C1_shape_vs_covering": 1, "C2_shape_vs_periodic": 3, "n": 5, "C1": false, "C2": false, "C3": false, "alpha": 0.05, "exploratory_shape_vs_covering_matched": 1, "exploratory_covering_matched_vs_covering": 3, "pass": false} p(shape<covering)=0.8557 p(shape<periodic)=0.0627
+OVERALL {"pass": false, "judged_on": "16bit", "criterion": "C1 and C2 and C3"}
+DONE 1547s

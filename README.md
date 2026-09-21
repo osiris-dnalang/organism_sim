@@ -54,6 +54,36 @@ scorecard, commits), print a contract, or **scaffold**: package the commits, the
 the hard constraints and the telemetry-row schema into `scaffold.md` (and the clipboard) as
 a prompt for an external reasoner. The reasoner stays outside the execution loop.
 
+## Neuro-symbolic bridge (a model outside the loop, a gate in front of the genome)
+
+```bash
+python chat_bridge.py --model qwen2.5:7b --warmup 400     # needs a local Ollama
+python -c "from organism_sim.telemetry import capture_frame"
+```
+
+`organism_sim/telemetry.py` — `capture_frame(Organism | LCSAgent | GRN, tick)` serialises the
+live state of one organism as JSON (`schemas/telemetry_frame.schema.json`): organism state
+machine, learner (rule counts, `p_explore`, engine counters), topology (routes, peers,
+severed, reroutes) and regulation (`GRN` metrics, CUSUM `s`/`h`, active genes, board,
+expression counts, the genome). Layers that do not exist on the target are `null`; nothing
+is synthesised.
+
+`organism_sim/chat_bridge.py` — an LLM translates English into dna::}{::lang **rule and
+regulator genes** and never touches the runtime directly. Every ```dna block goes through
+`gate()`: `dnalang.parse` → `dnalang.check` on the *merged* genome (live + proposal, so
+`after`/`dependencies` references to live genes resolve and duplicate ids are caught) →
+runtime binding (`when` metrics ∈ `grn.METRICS`, `(adjust …)` parameters ∈ `grn.PARAMS`,
+rule-condition width = register width) → `GRN.add_genes` (atomic). Rejections go back to
+the model with the exact diagnostics for up to `max_rounds` self-corrections; a rejected
+round leaves the runtime byte-for-byte unchanged (tested against a full state snapshot).
+`AlertMonitor` derives edge-triggered alerts from consecutive frames (CUSUM crossing its
+threshold, status → critical, mutation, injection, first expression of a gene) and
+`run_async` interleaves runtime ticks with chat so an alert is written on the tick it
+occurs. `prompts/bridge_system.md` is the constrained system prompt (grammar, closed DSL,
+the exact metric and parameter names); a test asserts it lists every name the runtime
+accepts and that its worked example passes the gate. The model is a `ScriptedClient` in
+tests — the suite is offline and deterministic.
+
 ## Contracts and guards
 
 * `schemas/telemetry_row.schema.json`, `schemas/payload.schema.json` — the telemetry-row and
@@ -293,6 +323,28 @@ seen on M2's seeds is a 3 % difference on fresh seeds, inside the per-seed sprea
 shape beats covering 5/5 but not blind injection (3/5), and the matched wildcard rate does
 nothing. Conclusion across Zero / One / M1 / M2 / M2b: in small spaces any injection helps and
 its content is irrelevant; in wide spaces nothing in this layer moves search efficiency.
+
+## M2c — specificity prior, second replication on fresh seeds, FAIL (closed)
+
+`benchmarks/m2c.py`, seeds 30–34 (never used before), the M2b harness **unchanged** (same
+arms, families, budgets, injections, probes). Criteria first: M2b's C1/C2 (shape < covering
+and shape < periodic on ≥ 4/5 seeds at 16 bits) plus C3, a one-sided permutation rank-sum
+test over the 15 pooled per-shift recoveries per arm, p < 0.05 against both controls. This
+was run as the prerequisite for any further open-ended-generation (M3) work at 16 bits.
+
+| 16-bit, pooled median | covering **9500** · covering-matched 9750 · shape 10750 · periodic 11750 |
+|---|---|
+| 6-bit, pooled median | covering 1050 · covering-matched 950 · shape 1000 · periodic 700 |
+
+16-bit: C1 **1/5**, C2 3/5, p(shape < covering) = 0.86, p(shape < periodic) = 0.063 →
+**FAIL** (`results/m2c_eval_seeds30-34.{json,csv}`, `results/m2c_run.log`, 1547 s). Shape is
+*slower* than plain covering on 4/5 seeds this time. 6-bit: C1 3/5, C2 2/5 — even M2b's 6-bit
+5/5 did not hold. Three independent samples of the same effect: +13 % (M2, exploratory),
++3 % (M2b), −13 % (M2c). The specificity prior is noise around zero and is **closed**; no
+further replications. Consequence for the ladder: nothing in the injection layer moves
+wide-space search efficiency, so M3 at 16 bits remains blocked on the base learner, exactly
+as recorded after M2b/M3. The next pre-registration is XCS engineering (tournament
+selection, specify operator, N, θ_GA), not another prior.
 
 ## M3 — open-ended task generation at 6–10 bits, pre-registered, FAIL
 

@@ -139,6 +139,18 @@ class State:
         except (FileNotFoundError, KeyError):
             pass
         try:
+            d = self.load("m2c_eval_seeds30-34.json")
+            f = d["families"]["16bit"]
+            pm, v = f["pooled_median"], f["verdict"]
+            t = v["C3_tests"]
+            rows.append({"experiment": "m2c: specificity prior replication, 16-bit",
+                         "verdict": "PASS" if v["pass"] else "FAIL",
+                         "number": f"shape {pm['shape']:.0f} vs covering {pm['covering']:.0f} vs periodic {pm['periodic']:.0f}; "
+                                   f"C1 {v['C1_shape_vs_covering']}/5 C2 {v['C2_shape_vs_periodic']}/5 "
+                                   f"p={t['shape_vs_covering']['p_one_sided']:.3f}/{t['shape_vs_periodic']['p_one_sided']:.3f}"})
+        except (FileNotFoundError, KeyError):
+            pass
+        try:
             d = self.load("m3_eval_seeds20-24.json")
             rows.append({"experiment": "m3: open-ended tasks, 6-10 bit", "verdict": "PASS" if d["verdict"]["pass"] else "FAIL",
                          "number": f"poet {d['pooled_annecs']['poet']:.0f} vs random {d['pooled_annecs']['random']:.0f} ANNECS"})
