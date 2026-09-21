@@ -78,7 +78,7 @@ OACG; failing one ends that branch and is published.
 |---|---|---|---|---|
 | M1 | **Regulatory genes** — dnalang v0.2 interpreter: genes with `trigger`, `dependencies`, `outputs`; staged expression; compiles to an L1 rule set | artificial GRNs (Banzhaf; Bongard) | on the drifting hidden-mux family, a GRN-encoded organism vs a flat LCS at equal evaluations | **FAIL (specification gaming; hand cascade 4/5 exploratory).** Language built (`dnalang` 0.2) |
 | M2 | **Content must matter** — priors vs random injection on a 12–16-bit family where random rules almost never match | Experiment Zero, widened | B (informed) vs C (random) vs periodic, as before | **FAIL (0/5 vs shape-matched control).** LLM-prior branch closed |
-| M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | ANNECS curve not above the fixed-stream curve with disjoint IQRs at the compute budget → no open-endedness |
+| M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | **FAIL at 6–10 bits (ratio 0.885, 1/5):** no hard tasks to reach, so the generator is overhead. Blocked on learner sample efficiency at wide inputs |
 | M4 | **Library learning** — evolved DSL programs are abstracted into new primitives when they recur; the DSL grows | DreamCoder (Ellis et al. 2021); ADFs (Koza) | held-out task solve rate and description length before/after abstraction | no gain in solve rate on held-out families → abstraction adds nothing |
 | M5 | **Division of labour** — populations on the bus with the signalling result (18 % full protocols, 50 seeds) as baseline; tasks that require ≥ 2 agents | emergent communication; Lewis signalling | fraction of communication-dependent tasks solved; protocol injectivity rate | no rise over the 18 % baseline with structure (M1) present → communication is not helped by regulation |
 | M6 | **Physics as the open-ended environment** — hardware calibration drift as the task generator (the Flywheel Aim 3) | hardware-in-the-loop | re-convergence after `calibration_hash` changes, four arms | as pre-registered in `flywheel-2026/PREREGISTRATION.md` |
@@ -98,7 +98,11 @@ changes recovery (~9,500 trials/shift). What the substrate has measurably contri
 topological self-repair (relay dead) and small-space diversity injection. **Search
 efficiency in wide spaces is not a layer property**; if M3 needs it, it is a base-learner
 pre-registration (tournament selection, specify operator, N, θ_GA — Butz et al.), or M3 runs
-at 6–10 bits and says so. M3 and M7 are where OACG lives or dies. M6 is funded by the
+at 6–10 bits and says so. **M3 (2026-09-21): FAIL** at 6–10 bits — the random stream out-generates the POET-style
+loop because nothing there is hard; at 16 bits the learner is too slow to generate for.
+**Next rung is base-learner efficiency** (a pre-registered XCS-engineering comparison at 16
+bits: tournament selection, specify operator, N, θ_GA), because both M3 and M7 are blocked
+on it. M3 and M7 remain where OACG lives or dies. M6 is funded by the
 proposal if it is accepted, and is the only rung with a physical environment.
 
 ## 4. What this is not

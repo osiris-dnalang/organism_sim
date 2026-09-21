@@ -138,6 +138,12 @@ class State:
                          "number": f"shape {pm['shape']:.0f} vs covering {pm['covering']:.0f} vs periodic {pm['periodic']:.0f}"})
         except (FileNotFoundError, KeyError):
             pass
+        try:
+            d = self.load("m3_eval_seeds20-24.json")
+            rows.append({"experiment": "m3: open-ended tasks, 6-10 bit", "verdict": "PASS" if d["verdict"]["pass"] else "FAIL",
+                         "number": f"poet {d['pooled_annecs']['poet']:.0f} vs random {d['pooled_annecs']['random']:.0f} ANNECS"})
+        except (FileNotFoundError, KeyError):
+            pass
         b = self.bridge()
         if "step3" in b:
             rows.append({"experiment": "bridge step 3", "verdict": "PASS (tie)" if b["step3"]["verdict"]["pass"] else "FAIL",

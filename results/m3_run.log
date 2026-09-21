@@ -1,0 +1,8 @@
+POOLED {"poet": 46.0, "random": 52.0} ratio 0.885
+VERDICT {"C1_count": 1, "C1": false, "C2": false, "n": 5, "exploratory_max_width": {"poet": [10, 10, 9, 9, 8], "random": [10, 10, 10, 10, 10]}, "exploratory_transfers": [10, 6, 8, 6, 11], "exploratory_still_rising": 5, "pass": false}
+20 poet 48 48 w 10 tr 10 | random 44 w 10
+21 poet 34 34 w 10 tr 6 | random 53 w 10
+22 poet 46 46 w 9 tr 8 | random 51 w 10
+23 poet 46 46 w 9 tr 6 | random 54 w 10
+24 poet 40 40 w 8 tr 11 | random 52 w 10
+DONE 1060s

@@ -294,6 +294,26 @@ shape beats covering 5/5 but not blind injection (3/5), and the matched wildcard
 nothing. Conclusion across Zero / One / M1 / M2 / M2b: in small spaces any injection helps and
 its content is irrelevant; in wide spaces nothing in this layer moves search efficiency.
 
+## M3 — open-ended task generation at 6–10 bits, pre-registered, FAIL
+
+`benchmarks/m3.py`: POET-style agent–task pairs over a mutating hidden-multiplexer task
+space (width 6–10, data permutation, inversion, parity twist); children admitted only under a
+minimal criterion (some current agent scores in [0.6, 0.95) before training); capped task
+population; agent transfer. Control: a random task stream with the same creation rate and
+training budget. Metric ANNECS = tasks unsolved at creation and later solved. Criterion
+first: poet > random on ≥ 4/5 seeds and pooled ratio ≥ 1.25 (fresh seeds 20–24).
+
+| poet 46 (34–48) · random 52 (44–54) · ratio 0.885 · C1 1/5 → **FAIL** |
+|---|
+
+(`results/m3_eval_seeds20-24.json`.) At this scale every task is solvable in a few
+iterations, so ANNECS counts task creation and uniform sampling covers the space faster
+than mutate-and-filter; minimal criterion and transfer are overhead with no hard tasks to
+reach. Together with M2/M2b: at small widths the generator adds nothing, at 16 bits the
+learner is too slow to generate for. Both close on the base learner's sample efficiency —
+the next pre-registration is XCS engineering (tournament selection, specify, N, θ_GA),
+not a layer or language mechanism.
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):
