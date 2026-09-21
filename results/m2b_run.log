@@ -1,0 +1,14 @@
+6bit POOLED {"covering": 1050.0, "periodic": 750.0, "shape": 650.0, "covering-matched": 850.0} VERDICT {"C1_shape_vs_covering": 5, "C2_shape_vs_periodic": 3, "n": 5, "C1": true, "C2": false, "exploratory_shape_vs_covering_matched": 3, "exploratory_covering_matched_vs_covering": 3, "pass": false}
+   10 {'covering': ([1300, 1000, 2400, 1100], 1200.0), 'periodic': ([1000, 700, 500, 400], 600.0), 'shape': ([800, 900, 800, 1400], 850.0), 'covering-matched': ([1200, 900, 600, 800], 850.0)}
+   11 {'covering': ([1100, 1200, 500, 1400], 1150.0), 'periodic': ([700, 700, 1100, 900], 800.0), 'shape': ([800, 1100, 1500, 600], 950.0), 'covering-matched': ([800, 1100, 800, 500], 800.0)}
+   12 {'covering': ([1100, 700, 1200, 900], 1000.0), 'periodic': ([1300, 700, 800, 300], 750.0), 'shape': ([1200, 500, 700, 600], 650.0), 'covering-matched': ([1500, 1100, 1100, 1000], 1100.0)}
+   13 {'covering': ([500, 1500, 600, 1900], 1050.0), 'periodic': ([400, 1300, 400, 1100], 750.0), 'shape': ([400, 700, 500, 1500], 600.0), 'covering-matched': ([700, 900, 600, 900], 800.0)}
+   14 {'covering': ([1100, 800, 600, 1600], 950.0), 'periodic': ([500, 1200, 500, 700], 600.0), 'shape': ([600, 900, 400, 500], 550.0), 'covering-matched': ([1000, 1700, 1000, 500], 1000.0)}
+16bit POOLED {"covering": 9750.0, "periodic": 10500.0, "shape": 9500.0, "covering-matched": 10250.0} VERDICT {"C1_shape_vs_covering": 3, "C2_shape_vs_periodic": 4, "n": 5, "C1": false, "C2": true, "exploratory_shape_vs_covering_matched": 2, "exploratory_covering_matched_vs_covering": 3, "pass": false}
+   10 {'covering': ([9750, 12500, 9750], 9750.0), 'periodic': ([9750, 8250, 12250], 9750.0), 'shape': ([14250, 8500, 9500], 9500.0), 'covering-matched': ([10250, 7250, 7750], 7750.0)}
+   11 {'covering': ([6250, 8000, 10750], 8000.0), 'periodic': ([11500, 10500, 8000], 10500.0), 'shape': ([9250, 10000, 9000], 9250.0), 'covering-matched': ([11000, 11250, 10000], 11000.0)}
+   12 {'covering': ([8000, 10500, 10500], 10500.0), 'periodic': ([10000, 12000, 9000], 10000.0), 'shape': ([11500, 7250, 10000], 10000.0), 'covering-matched': ([11750, 9250, 4500], 9250.0)}
+   13 {'covering': ([15500, 13250, 9750], 13250.0), 'periodic': ([13250, 15000, 8500], 13250.0), 'shape': ([12000, 10750, 10250], 10750.0), 'covering-matched': ([10250, 11500, 9750], 10250.0)}
+   14 {'covering': ([9000, 6250, 12750], 9000.0), 'periodic': ([11750, 8750, 12750], 11750.0), 'shape': ([10500, 6000, 9000], 9000.0), 'covering-matched': ([10500, 6250, 12000], 10500.0)}
+OVERALL {"pass": false, "judged_on": "16bit"}
+DONE 1579s

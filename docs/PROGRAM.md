@@ -92,10 +92,13 @@ reroutes, evaluations). **M2 result (2026-09-21): FAIL.** On the 16-bit family, 
 signal (0/5 vs a shape-matched random control; the action coupling is wrong for inverted
 instances), and blind injection *hurts* (0/5 vs none) — Experiment One's diversity mechanism
 is a small-space effect. The only mover was specificity (shape-matched random rules beat
-none 5/5, exploratory). Vector 1 (LLM/offline priors) is closed on this substrate. What the
-substrate has measurably contributed: topological self-repair (relay dead) and small-space
-diversity injection. M3 is built on that base and on the search itself; M3 and M7 are where
-OACG lives or dies. M6 is funded by the
+none 5/5, exploratory). Vector 1 (LLM/offline priors) is closed on this substrate. **M2b (2026-09-21): FAIL** — the specificity effect did not replicate on fresh seeds; at
+16 bits neither injection (any content, any specificity) nor the covering wildcard rate
+changes recovery (~9,500 trials/shift). What the substrate has measurably contributed:
+topological self-repair (relay dead) and small-space diversity injection. **Search
+efficiency in wide spaces is not a layer property**; if M3 needs it, it is a base-learner
+pre-registration (tournament selection, specify operator, N, θ_GA — Butz et al.), or M3 runs
+at 6–10 bits and says so. M3 and M7 are where OACG lives or dies. M6 is funded by the
 proposal if it is accepted, and is the only rung with a physical environment.
 
 ## 4. What this is not

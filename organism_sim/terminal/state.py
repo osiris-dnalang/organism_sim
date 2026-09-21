@@ -130,6 +130,14 @@ class State:
                              "number": f"{arm} {med(arm):.0f} vs {base} {med(base):.0f}"})
             except (FileNotFoundError, KeyError):
                 pass
+        try:
+            d = self.load("m2b_eval_seeds10-14.json")
+            f = d["families"]["16bit"]
+            pm = f["pooled_median"]
+            rows.append({"experiment": "m2b: specificity prior, 16-bit", "verdict": "PASS" if f["verdict"]["pass"] else "FAIL",
+                         "number": f"shape {pm['shape']:.0f} vs covering {pm['covering']:.0f} vs periodic {pm['periodic']:.0f}"})
+        except (FileNotFoundError, KeyError):
+            pass
         b = self.bridge()
         if "step3" in b:
             rows.append({"experiment": "bridge step 3", "verdict": "PASS (tie)" if b["step3"]["verdict"]["pass"] else "FAIL",

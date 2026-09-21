@@ -276,6 +276,24 @@ is worse than none. Exploratory: blind injection now *hurts* (periodic < none 0/
 Experiment One mechanism is a small-space effect); specificity alone helps (shape > none
 5/5, ≈ 13 %) — a candidate for its own pre-registration, about the search, not the layer.
 
+## M2b — specificity prior, pre-registered on fresh seeds, FAIL (M2's exploratory finding did not replicate)
+
+`benchmarks/m2b.py`, seeds 10–14 (never used before), both families. Arms: `covering`
+(P# 0.33), `periodic` (blind injection), `shape` (specificity-matched random rules at start
+and each shift), and `covering-matched` (P# set to the family's specificity — the control that
+decides whether the effect is "inject" or "right P#"). Criterion first: on the 16-bit family,
+shape < covering **and** shape < periodic on ≥ 4/5 seeds.
+
+| 16-bit, pooled median | covering 9750 · covering-matched 10250 · periodic 10500 · **shape 9500** |
+|---|---|
+| 6-bit, pooled median | covering 1050 · covering-matched 850 · periodic 750 · shape 650 |
+
+16-bit: C1 3/5, C2 4/5 → **FAIL** (`results/m2b_eval_seeds10-14.{json,csv}`). The 5/5 effect
+seen on M2's seeds is a 3 % difference on fresh seeds, inside the per-seed spread. 6-bit:
+shape beats covering 5/5 but not blind injection (3/5), and the matched wildcard rate does
+nothing. Conclusion across Zero / One / M1 / M2 / M2b: in small spaces any injection helps and
+its content is irrelevant; in wide spaces nothing in this layer moves search efficiency.
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):
