@@ -45,34 +45,44 @@ ARMS = ("random", "informed", "control")
 
 
 class HiddenMux:
-    """One instance of the family."""
+    """One instance of the family: ``k`` hidden address positions select one of ``2**k``
+    hidden data positions out of ``width`` inputs (the rest are irrelevant); optional
+    inversion. ``k=2, width=6`` is the 6-bit family; ``k=3, width=16`` the wide one."""
 
-    def __init__(self, rng: np.random.Generator):
-        perm = list(rng.permutation(6))
-        self.addr = perm[:2]
-        self.data = perm[2:]
+    def __init__(self, rng: np.random.Generator, k: int = 2, width: int = 6):
+        assert width >= k + 2 ** k
+        perm = list(rng.permutation(width))
+        self.k, self.width = k, width
+        self.addr = perm[:k]
+        self.data = perm[k:k + 2 ** k]
+        self.irrelevant = perm[k + 2 ** k:]
         self.invert = bool(rng.integers(2))
 
     def truth(self, bits: str) -> str:
         b = [int(c) for c in bits]
-        out = b[self.data[2 * b[self.addr[0]] + b[self.addr[1]]]]
+        idx = 0
+        for a in self.addr:
+            idx = 2 * idx + b[a]
+        out = b[self.data[idx]]
         return str(1 - out if self.invert else out)
 
     def describe(self) -> Dict[str, Any]:
-        return {"addr": [int(a) for a in self.addr], "data": [int(d) for d in self.data],
+        return {"k": self.k, "width": self.width, "addr": [int(a) for a in self.addr],
+                "data": [int(d) for d in self.data], "irrelevant": [int(i) for i in self.irrelevant],
                 "invert": self.invert}
 
 
 class DriftingHidden:
-    def __init__(self, seed: int, shift_every: int):
+    def __init__(self, seed: int, shift_every: int, k: int = 2, width: int = 6):
         self.rng = np.random.default_rng(seed + 4242)
         self.shift_every = shift_every
-        self.instance = HiddenMux(self.rng)
+        self.k, self.width = k, width
+        self.instance = HiddenMux(self.rng, k, width)
         self.shifts: List[int] = []
 
     def maybe_shift(self, trial: int, trials: int) -> bool:
         if trial % self.shift_every == 0 and trial + self.shift_every <= trials:
-            self.instance = HiddenMux(self.rng)
+            self.instance = HiddenMux(self.rng, self.k, self.width)
             self.shifts.append(trial)
             return True
         return False

@@ -1,0 +1,48 @@
+// M2 — structural priors for the 16-bit generalised-multiplexer family (3 address
+// positions, 8 data positions, 5 irrelevant, optional inversion). Written once from the
+// FAMILY definition only; positions and values are guesses. Seed 999; never edited.
+ORGANISM M2_PRIORS {
+    META { version: "1.0.0", domain: "benchmark" }
+    GENOME {
+        GENE shape_7_9_2_15 { id: "S0", condition: "##1####1#1#####0", action: "(emit 0)", expression: 1.0 }
+        GENE shape_5_9_10_15 { id: "S1", condition: "#####0###01####0", action: "(emit 0)", expression: 1.0 }
+        GENE shape_15_8_1_4 { id: "S2", condition: "#0##1###0######1", action: "(emit 1)", expression: 1.0 }
+        GENE shape_11_14_15_3 { id: "S3", condition: "###1#######0##10", action: "(emit 1)", expression: 1.0 }
+        GENE shape_14_8_3_12 { id: "S4", condition: "###0####1###1#1#", action: "(emit 1)", expression: 1.0 }
+        GENE shape_1_14_0_11 { id: "S5", condition: "10#########1##0#", action: "(emit 1)", expression: 1.0 }
+        GENE shape_8_0_3_6 { id: "S6", condition: "0##1##0#0#######", action: "(emit 0)", expression: 1.0 }
+        GENE shape_15_10_7_11 { id: "S7", condition: "#######1##10###0", action: "(emit 0)", expression: 1.0 }
+        GENE shape_7_0_9_4 { id: "S8", condition: "1###1##0#0######", action: "(emit 1)", expression: 1.0 }
+        GENE shape_0_2_14_8 { id: "S9", condition: "1#1#####1#####1#", action: "(emit 1)", expression: 1.0 }
+        GENE shape_6_14_9_13 { id: "S10", condition: "######1##0###10#", action: "(emit 1)", expression: 1.0 }
+        GENE shape_5_3_8_4 { id: "S11", condition: "###000##0#######", action: "(emit 0)", expression: 1.0 }
+        GENE shape_8_2_9_7 { id: "S12", condition: "##1####001######", action: "(emit 0)", expression: 1.0 }
+        GENE shape_9_15_11_5 { id: "S13", condition: "#####0###0#1###1", action: "(emit 0)", expression: 1.0 }
+        GENE shape_12_3_2_4 { id: "S14", condition: "##101#######0###", action: "(emit 1)", expression: 1.0 }
+        GENE shape_9_1_0_5 { id: "S15", condition: "01###1###0######", action: "(emit 1)", expression: 1.0 }
+        GENE shape_13_5_3_0 { id: "S16", condition: "1##1#1#######0##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_4_6_3_7 { id: "S17", condition: "###00#01########", action: "(emit 1)", expression: 1.0 }
+        GENE shape_7_5_12_9 { id: "S18", condition: "#####1#0#0##0###", action: "(emit 0)", expression: 1.0 }
+        GENE shape_9_2_6_0 { id: "S19", condition: "0#0###0##0######", action: "(emit 0)", expression: 1.0 }
+        GENE shape_15_1_3_4 { id: "S20", condition: "#0#00##########0", action: "(emit 0)", expression: 1.0 }
+        GENE shape_6_15_0_10 { id: "S21", condition: "1#####0###0####1", action: "(emit 0)", expression: 1.0 }
+        GENE shape_2_11_15_4 { id: "S22", condition: "##0#1######1###1", action: "(emit 1)", expression: 1.0 }
+        GENE shape_11_8_9_10 { id: "S23", condition: "########0010####", action: "(emit 1)", expression: 1.0 }
+        GENE shape_7_6_2_10 { id: "S24", condition: "##1###10##0#####", action: "(emit 0)", expression: 1.0 }
+        GENE shape_14_1_15_10 { id: "S25", condition: "#0########1###00", action: "(emit 1)", expression: 1.0 }
+        GENE shape_1_15_12_5 { id: "S26", condition: "#1###1######1##1", action: "(emit 1)", expression: 1.0 }
+        GENE shape_15_2_0_13 { id: "S27", condition: "1#1##########0#1", action: "(emit 0)", expression: 1.0 }
+        GENE shape_2_13_3_5 { id: "S28", condition: "##00#1#######1##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_10_2_13_11 { id: "S29", condition: "##0#######00#0##", action: "(emit 0)", expression: 1.0 }
+        GENE shape_11_0_10_9 { id: "S30", condition: "1########101####", action: "(emit 1)", expression: 1.0 }
+        GENE shape_6_2_9_7 { id: "S31", condition: "##0###10#0######", action: "(emit 0)", expression: 1.0 }
+        GENE shape_9_6_5_13 { id: "S32", condition: "#####00##0###1##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_0_12_8_11 { id: "S33", condition: "0#######0##11###", action: "(emit 1)", expression: 1.0 }
+        GENE shape_5_9_12_14 { id: "S34", condition: "#####1###0##0#0#", action: "(emit 0)", expression: 1.0 }
+        GENE shape_8_1_15_13 { id: "S35", condition: "#0######0####1#0", action: "(emit 1)", expression: 1.0 }
+        GENE shape_6_3_12_4 { id: "S36", condition: "###11#1#####1###", action: "(emit 1)", expression: 1.0 }
+        GENE shape_13_2_10_11 { id: "S37", condition: "##0#######01#1##", action: "(emit 1)", expression: 1.0 }
+        GENE shape_9_5_4_11 { id: "S38", condition: "####10###1#1####", action: "(emit 1)", expression: 1.0 }
+        GENE shape_5_6_11_9 { id: "S39", condition: "#####01##0#1####", action: "(emit 0)", expression: 1.0 }
+    }
+}
