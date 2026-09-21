@@ -1,0 +1,6336 @@
+{
+ "seeds": [
+  110,
+  111,
+  112,
+  113,
+  114
+ ],
+ "table": [
+  {
+   "config": "tga25_ason_mu0.05_pw0.75",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    11750.0,
+    9000.0,
+    10250.0,
+    7750.0,
+    10000.0
+   ],
+   "pooled_median": 10000.0,
+   "pooled_per_shift_median": 10000.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.05_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      9000,
+      11750,
+      11750
+     ],
+     "scores": [
+      9000,
+      11750,
+      11750
+     ],
+     "median": 11750.0,
+     "macro_end": 418,
+     "ga": 90048,
+     "subsume": 62939,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      10250,
+      9000,
+      9000
+     ],
+     "scores": [
+      10250,
+      9000,
+      9000
+     ],
+     "median": 9000.0,
+     "macro_end": 323,
+     "ga": 89221,
+     "subsume": 63347,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      9250,
+      10250,
+      11500
+     ],
+     "scores": [
+      9250,
+      10250,
+      11500
+     ],
+     "median": 10250.0,
+     "macro_end": 456,
+     "ga": 89661,
+     "subsume": 62427,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      7750,
+      12000,
+      5250
+     ],
+     "scores": [
+      7750,
+      12000,
+      5250
+     ],
+     "median": 7750.0,
+     "macro_end": 411,
+     "ga": 88058,
+     "subsume": 68124,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      10000,
+      8250,
+      12250
+     ],
+     "scores": [
+      10000,
+      8250,
+      12250
+     ],
+     "median": 10000.0,
+     "macro_end": 323,
+     "ga": 89394,
+     "subsume": 65059,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.05_pw0.5",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    11750.0,
+    10000.0,
+    10250.0,
+    6750.0,
+    12250.0
+   ],
+   "pooled_median": 10250.0,
+   "pooled_per_shift_median": 10250.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.05_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      12500,
+      11750,
+      10500
+     ],
+     "scores": [
+      12500,
+      11750,
+      10500
+     ],
+     "median": 11750.0,
+     "macro_end": 170,
+     "ga": 87341,
+     "subsume": 65379,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      10000,
+      12250,
+      10000
+     ],
+     "scores": [
+      10000,
+      12250,
+      10000
+     ],
+     "median": 10000.0,
+     "macro_end": 203,
+     "ga": 86796,
+     "subsume": 68465,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      10250,
+      10500,
+      9250
+     ],
+     "scores": [
+      10250,
+      10500,
+      9250
+     ],
+     "median": 10250.0,
+     "macro_end": 187,
+     "ga": 86318,
+     "subsume": 68441,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      6750,
+      9250,
+      5250
+     ],
+     "scores": [
+      6750,
+      9250,
+      5250
+     ],
+     "median": 6750.0,
+     "macro_end": 180,
+     "ga": 83608,
+     "subsume": 76356,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      14500,
+      12250,
+      9750
+     ],
+     "scores": [
+      14500,
+      12250,
+      9750
+     ],
+     "median": 12250.0,
+     "macro_end": 191,
+     "ga": 86417,
+     "subsume": 68424,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.04_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.04,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    12250.0,
+    11250.0,
+    9500.0,
+    6750.0,
+    10500.0
+   ],
+   "pooled_median": 10500.0,
+   "pooled_per_shift_median": 10500.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.04_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      12250,
+      11750,
+      13500
+     ],
+     "scores": [
+      12250,
+      11750,
+      13500
+     ],
+     "median": 12250.0,
+     "macro_end": 340,
+     "ga": 88111,
+     "subsume": 60518,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.04_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      8250,
+      12000,
+      11250
+     ],
+     "scores": [
+      8250,
+      12000,
+      11250
+     ],
+     "median": 11250.0,
+     "macro_end": 310,
+     "ga": 87990,
+     "subsume": 60183,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.04_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      10250,
+      7750,
+      9500
+     ],
+     "scores": [
+      10250,
+      7750,
+      9500
+     ],
+     "median": 9500.0,
+     "macro_end": 219,
+     "ga": 87039,
+     "subsume": 66185,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.04_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      6750,
+      12000,
+      5500
+     ],
+     "scores": [
+      6750,
+      12000,
+      5500
+     ],
+     "median": 6750.0,
+     "macro_end": 275,
+     "ga": 86147,
+     "subsume": 67183,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.04_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      10500,
+      8750,
+      11500
+     ],
+     "scores": [
+      10500,
+      8750,
+      11500
+     ],
+     "median": 10500.0,
+     "macro_end": 253,
+     "ga": 85977,
+     "subsume": 67242,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.05_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    10750.0,
+    10500.0,
+    9750.0,
+    8250.0,
+    11500.0
+   ],
+   "pooled_median": 10500.0,
+   "pooled_per_shift_median": 10750.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.05_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      10750,
+      14000,
+      10250
+     ],
+     "scores": [
+      10750,
+      14000,
+      10250
+     ],
+     "median": 10750.0,
+     "macro_end": 390,
+     "ga": 91054,
+     "subsume": 57584,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      10500,
+      8500,
+      11000
+     ],
+     "scores": [
+      10500,
+      8500,
+      11000
+     ],
+     "median": 10500.0,
+     "macro_end": 447,
+     "ga": 89260,
+     "subsume": 62925,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      9750,
+      8750,
+      12250
+     ],
+     "scores": [
+      9750,
+      8750,
+      12250
+     ],
+     "median": 9750.0,
+     "macro_end": 406,
+     "ga": 90136,
+     "subsume": 59877,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      7000,
+      11500,
+      8250
+     ],
+     "scores": [
+      7000,
+      11500,
+      8250
+     ],
+     "median": 8250.0,
+     "macro_end": 300,
+     "ga": 89497,
+     "subsume": 62667,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      11250,
+      12250,
+      11500
+     ],
+     "scores": [
+      11250,
+      12250,
+      11500
+     ],
+     "median": 11500.0,
+     "macro_end": 361,
+     "ga": 90895,
+     "subsume": 58106,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.05_pw0.5",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    11750.0,
+    9750.0,
+    11000.0,
+    8750.0,
+    10750.0
+   ],
+   "pooled_median": 10750.0,
+   "pooled_per_shift_median": 10750.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.05_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      11750,
+      12500,
+      9250
+     ],
+     "scores": [
+      11750,
+      12500,
+      9250
+     ],
+     "median": 11750.0,
+     "macro_end": 271,
+     "ga": 91476,
+     "subsume": 59388,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      8500,
+      9750,
+      10500
+     ],
+     "scores": [
+      8500,
+      9750,
+      10500
+     ],
+     "median": 9750.0,
+     "macro_end": 436,
+     "ga": 90277,
+     "subsume": 62062,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      10750,
+      11500,
+      11000
+     ],
+     "scores": [
+      10750,
+      11500,
+      11000
+     ],
+     "median": 11000.0,
+     "macro_end": 306,
+     "ga": 90170,
+     "subsume": 62254,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      5000,
+      12000,
+      8750
+     ],
+     "scores": [
+      5000,
+      12000,
+      8750
+     ],
+     "median": 8750.0,
+     "macro_end": 352,
+     "ga": 89095,
+     "subsume": 66672,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.05_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      11500,
+      10750,
+      9750
+     ],
+     "scores": [
+      11500,
+      10750,
+      9750
+     ],
+     "median": 10750.0,
+     "macro_end": 471,
+     "ga": 90573,
+     "subsume": 61895,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.01_pw0.75",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    11750.0,
+    10750.0,
+    12750.0,
+    8500.0,
+    11000.0
+   ],
+   "pooled_median": 11000.0,
+   "pooled_per_shift_median": 11000.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.01_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      11750,
+      18000,
+      11000
+     ],
+     "scores": [
+      11750,
+      18000,
+      11000
+     ],
+     "median": 11750.0,
+     "macro_end": 57,
+     "ga": 74741,
+     "subsume": 75126,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      9500,
+      11750,
+      10750
+     ],
+     "scores": [
+      9500,
+      11750,
+      10750
+     ],
+     "median": 10750.0,
+     "macro_end": 59,
+     "ga": 67085,
+     "subsume": 65377,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      10250,
+      12750,
+      14000
+     ],
+     "scores": [
+      10250,
+      12750,
+      14000
+     ],
+     "median": 12750.0,
+     "macro_end": 59,
+     "ga": 72879,
+     "subsume": 73362,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      8500,
+      12000,
+      7750
+     ],
+     "scores": [
+      8500,
+      12000,
+      7750
+     ],
+     "median": 8500.0,
+     "macro_end": 61,
+     "ga": 73116,
+     "subsume": 86186,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      11000,
+      10250,
+      12000
+     ],
+     "scores": [
+      11000,
+      10250,
+      12000
+     ],
+     "median": 11000.0,
+     "macro_end": 58,
+     "ga": 75849,
+     "subsume": 81179,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.05_pw0.75",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    11000.0,
+    12250.0,
+    11000.0,
+    7250.0,
+    12750.0
+   ],
+   "pooled_median": 11000.0,
+   "pooled_per_shift_median": 11000.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.05_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      11000,
+      8500,
+      11000
+     ],
+     "scores": [
+      11000,
+      8500,
+      11000
+     ],
+     "median": 11000.0,
+     "macro_end": 184,
+     "ga": 85483,
+     "subsume": 69888,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      7500,
+      12250,
+      13000
+     ],
+     "scores": [
+      7500,
+      12250,
+      13000
+     ],
+     "median": 12250.0,
+     "macro_end": 189,
+     "ga": 86244,
+     "subsume": 68124,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      11000,
+      12250,
+      10500
+     ],
+     "scores": [
+      11000,
+      12250,
+      10500
+     ],
+     "median": 11000.0,
+     "macro_end": 196,
+     "ga": 86355,
+     "subsume": 66635,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      6250,
+      7250,
+      8750
+     ],
+     "scores": [
+      6250,
+      7250,
+      8750
+     ],
+     "median": 7250.0,
+     "macro_end": 185,
+     "ga": 82896,
+     "subsume": 77231,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      12750,
+      12750,
+      10250
+     ],
+     "scores": [
+      12750,
+      12750,
+      10250
+     ],
+     "median": 12750.0,
+     "macro_end": 172,
+     "ga": 86220,
+     "subsume": 67486,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.01_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    12000.0,
+    11250.0,
+    11250.0,
+    7500.0,
+    12500.0
+   ],
+   "pooled_median": 11250.0,
+   "pooled_per_shift_median": 11750.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.01_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      14000,
+      11750,
+      12000
+     ],
+     "scores": [
+      14000,
+      11750,
+      12000
+     ],
+     "median": 12000.0,
+     "macro_end": 104,
+     "ga": 77391,
+     "subsume": 61627,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      9500,
+      13000,
+      11250
+     ],
+     "scores": [
+      9500,
+      13000,
+      11250
+     ],
+     "median": 11250.0,
+     "macro_end": 98,
+     "ga": 75623,
+     "subsume": 64968,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      9750,
+      11250,
+      12500
+     ],
+     "scores": [
+      9750,
+      11250,
+      12500
+     ],
+     "median": 11250.0,
+     "macro_end": 95,
+     "ga": 75722,
+     "subsume": 63539,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      7250,
+      13750,
+      7500
+     ],
+     "scores": [
+      7250,
+      13750,
+      7500
+     ],
+     "median": 7500.0,
+     "macro_end": 162,
+     "ga": 73569,
+     "subsume": 70691,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      12500,
+      9000,
+      13500
+     ],
+     "scores": [
+      12500,
+      9000,
+      13500
+     ],
+     "median": 12500.0,
+     "macro_end": 137,
+     "ga": 76404,
+     "subsume": 62666,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.01_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    11250.0,
+    13000.0,
+    13500.0,
+    8250.0,
+    11000.0
+   ],
+   "pooled_median": 11250.0,
+   "pooled_per_shift_median": 12000.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.01_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      11250,
+      13500,
+      11000
+     ],
+     "scores": [
+      11250,
+      13500,
+      11000
+     ],
+     "median": 11250.0,
+     "macro_end": 57,
+     "ga": 76243,
+     "subsume": 76073,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      13000,
+      12000,
+      15000
+     ],
+     "scores": [
+      13000,
+      12000,
+      15000
+     ],
+     "median": 13000.0,
+     "macro_end": 139,
+     "ga": 76671,
+     "subsume": 74340,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      14750,
+      10750,
+      13500
+     ],
+     "scores": [
+      14750,
+      10750,
+      13500
+     ],
+     "median": 13500.0,
+     "macro_end": 75,
+     "ga": 76762,
+     "subsume": 76158,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      8250,
+      12000,
+      7250
+     ],
+     "scores": [
+      8250,
+      12000,
+      7250
+     ],
+     "median": 8250.0,
+     "macro_end": 82,
+     "ga": 74445,
+     "subsume": 86039,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      13000,
+      9500,
+      11000
+     ],
+     "scores": [
+      13000,
+      9500,
+      11000
+     ],
+     "median": 11000.0,
+     "macro_end": 76,
+     "ga": 74950,
+     "subsume": 79244,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.05_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    11250.0,
+    11500.0,
+    11750.0,
+    5500.0,
+    11750.0
+   ],
+   "pooled_median": 11500.0,
+   "pooled_per_shift_median": 11500.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.05_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      11250,
+      12750,
+      9500
+     ],
+     "scores": [
+      11250,
+      12750,
+      9500
+     ],
+     "median": 11250.0,
+     "macro_end": 177,
+     "ga": 85485,
+     "subsume": 69464,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      8750,
+      12750,
+      11500
+     ],
+     "scores": [
+      8750,
+      12750,
+      11500
+     ],
+     "median": 11500.0,
+     "macro_end": 192,
+     "ga": 85522,
+     "subsume": 68428,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      11750,
+      12500,
+      10750
+     ],
+     "scores": [
+      11750,
+      12500,
+      10750
+     ],
+     "median": 11750.0,
+     "macro_end": 192,
+     "ga": 87256,
+     "subsume": 64761,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      5500,
+      11750,
+      5500
+     ],
+     "scores": [
+      5500,
+      11750,
+      5500
+     ],
+     "median": 5500.0,
+     "macro_end": 198,
+     "ga": 83243,
+     "subsume": 74290,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.05_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      12500,
+      9000,
+      11750
+     ],
+     "scores": [
+      12500,
+      9000,
+      11750
+     ],
+     "median": 11750.0,
+     "macro_end": 181,
+     "ga": 85919,
+     "subsume": 68247,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.01_pw0.75",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    14250.0,
+    13500.0,
+    10250.0,
+    8000.0,
+    12000.0
+   ],
+   "pooled_median": 12000.0,
+   "pooled_per_shift_median": 12000.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.01_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      14250,
+      17750,
+      10000
+     ],
+     "scores": [
+      14250,
+      17750,
+      10000
+     ],
+     "median": 14250.0,
+     "macro_end": 75,
+     "ga": 73554,
+     "subsume": 59740,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      11500,
+      18750,
+      13500
+     ],
+     "scores": [
+      11500,
+      18750,
+      13500
+     ],
+     "median": 13500.0,
+     "macro_end": 134,
+     "ga": 68017,
+     "subsume": 49617,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      10250,
+      10000,
+      13500
+     ],
+     "scores": [
+      10250,
+      10000,
+      13500
+     ],
+     "median": 10250.0,
+     "macro_end": 117,
+     "ga": 72980,
+     "subsume": 60901,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      7000,
+      13750,
+      8000
+     ],
+     "scores": [
+      7000,
+      13750,
+      8000
+     ],
+     "median": 8000.0,
+     "macro_end": 90,
+     "ga": 72852,
+     "subsume": 69789,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      13500,
+      8750,
+      12000
+     ],
+     "scores": [
+      13500,
+      8750,
+      12000
+     ],
+     "median": 12000.0,
+     "macro_end": 116,
+     "ga": 74395,
+     "subsume": 68327,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.01_pw0.5",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    14250.0,
+    13000.0,
+    11500.0,
+    7750.0,
+    12000.0
+   ],
+   "pooled_median": 12000.0,
+   "pooled_per_shift_median": 13000.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.01_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      14250,
+      13750,
+      14750
+     ],
+     "scores": [
+      14250,
+      13750,
+      14750
+     ],
+     "median": 14250.0,
+     "macro_end": 116,
+     "ga": 76829,
+     "subsume": 64794,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      11750,
+      13000,
+      13000
+     ],
+     "scores": [
+      11750,
+      13000,
+      13000
+     ],
+     "median": 13000.0,
+     "macro_end": 97,
+     "ga": 76855,
+     "subsume": 63311,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      11500,
+      14000,
+      11250
+     ],
+     "scores": [
+      11500,
+      14000,
+      11250
+     ],
+     "median": 11500.0,
+     "macro_end": 151,
+     "ga": 77036,
+     "subsume": 63334,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      7500,
+      14000,
+      7750
+     ],
+     "scores": [
+      7500,
+      14000,
+      7750
+     ],
+     "median": 7750.0,
+     "macro_end": 89,
+     "ga": 75450,
+     "subsume": 71787,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.01_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      14000,
+      7250,
+      12000
+     ],
+     "scores": [
+      14000,
+      7250,
+      12000
+     ],
+     "median": 12000.0,
+     "macro_end": 153,
+     "ga": 75527,
+     "subsume": 67573,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.05_pw0.75",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    15000.0,
+    11500.0,
+    14000.0,
+    9750.0,
+    12250.0
+   ],
+   "pooled_median": 12250.0,
+   "pooled_per_shift_median": 12500.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.05_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      15000,
+      13750,
+      15250
+     ],
+     "scores": [
+      15000,
+      13750,
+      15250
+     ],
+     "median": 15000.0,
+     "macro_end": 279,
+     "ga": 49505,
+     "subsume": 29360,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      11500,
+      13500,
+      11250
+     ],
+     "scores": [
+      11500,
+      13500,
+      11250
+     ],
+     "median": 11500.0,
+     "macro_end": 278,
+     "ga": 46585,
+     "subsume": 30403,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      18500,
+      11000,
+      14000
+     ],
+     "scores": [
+      18500,
+      11000,
+      14000
+     ],
+     "median": 14000.0,
+     "macro_end": 212,
+     "ga": 51069,
+     "subsume": 29128,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      8500,
+      12500,
+      9750
+     ],
+     "scores": [
+      8500,
+      12500,
+      9750
+     ],
+     "median": 9750.0,
+     "macro_end": 242,
+     "ga": 48907,
+     "subsume": 33424,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      12250,
+      12000,
+      13250
+     ],
+     "scores": [
+      12250,
+      12000,
+      13250
+     ],
+     "median": 12250.0,
+     "macro_end": 364,
+     "ga": 49632,
+     "subsume": 32168,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.01_pw0.5",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    12500.0,
+    12500.0,
+    13500.0,
+    11000.0,
+    12000.0
+   ],
+   "pooled_median": 12500.0,
+   "pooled_per_shift_median": 12500.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.01_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      12500,
+      15500,
+      11250
+     ],
+     "scores": [
+      12500,
+      15500,
+      11250
+     ],
+     "median": 12500.0,
+     "macro_end": 58,
+     "ga": 77272,
+     "subsume": 78493,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      14250,
+      12500,
+      10250
+     ],
+     "scores": [
+      14250,
+      12500,
+      10250
+     ],
+     "median": 12500.0,
+     "macro_end": 72,
+     "ga": 75852,
+     "subsume": 79765,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      13500,
+      11250,
+      13750
+     ],
+     "scores": [
+      13500,
+      11250,
+      13750
+     ],
+     "median": 13500.0,
+     "macro_end": 56,
+     "ga": 77006,
+     "subsume": 79462,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      11000,
+      13500,
+      10000
+     ],
+     "scores": [
+      11000,
+      13500,
+      10000
+     ],
+     "median": 11000.0,
+     "macro_end": 58,
+     "ga": 75585,
+     "subsume": 84051,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.01_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      13250,
+      12000,
+      11250
+     ],
+     "scores": [
+      13250,
+      12000,
+      11250
+     ],
+     "median": 12000.0,
+     "macro_end": 46,
+     "ga": 77174,
+     "subsume": 79032,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.05_pw0.5",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    15000.0,
+    12750.0,
+    14500.0,
+    7500.0,
+    13250.0
+   ],
+   "pooled_median": 13250.0,
+   "pooled_per_shift_median": 13250.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.05_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      14500,
+      15000,
+      15250
+     ],
+     "scores": [
+      14500,
+      15000,
+      15250
+     ],
+     "median": 15000.0,
+     "macro_end": 336,
+     "ga": 52612,
+     "subsume": 29732,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      10250,
+      14000,
+      12750
+     ],
+     "scores": [
+      10250,
+      14000,
+      12750
+     ],
+     "median": 12750.0,
+     "macro_end": 292,
+     "ga": 50804,
+     "subsume": 32167,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      11750,
+      15500,
+      14500
+     ],
+     "scores": [
+      11750,
+      15500,
+      14500
+     ],
+     "median": 14500.0,
+     "macro_end": 295,
+     "ga": 51880,
+     "subsume": 31515,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      7500,
+      12500,
+      7500
+     ],
+     "scores": [
+      7500,
+      12500,
+      7500
+     ],
+     "median": 7500.0,
+     "macro_end": 185,
+     "ga": 48305,
+     "subsume": 34878,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      14250,
+      12750,
+      13250
+     ],
+     "scores": [
+      14250,
+      12750,
+      13250
+     ],
+     "median": 13250.0,
+     "macro_end": 336,
+     "ga": 53085,
+     "subsume": 29319,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.05_pw0.75",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    13250.0,
+    12000.0,
+    14500.0,
+    8000.0,
+    14000.0
+   ],
+   "pooled_median": 13250.0,
+   "pooled_per_shift_median": 13500.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.05_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      13250,
+      15250,
+      11750
+     ],
+     "scores": [
+      13250,
+      15250,
+      11750
+     ],
+     "median": 13250.0,
+     "macro_end": 142,
+     "ga": 48142,
+     "subsume": 32488,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      8500,
+      15750,
+      12000
+     ],
+     "scores": [
+      8500,
+      15750,
+      12000
+     ],
+     "median": 12000.0,
+     "macro_end": 167,
+     "ga": 46303,
+     "subsume": 31820,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      14500,
+      16500,
+      14500
+     ],
+     "scores": [
+      14500,
+      16500,
+      14500
+     ],
+     "median": 14500.0,
+     "macro_end": 198,
+     "ga": 51303,
+     "subsume": 30227,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      7500,
+      13500,
+      8000
+     ],
+     "scores": [
+      7500,
+      13500,
+      8000
+     ],
+     "median": 8000.0,
+     "macro_end": 154,
+     "ga": 47683,
+     "subsume": 35021,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      15500,
+      14000,
+      13000
+     ],
+     "scores": [
+      15500,
+      14000,
+      13000
+     ],
+     "median": 14000.0,
+     "macro_end": 150,
+     "ga": 49610,
+     "subsume": 32560,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.05_pw0.33",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    12250.0,
+    13500.0,
+    14000.0,
+    8500.0,
+    13750.0
+   ],
+   "pooled_median": 13500.0,
+   "pooled_per_shift_median": 12500.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.05_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      12250,
+      16250,
+      12250
+     ],
+     "scores": [
+      12250,
+      16250,
+      12250
+     ],
+     "median": 12250.0,
+     "macro_end": 242,
+     "ga": 51827,
+     "subsume": 29180,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      13750,
+      12500,
+      13500
+     ],
+     "scores": [
+      13750,
+      12500,
+      13500
+     ],
+     "median": 13500.0,
+     "macro_end": 223,
+     "ga": 50878,
+     "subsume": 29877,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      14500,
+      11500,
+      14000
+     ],
+     "scores": [
+      14500,
+      11500,
+      14000
+     ],
+     "median": 14000.0,
+     "macro_end": 272,
+     "ga": 51391,
+     "subsume": 30460,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      8000,
+      12500,
+      8500
+     ],
+     "scores": [
+      8000,
+      12500,
+      8500
+     ],
+     "median": 8500.0,
+     "macro_end": 289,
+     "ga": 48200,
+     "subsume": 32632,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.05_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      13750,
+      10750,
+      14250
+     ],
+     "scores": [
+      13750,
+      10750,
+      14250
+     ],
+     "median": 13750.0,
+     "macro_end": 263,
+     "ga": 51035,
+     "subsume": 30179,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.05_pw0.5",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    13750.0,
+    12000.0,
+    14000.0,
+    9000.0,
+    14750.0
+   ],
+   "pooled_median": 13750.0,
+   "pooled_per_shift_median": 13000.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.05_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      15750,
+      11000,
+      13750
+     ],
+     "scores": [
+      15750,
+      11000,
+      13750
+     ],
+     "median": 13750.0,
+     "macro_end": 156,
+     "ga": 50018,
+     "subsume": 33435,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      10500,
+      14000,
+      12000
+     ],
+     "scores": [
+      10500,
+      14000,
+      12000
+     ],
+     "median": 12000.0,
+     "macro_end": 151,
+     "ga": 51187,
+     "subsume": 34068,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      10750,
+      14000,
+      17250
+     ],
+     "scores": [
+      10750,
+      14000,
+      17250
+     ],
+     "median": 14000.0,
+     "macro_end": 187,
+     "ga": 51490,
+     "subsume": 32490,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      9000,
+      13000,
+      8000
+     ],
+     "scores": [
+      9000,
+      13000,
+      8000
+     ],
+     "median": 9000.0,
+     "macro_end": 148,
+     "ga": 47844,
+     "subsume": 37970,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      15000,
+      11750,
+      14750
+     ],
+     "scores": [
+      15000,
+      11750,
+      14750
+     ],
+     "median": 14750.0,
+     "macro_end": 161,
+     "ga": 51291,
+     "subsume": 31908,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.05_pw0.33",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    14000.0,
+    13000.0,
+    14750.0,
+    8250.0,
+    14000.0
+   ],
+   "pooled_median": 14000.0,
+   "pooled_per_shift_median": 13500.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.05_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      16000,
+      14000,
+      11750
+     ],
+     "scores": [
+      16000,
+      14000,
+      11750
+     ],
+     "median": 14000.0,
+     "macro_end": 170,
+     "ga": 51229,
+     "subsume": 30864,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      10250,
+      13000,
+      15500
+     ],
+     "scores": [
+      10250,
+      13000,
+      15500
+     ],
+     "median": 13000.0,
+     "macro_end": 190,
+     "ga": 51694,
+     "subsume": 31035,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      15500,
+      14750,
+      12750
+     ],
+     "scores": [
+      15500,
+      14750,
+      12750
+     ],
+     "median": 14750.0,
+     "macro_end": 167,
+     "ga": 51496,
+     "subsume": 31142,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      7250,
+      13500,
+      8250
+     ],
+     "scores": [
+      7250,
+      13500,
+      8250
+     ],
+     "median": 8250.0,
+     "macro_end": 138,
+     "ga": 47328,
+     "subsume": 36854,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.05_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      17000,
+      14000,
+      13000
+     ],
+     "scores": [
+      17000,
+      14000,
+      13000
+     ],
+     "median": 14000.0,
+     "macro_end": 141,
+     "ga": 50505,
+     "subsume": 31398,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.1_pw0.5",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    17250.0,
+    18000.0,
+    19000.0,
+    17250.0,
+    16000.0
+   ],
+   "pooled_median": 17250.0,
+   "pooled_per_shift_median": 17500.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.1_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      17250,
+      22500,
+      14750
+     ],
+     "scores": [
+      17250,
+      22500,
+      14750
+     ],
+     "median": 17250.0,
+     "macro_end": 473,
+     "ga": 62977,
+     "subsume": 23421,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      18250,
+      16750,
+      18000
+     ],
+     "scores": [
+      18250,
+      16750,
+      18000
+     ],
+     "median": 18000.0,
+     "macro_end": 453,
+     "ga": 65235,
+     "subsume": 19528,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      19000,
+      18250,
+      24000
+     ],
+     "scores": [
+      19000,
+      18250,
+      24000
+     ],
+     "median": 19000.0,
+     "macro_end": 667,
+     "ga": 67002,
+     "subsume": 17414,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      12000,
+      25750,
+      17250
+     ],
+     "scores": [
+      12000,
+      25750,
+      17250
+     ],
+     "median": 17250.0,
+     "macro_end": 502,
+     "ga": 64290,
+     "subsume": 21521,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      16000,
+      15000,
+      17500
+     ],
+     "scores": [
+      16000,
+      15000,
+      17500
+     ],
+     "median": 16000.0,
+     "macro_end": 586,
+     "ga": 62684,
+     "subsume": 24071,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.1_pw0.33",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    14000.0,
+    18500.0,
+    19250.0,
+    13750.0,
+    24750.0
+   ],
+   "pooled_median": 18500.0,
+   "pooled_per_shift_median": 18250.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.1_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      18250,
+      14000,
+      13750
+     ],
+     "scores": [
+      18250,
+      14000,
+      13750
+     ],
+     "median": 14000.0,
+     "macro_end": 542,
+     "ga": 63198,
+     "subsume": 22756,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      19750,
+      18500,
+      17750
+     ],
+     "scores": [
+      19750,
+      18500,
+      17750
+     ],
+     "median": 18500.0,
+     "macro_end": 405,
+     "ga": 63042,
+     "subsume": 22643,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      19250,
+      21250,
+      19000
+     ],
+     "scores": [
+      19250,
+      21250,
+      19000
+     ],
+     "median": 19250.0,
+     "macro_end": 640,
+     "ga": 65120,
+     "subsume": 18881,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      11250,
+      14500,
+      13750
+     ],
+     "scores": [
+      11250,
+      14500,
+      13750
+     ],
+     "median": 13750.0,
+     "macro_end": 501,
+     "ga": 62201,
+     "subsume": 23627,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      16500,
+      24750,
+      27750
+     ],
+     "scores": [
+      16500,
+      24750,
+      27750
+     ],
+     "median": 24750.0,
+     "macro_end": 722,
+     "ga": 66413,
+     "subsume": 16850,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.01_pw0.5",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    23250.0,
+    18250.0,
+    30000.0,
+    13250.0,
+    18500.0
+   ],
+   "pooled_median": 18500.0,
+   "pooled_per_shift_median": 19000.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.01_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      23250,
+      27250,
+      19000
+     ],
+     "scores": [
+      23250,
+      27250,
+      19000
+     ],
+     "median": 23250.0,
+     "macro_end": 109,
+     "ga": 39465,
+     "subsume": 27746,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      18250,
+      22250,
+      17000
+     ],
+     "scores": [
+      18250,
+      22250,
+      17000
+     ],
+     "median": 18250.0,
+     "macro_end": 134,
+     "ga": 39156,
+     "subsume": 30600,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      null,
+      17250,
+      null
+     ],
+     "scores": [
+      30000,
+      17250,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 373,
+     "ga": 30634,
+     "subsume": 18592,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      11750,
+      null,
+      13250
+     ],
+     "scores": [
+      11750,
+      30000,
+      13250
+     ],
+     "median": 13250.0,
+     "macro_end": 105,
+     "ga": 36395,
+     "subsume": 30840,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      null,
+      17000,
+      18500
+     ],
+     "scores": [
+      30000,
+      17000,
+      18500
+     ],
+     "median": 18500.0,
+     "macro_end": 185,
+     "ga": 33810,
+     "subsume": 23111,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.1_pw0.75",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    14750.0,
+    18750.0,
+    21750.0,
+    16500.0,
+    21500.0
+   ],
+   "pooled_median": 18750.0,
+   "pooled_per_shift_median": 18750.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.1_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      23750,
+      13750,
+      14750
+     ],
+     "scores": [
+      23750,
+      13750,
+      14750
+     ],
+     "median": 14750.0,
+     "macro_end": 519,
+     "ga": 64815,
+     "subsume": 18181,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      23500,
+      18750,
+      18000
+     ],
+     "scores": [
+      23500,
+      18750,
+      18000
+     ],
+     "median": 18750.0,
+     "macro_end": 466,
+     "ga": 64886,
+     "subsume": 17253,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      24000,
+      17750,
+      21750
+     ],
+     "scores": [
+      24000,
+      17750,
+      21750
+     ],
+     "median": 21750.0,
+     "macro_end": 593,
+     "ga": 66627,
+     "subsume": 15330,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      16500,
+      18500,
+      12500
+     ],
+     "scores": [
+      16500,
+      18500,
+      12500
+     ],
+     "median": 16500.0,
+     "macro_end": 367,
+     "ga": 59896,
+     "subsume": 25099,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      21500,
+      23000,
+      20500
+     ],
+     "scores": [
+      21500,
+      23000,
+      20500
+     ],
+     "median": 21500.0,
+     "macro_end": 521,
+     "ga": 64510,
+     "subsume": 19329,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.1_pw0.33",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    18750.0,
+    16500.0,
+    21250.0,
+    17000.0,
+    22250.0
+   ],
+   "pooled_median": 18750.0,
+   "pooled_per_shift_median": 21000.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.1_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      18750,
+      18250,
+      27000
+     ],
+     "scores": [
+      18750,
+      18250,
+      27000
+     ],
+     "median": 18750.0,
+     "macro_end": 747,
+     "ga": 66212,
+     "subsume": 16070,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      14500,
+      21000,
+      16500
+     ],
+     "scores": [
+      14500,
+      21000,
+      16500
+     ],
+     "median": 16500.0,
+     "macro_end": 488,
+     "ga": 65139,
+     "subsume": 17600,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      20250,
+      24000,
+      21250
+     ],
+     "scores": [
+      20250,
+      24000,
+      21250
+     ],
+     "median": 21250.0,
+     "macro_end": 512,
+     "ga": 66552,
+     "subsume": 15180,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      17000,
+      23500,
+      12500
+     ],
+     "scores": [
+      17000,
+      23500,
+      12500
+     ],
+     "median": 17000.0,
+     "macro_end": 383,
+     "ga": 64949,
+     "subsume": 17550,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      21750,
+      24750,
+      22250
+     ],
+     "scores": [
+      21750,
+      24750,
+      22250
+     ],
+     "median": 22250.0,
+     "macro_end": 585,
+     "ga": 67691,
+     "subsume": 14343,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.1_pw0.75",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    15750.0,
+    20250.0,
+    21250.0,
+    26500.0,
+    17250.0
+   ],
+   "pooled_median": 20250.0,
+   "pooled_per_shift_median": 19750.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.1_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      15000,
+      20500,
+      15750
+     ],
+     "scores": [
+      15000,
+      20500,
+      15750
+     ],
+     "median": 15750.0,
+     "macro_end": 579,
+     "ga": 64667,
+     "subsume": 21148,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      21500,
+      20250,
+      16000
+     ],
+     "scores": [
+      21500,
+      20250,
+      16000
+     ],
+     "median": 20250.0,
+     "macro_end": 628,
+     "ga": 63501,
+     "subsume": 20881,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      21250,
+      25750,
+      15250
+     ],
+     "scores": [
+      21250,
+      25750,
+      15250
+     ],
+     "median": 21250.0,
+     "macro_end": 576,
+     "ga": 64719,
+     "subsume": 19987,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      14250,
+      26500,
+      28000
+     ],
+     "scores": [
+      14250,
+      26500,
+      28000
+     ],
+     "median": 26500.0,
+     "macro_end": 774,
+     "ga": 66677,
+     "subsume": 16421,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.1_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      17250,
+      19750,
+      11750
+     ],
+     "scores": [
+      17250,
+      19750,
+      11750
+     ],
+     "median": 17250.0,
+     "macro_end": 522,
+     "ga": 64587,
+     "subsume": 21624,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.1_pw0.5",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    19750.0,
+    23250.0,
+    23750.0,
+    17750.0,
+    21000.0
+   ],
+   "pooled_median": 21000.0,
+   "pooled_per_shift_median": 20750.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.1_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      22250,
+      19750,
+      18250
+     ],
+     "scores": [
+      22250,
+      19750,
+      18250
+     ],
+     "median": 19750.0,
+     "macro_end": 421,
+     "ga": 64390,
+     "subsume": 20013,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      28250,
+      17000,
+      23250
+     ],
+     "scores": [
+      28250,
+      17000,
+      23250
+     ],
+     "median": 23250.0,
+     "macro_end": 714,
+     "ga": 68850,
+     "subsume": 13537,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      23750,
+      20750,
+      28750
+     ],
+     "scores": [
+      23750,
+      20750,
+      28750
+     ],
+     "median": 23750.0,
+     "macro_end": 802,
+     "ga": 67531,
+     "subsume": 15081,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      19750,
+      13750,
+      17750
+     ],
+     "scores": [
+      19750,
+      13750,
+      17750
+     ],
+     "median": 17750.0,
+     "macro_end": 412,
+     "ga": 64029,
+     "subsume": 19257,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.1_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      25750,
+      17250,
+      21000
+     ],
+     "scores": [
+      25750,
+      17250,
+      21000
+     ],
+     "median": 21000.0,
+     "macro_end": 431,
+     "ga": 66132,
+     "subsume": 16161,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.01_pw0.33",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    26000.0,
+    16500.0,
+    21250.0,
+    21000.0,
+    26000.0
+   ],
+   "pooled_median": 21250.0,
+   "pooled_per_shift_median": 21250.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.01_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      null,
+      16250,
+      26000
+     ],
+     "scores": [
+      30000,
+      16250,
+      26000
+     ],
+     "median": 26000.0,
+     "macro_end": 261,
+     "ga": 33537,
+     "subsume": 19508,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      16500,
+      27750,
+      15750
+     ],
+     "scores": [
+      16500,
+      27750,
+      15750
+     ],
+     "median": 16500.0,
+     "macro_end": 151,
+     "ga": 37241,
+     "subsume": 26320,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      21250,
+      19000,
+      null
+     ],
+     "scores": [
+      21250,
+      19000,
+      30000
+     ],
+     "median": 21250.0,
+     "macro_end": 432,
+     "ga": 31217,
+     "subsume": 19041,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      12250,
+      null,
+      21000
+     ],
+     "scores": [
+      12250,
+      30000,
+      21000
+     ],
+     "median": 21000.0,
+     "macro_end": 200,
+     "ga": 32058,
+     "subsume": 24346,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      null,
+      14250,
+      26000
+     ],
+     "scores": [
+      30000,
+      14250,
+      26000
+     ],
+     "median": 26000.0,
+     "macro_end": 256,
+     "ga": 28717,
+     "subsume": 16377,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.05_pw0.5",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    22750.0,
+    18250.0,
+    23750.0,
+    20000.0,
+    21750.0
+   ],
+   "pooled_median": 21750.0,
+   "pooled_per_shift_median": 21750.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.05_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      21750,
+      26500,
+      22750
+     ],
+     "scores": [
+      21750,
+      26500,
+      22750
+     ],
+     "median": 22750.0,
+     "macro_end": 515,
+     "ga": 21556,
+     "subsume": 8222,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      18250,
+      28750,
+      17000
+     ],
+     "scores": [
+      18250,
+      28750,
+      17000
+     ],
+     "median": 18250.0,
+     "macro_end": 305,
+     "ga": 19205,
+     "subsume": 9201,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      19750,
+      29250,
+      23750
+     ],
+     "scores": [
+      19750,
+      29250,
+      23750
+     ],
+     "median": 23750.0,
+     "macro_end": 549,
+     "ga": 22272,
+     "subsume": 8704,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      15500,
+      null,
+      20000
+     ],
+     "scores": [
+      15500,
+      30000,
+      20000
+     ],
+     "median": 20000.0,
+     "macro_end": 391,
+     "ga": 20528,
+     "subsume": 8829,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      null,
+      14500,
+      21750
+     ],
+     "scores": [
+      30000,
+      14500,
+      21750
+     ],
+     "median": 21750.0,
+     "macro_end": 380,
+     "ga": 21504,
+     "subsume": 9771,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.1_pw0.5",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    27000.0,
+    20000.0,
+    22500.0,
+    20250.0,
+    22250.0
+   ],
+   "pooled_median": 22250.0,
+   "pooled_per_shift_median": 21750.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.1_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      27000,
+      29500,
+      19250
+     ],
+     "scores": [
+      27000,
+      29500,
+      19250
+     ],
+     "median": 27000.0,
+     "macro_end": 612,
+     "ga": 104525,
+     "subsume": 26781,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      21750,
+      20000,
+      15000
+     ],
+     "scores": [
+      21750,
+      20000,
+      15000
+     ],
+     "median": 20000.0,
+     "macro_end": 707,
+     "ga": 104219,
+     "subsume": 27508,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      22500,
+      20500,
+      24000
+     ],
+     "scores": [
+      22500,
+      20500,
+      24000
+     ],
+     "median": 22500.0,
+     "macro_end": 723,
+     "ga": 103949,
+     "subsume": 28775,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      18750,
+      23750,
+      20250
+     ],
+     "scores": [
+      18750,
+      23750,
+      20250
+     ],
+     "median": 20250.0,
+     "macro_end": 661,
+     "ga": 104019,
+     "subsume": 29695,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      22250,
+      17250,
+      22500
+     ],
+     "scores": [
+      22250,
+      17250,
+      22500
+     ],
+     "median": 22250.0,
+     "macro_end": 689,
+     "ga": 103306,
+     "subsume": 33768,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.1_pw0.5",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    24750.0,
+    29750.0,
+    22500.0,
+    17500.0,
+    18000.0
+   ],
+   "pooled_median": 22500.0,
+   "pooled_per_shift_median": 22500.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.1_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      29250,
+      23250,
+      24750
+     ],
+     "scores": [
+      29250,
+      23250,
+      24750
+     ],
+     "median": 24750.0,
+     "macro_end": 741,
+     "ga": 29312,
+     "subsume": 6662,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      21500,
+      null,
+      29750
+     ],
+     "scores": [
+      21500,
+      30000,
+      29750
+     ],
+     "median": 29750.0,
+     "macro_end": 848,
+     "ga": 28785,
+     "subsume": 6001,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      26000,
+      21500,
+      22500
+     ],
+     "scores": [
+      26000,
+      21500,
+      22500
+     ],
+     "median": 22500.0,
+     "macro_end": 725,
+     "ga": 29501,
+     "subsume": 7455,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      17500,
+      21250,
+      15500
+     ],
+     "scores": [
+      17500,
+      21250,
+      15500
+     ],
+     "median": 17500.0,
+     "macro_end": 446,
+     "ga": 27081,
+     "subsume": 9291,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      18000,
+      15500,
+      25000
+     ],
+     "scores": [
+      18000,
+      15500,
+      25000
+     ],
+     "median": 18000.0,
+     "macro_end": 669,
+     "ga": 29064,
+     "subsume": 7371,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.1_pw0.75",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    22500.0,
+    14250.0,
+    24250.0,
+    27500.0,
+    17250.0
+   ],
+   "pooled_median": 22500.0,
+   "pooled_per_shift_median": 24000.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.1_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      22500,
+      12250,
+      27250
+     ],
+     "scores": [
+      22500,
+      12250,
+      27250
+     ],
+     "median": 22500.0,
+     "macro_end": 753,
+     "ga": 104902,
+     "subsume": 23475,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      12250,
+      14250,
+      null
+     ],
+     "scores": [
+      12250,
+      14250,
+      30000
+     ],
+     "median": 14250.0,
+     "macro_end": 916,
+     "ga": 103270,
+     "subsume": 31613,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      24000,
+      24250
+     ],
+     "scores": [
+      30000,
+      24000,
+      24250
+     ],
+     "median": 24250.0,
+     "macro_end": 762,
+     "ga": 104287,
+     "subsume": 27788,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      null,
+      27500,
+      20500
+     ],
+     "scores": [
+      30000,
+      27500,
+      20500
+     ],
+     "median": 27500.0,
+     "macro_end": 724,
+     "ga": 104667,
+     "subsume": 23993,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      17250,
+      17250,
+      null
+     ],
+     "scores": [
+      17250,
+      17250,
+      30000
+     ],
+     "median": 17250.0,
+     "macro_end": 831,
+     "ga": 103458,
+     "subsume": 30542,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.05_pw0.5",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    22750.0,
+    19750.0,
+    24750.0,
+    17750.0,
+    26000.0
+   ],
+   "pooled_median": 22750.0,
+   "pooled_per_shift_median": 22750.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.05_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      null,
+      19500,
+      22750
+     ],
+     "scores": [
+      30000,
+      19500,
+      22750
+     ],
+     "median": 22750.0,
+     "macro_end": 531,
+     "ga": 22191,
+     "subsume": 8632,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      19750,
+      24750,
+      19000
+     ],
+     "scores": [
+      19750,
+      24750,
+      19000
+     ],
+     "median": 19750.0,
+     "macro_end": 339,
+     "ga": 21041,
+     "subsume": 8056,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      null,
+      21250,
+      24750
+     ],
+     "scores": [
+      30000,
+      21250,
+      24750
+     ],
+     "median": 24750.0,
+     "macro_end": 550,
+     "ga": 22461,
+     "subsume": 8446,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      13750,
+      22750,
+      17750
+     ],
+     "scores": [
+      13750,
+      22750,
+      17750
+     ],
+     "median": 17750.0,
+     "macro_end": 383,
+     "ga": 23008,
+     "subsume": 10494,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      26250,
+      21250,
+      26000
+     ],
+     "scores": [
+      26250,
+      21250,
+      26000
+     ],
+     "median": 26000.0,
+     "macro_end": 670,
+     "ga": 22791,
+     "subsume": 6893,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.1_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    25750.0,
+    30000.0,
+    23000.0,
+    22750.0,
+    22750.0
+   ],
+   "pooled_median": 23000.0,
+   "pooled_per_shift_median": 23000.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.1_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      25750,
+      null,
+      17500
+     ],
+     "scores": [
+      25750,
+      30000,
+      17500
+     ],
+     "median": 25750.0,
+     "macro_end": 512,
+     "ga": 105214,
+     "subsume": 18488,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      null,
+      19250,
+      null
+     ],
+     "scores": [
+      30000,
+      19250,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 935,
+     "ga": 104733,
+     "subsume": 20354,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      23000,
+      20250,
+      null
+     ],
+     "scores": [
+      23000,
+      20250,
+      30000
+     ],
+     "median": 23000.0,
+     "macro_end": 928,
+     "ga": 104634,
+     "subsume": 20140,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      21750,
+      null,
+      22750
+     ],
+     "scores": [
+      21750,
+      30000,
+      22750
+     ],
+     "median": 22750.0,
+     "macro_end": 592,
+     "ga": 105304,
+     "subsume": 16324,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      17000,
+      28000,
+      22750
+     ],
+     "scores": [
+      17000,
+      28000,
+      22750
+     ],
+     "median": 22750.0,
+     "macro_end": 658,
+     "ga": 102787,
+     "subsume": 29556,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.05_pw0.33",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    23500.0,
+    24750.0,
+    27250.0,
+    18750.0,
+    21750.0
+   ],
+   "pooled_median": 23500.0,
+   "pooled_per_shift_median": 23500.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.05_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      23500,
+      21000,
+      23500
+     ],
+     "scores": [
+      23500,
+      21000,
+      23500
+     ],
+     "median": 23500.0,
+     "macro_end": 516,
+     "ga": 20007,
+     "subsume": 7204,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      29000,
+      24750,
+      20500
+     ],
+     "scores": [
+      29000,
+      24750,
+      20500
+     ],
+     "median": 24750.0,
+     "macro_end": 527,
+     "ga": 20195,
+     "subsume": 6883,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      21250,
+      27250,
+      null
+     ],
+     "scores": [
+      21250,
+      27250,
+      30000
+     ],
+     "median": 27250.0,
+     "macro_end": 592,
+     "ga": 19212,
+     "subsume": 5666,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      18750,
+      25500,
+      14250
+     ],
+     "scores": [
+      18750,
+      25500,
+      14250
+     ],
+     "median": 18750.0,
+     "macro_end": 300,
+     "ga": 19601,
+     "subsume": 7917,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      19500,
+      21750,
+      25750
+     ],
+     "scores": [
+      19500,
+      21750,
+      25750
+     ],
+     "median": 21750.0,
+     "macro_end": 495,
+     "ga": 20323,
+     "subsume": 7139,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.05_pw0.75",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    23000.0,
+    30000.0,
+    23500.0,
+    18250.0,
+    24250.0
+   ],
+   "pooled_median": 23500.0,
+   "pooled_per_shift_median": 24000.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.05_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      null,
+      21250,
+      23000
+     ],
+     "scores": [
+      30000,
+      21250,
+      23000
+     ],
+     "median": 23000.0,
+     "macro_end": 464,
+     "ga": 14980,
+     "subsume": 5798,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      26000
+     ],
+     "scores": [
+      30000,
+      30000,
+      26000
+     ],
+     "median": 30000.0,
+     "macro_end": 516,
+     "ga": 5783,
+     "subsume": 2113,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      23500,
+      18750
+     ],
+     "scores": [
+      30000,
+      23500,
+      18750
+     ],
+     "median": 23500.0,
+     "macro_end": 449,
+     "ga": 14298,
+     "subsume": 5295,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      24000,
+      18250,
+      17500
+     ],
+     "scores": [
+      24000,
+      18250,
+      17500
+     ],
+     "median": 18250.0,
+     "macro_end": 357,
+     "ga": 16117,
+     "subsume": 7025,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      null,
+      24250,
+      18750
+     ],
+     "scores": [
+      30000,
+      24250,
+      18750
+     ],
+     "median": 24250.0,
+     "macro_end": 437,
+     "ga": 11974,
+     "subsume": 5139,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.05_pw0.33",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.05,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    23500.0,
+    23750.0,
+    24500.0,
+    16750.0,
+    25750.0
+   ],
+   "pooled_median": 23750.0,
+   "pooled_per_shift_median": 23750.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.05_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      24500,
+      23500,
+      18750
+     ],
+     "scores": [
+      24500,
+      23500,
+      18750
+     ],
+     "median": 23500.0,
+     "macro_end": 401,
+     "ga": 21499,
+     "subsume": 7457,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      23750,
+      23750,
+      12750
+     ],
+     "scores": [
+      23750,
+      23750,
+      12750
+     ],
+     "median": 23750.0,
+     "macro_end": 390,
+     "ga": 21742,
+     "subsume": 7817,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      24500,
+      27750,
+      23250
+     ],
+     "scores": [
+      24500,
+      27750,
+      23250
+     ],
+     "median": 24500.0,
+     "macro_end": 542,
+     "ga": 20121,
+     "subsume": 6172,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      13750,
+      24250,
+      16750
+     ],
+     "scores": [
+      13750,
+      24250,
+      16750
+     ],
+     "median": 16750.0,
+     "macro_end": 387,
+     "ga": 19556,
+     "subsume": 8681,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.05_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      25750,
+      18750,
+      null
+     ],
+     "scores": [
+      25750,
+      18750,
+      30000
+     ],
+     "median": 25750.0,
+     "macro_end": 661,
+     "ga": 16608,
+     "subsume": 5237,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_ason_mu0.1_pw0.33",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    30000.0,
+    23750.0,
+    26250.0,
+    24250.0,
+    18000.0
+   ],
+   "pooled_median": 24250.0,
+   "pooled_per_shift_median": 24250.0,
+   "rows": [
+    {
+     "config": "tga25_ason_mu0.1_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      19750
+     ],
+     "scores": [
+      30000,
+      30000,
+      19750
+     ],
+     "median": 30000.0,
+     "macro_end": 630,
+     "ga": 104673,
+     "subsume": 22466,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      25000,
+      20500,
+      23750
+     ],
+     "scores": [
+      25000,
+      20500,
+      23750
+     ],
+     "median": 23750.0,
+     "macro_end": 608,
+     "ga": 104065,
+     "subsume": 26390,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      29500,
+      20250,
+      26250
+     ],
+     "scores": [
+      29500,
+      20250,
+      26250
+     ],
+     "median": 26250.0,
+     "macro_end": 774,
+     "ga": 104525,
+     "subsume": 22798,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      24500,
+      24250,
+      20000
+     ],
+     "scores": [
+      24500,
+      24250,
+      20000
+     ],
+     "median": 24250.0,
+     "macro_end": 749,
+     "ga": 104106,
+     "subsume": 26961,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_ason_mu0.1_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      14500,
+      18000,
+      25750
+     ],
+     "scores": [
+      14500,
+      18000,
+      25750
+     ],
+     "median": 18000.0,
+     "macro_end": 702,
+     "ga": 102669,
+     "subsume": 34505,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.01_pw0.33",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    21750.0,
+    24250.0,
+    29250.0,
+    22000.0,
+    28000.0
+   ],
+   "pooled_median": 24250.0,
+   "pooled_per_shift_median": 24250.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.01_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      21750,
+      20250,
+      24250
+     ],
+     "scores": [
+      21750,
+      20250,
+      24250
+     ],
+     "median": 21750.0,
+     "macro_end": 186,
+     "ga": 35428,
+     "subsume": 18688,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      24250,
+      26000,
+      19750
+     ],
+     "scores": [
+      24250,
+      26000,
+      19750
+     ],
+     "median": 24250.0,
+     "macro_end": 180,
+     "ga": 33476,
+     "subsume": 18811,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      19750,
+      29250,
+      null
+     ],
+     "scores": [
+      19750,
+      29250,
+      30000
+     ],
+     "median": 29250.0,
+     "macro_end": 413,
+     "ga": 24418,
+     "subsume": 10908,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      25250,
+      22000,
+      14250
+     ],
+     "scores": [
+      25250,
+      22000,
+      14250
+     ],
+     "median": 22000.0,
+     "macro_end": 170,
+     "ga": 31005,
+     "subsume": 18862,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      28000,
+      25250,
+      null
+     ],
+     "scores": [
+      28000,
+      25250,
+      30000
+     ],
+     "median": 28000.0,
+     "macro_end": 365,
+     "ga": 26382,
+     "subsume": 11358,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.1_pw0.75",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    29250.0,
+    24500.0,
+    22750.0,
+    23500.0,
+    30000.0
+   ],
+   "pooled_median": 24500.0,
+   "pooled_per_shift_median": 23750.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.1_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      21500,
+      29250,
+      null
+     ],
+     "scores": [
+      21500,
+      29250,
+      30000
+     ],
+     "median": 29250.0,
+     "macro_end": 794,
+     "ga": 105282,
+     "subsume": 19814,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      24500,
+      28500,
+      23250
+     ],
+     "scores": [
+      24500,
+      28500,
+      23250
+     ],
+     "median": 24500.0,
+     "macro_end": 700,
+     "ga": 104331,
+     "subsume": 23821,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      22750,
+      18750,
+      28000
+     ],
+     "scores": [
+      22750,
+      18750,
+      28000
+     ],
+     "median": 22750.0,
+     "macro_end": 706,
+     "ga": 104381,
+     "subsume": 21120,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      21250,
+      23500,
+      23750
+     ],
+     "scores": [
+      21250,
+      23500,
+      23750
+     ],
+     "median": 23500.0,
+     "macro_end": 616,
+     "ga": 104606,
+     "subsume": 21696,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      23500,
+      null,
+      null
+     ],
+     "scores": [
+      23500,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 939,
+     "ga": 105989,
+     "subsume": 14660,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.01_pw0.5",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    26500.0,
+    24750.0,
+    22250.0,
+    16750.0,
+    30000.0
+   ],
+   "pooled_median": 24750.0,
+   "pooled_per_shift_median": 25250.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.01_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      null,
+      25250,
+      26500
+     ],
+     "scores": [
+      30000,
+      25250,
+      26500
+     ],
+     "median": 26500.0,
+     "macro_end": 256,
+     "ga": 35101,
+     "subsume": 18048,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      24750,
+      22250,
+      null
+     ],
+     "scores": [
+      24750,
+      22250,
+      30000
+     ],
+     "median": 24750.0,
+     "macro_end": 345,
+     "ga": 30896,
+     "subsume": 17982,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      null,
+      22000,
+      22250
+     ],
+     "scores": [
+      30000,
+      22000,
+      22250
+     ],
+     "median": 22250.0,
+     "macro_end": 160,
+     "ga": 29749,
+     "subsume": 16207,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      16750,
+      null,
+      15000
+     ],
+     "scores": [
+      16750,
+      30000,
+      15000
+     ],
+     "median": 16750.0,
+     "macro_end": 120,
+     "ga": 33001,
+     "subsume": 20328,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      null,
+      17500,
+      null
+     ],
+     "scores": [
+      30000,
+      17500,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 260,
+     "ga": 31533,
+     "subsume": 17189,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.1_pw0.5",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    25500.0,
+    25750.0,
+    24750.0,
+    25250.0,
+    21750.0
+   ],
+   "pooled_median": 25250.0,
+   "pooled_per_shift_median": 25250.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.1_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      25500,
+      26500,
+      18000
+     ],
+     "scores": [
+      25500,
+      26500,
+      18000
+     ],
+     "median": 25500.0,
+     "macro_end": 575,
+     "ga": 29287,
+     "subsume": 6762,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      19250,
+      25750,
+      29500
+     ],
+     "scores": [
+      19250,
+      25750,
+      29500
+     ],
+     "median": 25750.0,
+     "macro_end": 855,
+     "ga": 28647,
+     "subsume": 6042,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      24750,
+      null,
+      22000
+     ],
+     "scores": [
+      24750,
+      30000,
+      22000
+     ],
+     "median": 24750.0,
+     "macro_end": 815,
+     "ga": 31072,
+     "subsume": 4798,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      16250,
+      null,
+      25250
+     ],
+     "scores": [
+      16250,
+      30000,
+      25250
+     ],
+     "median": 25250.0,
+     "macro_end": 773,
+     "ga": 29691,
+     "subsume": 6049,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      19500,
+      21750,
+      null
+     ],
+     "scores": [
+      19500,
+      21750,
+      30000
+     ],
+     "median": 21750.0,
+     "macro_end": 849,
+     "ga": 30298,
+     "subsume": 5577,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.1_pw0.75",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    28500.0,
+    20250.0,
+    30000.0,
+    16500.0,
+    25500.0
+   ],
+   "pooled_median": 25500.0,
+   "pooled_per_shift_median": 25500.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.1_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      28500,
+      28750,
+      23000
+     ],
+     "scores": [
+      28500,
+      28750,
+      23000
+     ],
+     "median": 28500.0,
+     "macro_end": 734,
+     "ga": 28023,
+     "subsume": 4930,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      24500,
+      19000,
+      20250
+     ],
+     "scores": [
+      24500,
+      19000,
+      20250
+     ],
+     "median": 20250.0,
+     "macro_end": 722,
+     "ga": 25468,
+     "subsume": 5188,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      25500
+     ],
+     "scores": [
+      30000,
+      30000,
+      25500
+     ],
+     "median": 30000.0,
+     "macro_end": 780,
+     "ga": 27314,
+     "subsume": 3959,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      16500,
+      29500,
+      16500
+     ],
+     "scores": [
+      16500,
+      29500,
+      16500
+     ],
+     "median": 16500.0,
+     "macro_end": 643,
+     "ga": 26535,
+     "subsume": 6795,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      null,
+      25500,
+      23000
+     ],
+     "scores": [
+      30000,
+      25500,
+      23000
+     ],
+     "median": 25500.0,
+     "macro_end": 765,
+     "ga": 27056,
+     "subsume": 4996,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.1_pw0.75",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    27500.0,
+    25500.0,
+    26750.0,
+    25750.0,
+    24000.0
+   ],
+   "pooled_median": 25750.0,
+   "pooled_per_shift_median": 25750.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.1_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      27500,
+      null,
+      19750
+     ],
+     "scores": [
+      27500,
+      30000,
+      19750
+     ],
+     "median": 27500.0,
+     "macro_end": 603,
+     "ga": 26665,
+     "subsume": 6331,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      26500,
+      25500,
+      20250
+     ],
+     "scores": [
+      26500,
+      25500,
+      20250
+     ],
+     "median": 25500.0,
+     "macro_end": 569,
+     "ga": 24273,
+     "subsume": 6169,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      25500,
+      26750,
+      null
+     ],
+     "scores": [
+      25500,
+      26750,
+      30000
+     ],
+     "median": 26750.0,
+     "macro_end": 831,
+     "ga": 26318,
+     "subsume": 5412,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      17000,
+      25750,
+      27750
+     ],
+     "scores": [
+      17000,
+      25750,
+      27750
+     ],
+     "median": 25750.0,
+     "macro_end": 784,
+     "ga": 25885,
+     "subsume": 7691,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      27000,
+      24000,
+      23500
+     ],
+     "scores": [
+      27000,
+      24000,
+      23500
+     ],
+     "median": 24000.0,
+     "macro_end": 726,
+     "ga": 26272,
+     "subsume": 5584,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.1_pw0.33",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.1,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    27000.0,
+    24750.0,
+    28750.0,
+    19250.0,
+    27000.0
+   ],
+   "pooled_median": 27000.0,
+   "pooled_per_shift_median": 27000.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.1_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      29250,
+      26000,
+      27000
+     ],
+     "scores": [
+      29250,
+      26000,
+      27000
+     ],
+     "median": 27000.0,
+     "macro_end": 813,
+     "ga": 28695,
+     "subsume": 5267,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      24750,
+      24750,
+      18250
+     ],
+     "scores": [
+      24750,
+      24750,
+      18250
+     ],
+     "median": 24750.0,
+     "macro_end": 604,
+     "ga": 28552,
+     "subsume": 5743,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      28750,
+      null,
+      28250
+     ],
+     "scores": [
+      28750,
+      30000,
+      28250
+     ],
+     "median": 28750.0,
+     "macro_end": 804,
+     "ga": 29386,
+     "subsume": 4366,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      19250,
+      null,
+      18500
+     ],
+     "scores": [
+      19250,
+      30000,
+      18500
+     ],
+     "median": 19250.0,
+     "macro_end": 574,
+     "ga": 28108,
+     "subsume": 6431,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.1_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      23750,
+      27000,
+      27250
+     ],
+     "scores": [
+      23750,
+      27000,
+      27250
+     ],
+     "median": 27000.0,
+     "macro_end": 818,
+     "ga": 28192,
+     "subsume": 5439,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.1_pw0.33",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    30000.0,
+    28500.0,
+    30000.0,
+    25500.0,
+    28750.0
+   ],
+   "pooled_median": 28750.0,
+   "pooled_per_shift_median": 29500.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.1_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      null,
+      21250,
+      null
+     ],
+     "scores": [
+      30000,
+      21250,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 914,
+     "ga": 29414,
+     "subsume": 3645,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      24500,
+      null,
+      28500
+     ],
+     "scores": [
+      24500,
+      30000,
+      28500
+     ],
+     "median": 28500.0,
+     "macro_end": 850,
+     "ga": 29418,
+     "subsume": 4176,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      29500
+     ],
+     "scores": [
+      30000,
+      30000,
+      29500
+     ],
+     "median": 30000.0,
+     "macro_end": 832,
+     "ga": 29527,
+     "subsume": 3401,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      22500,
+      null,
+      25500
+     ],
+     "scores": [
+      22500,
+      30000,
+      25500
+     ],
+     "median": 25500.0,
+     "macro_end": 776,
+     "ga": 29240,
+     "subsume": 4872,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.1_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      null,
+      27750,
+      28750
+     ],
+     "scores": [
+      30000,
+      27750,
+      28750
+     ],
+     "median": 28750.0,
+     "macro_end": 815,
+     "ga": 29198,
+     "subsume": 3625,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga25_asoff_mu0.1_pw0.5",
+   "params": {
+    "theta_ga": 25,
+    "as_subsumption": false,
+    "mu": 0.1,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    27500.0,
+    30000.0,
+    25750.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga25_asoff_mu0.1_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      21250,
+      null,
+      null
+     ],
+     "scores": [
+      21250,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 881,
+     "ga": 105490,
+     "subsume": 18481,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      20000
+     ],
+     "scores": [
+      30000,
+      30000,
+      20000
+     ],
+     "median": 30000.0,
+     "macro_end": 540,
+     "ga": 105719,
+     "subsume": 16167,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      null,
+      27500,
+      24000
+     ],
+     "scores": [
+      30000,
+      27500,
+      24000
+     ],
+     "median": 27500.0,
+     "macro_end": 710,
+     "ga": 106670,
+     "subsume": 13434,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      13250
+     ],
+     "scores": [
+      30000,
+      30000,
+      13250
+     ],
+     "median": 30000.0,
+     "macro_end": 479,
+     "ga": 105102,
+     "subsume": 17796,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga25_asoff_mu0.1_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      21750,
+      null,
+      25750
+     ],
+     "scores": [
+      21750,
+      30000,
+      25750
+     ],
+     "median": 25750.0,
+     "macro_end": 640,
+     "ga": 105641,
+     "subsume": 17536,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_ason_mu0.01_pw0.75",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga100_ason_mu0.01_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 206,
+     "ga": 6930,
+     "subsume": 658,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 251,
+     "ga": 5528,
+     "subsume": 621,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 279,
+     "ga": 7526,
+     "subsume": 621,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 271,
+     "ga": 8354,
+     "subsume": 1012,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_ason_mu0.01_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 285,
+     "ga": 9430,
+     "subsume": 1488,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga100_asoff_mu0.01_pw0.75",
+   "params": {
+    "theta_ga": 100,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    27500.0,
+    30000.0,
+    24000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga100_asoff_mu0.01_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 343,
+     "ga": 10780,
+     "subsume": 2503,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 249,
+     "ga": 5423,
+     "subsume": 471,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      27500,
+      17250,
+      null
+     ],
+     "scores": [
+      27500,
+      17250,
+      30000
+     ],
+     "median": 27500.0,
+     "macro_end": 389,
+     "ga": 22918,
+     "subsume": 13464,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 253,
+     "ga": 7941,
+     "subsume": 810,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga100_asoff_mu0.01_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      24000,
+      15000,
+      null
+     ],
+     "scores": [
+      24000,
+      15000,
+      30000
+     ],
+     "median": 24000.0,
+     "macro_end": 343,
+     "ga": 21854,
+     "subsume": 12747,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.01_pw0.33",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.01_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 496,
+     "ga": 17806,
+     "subsume": 529,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 794,
+     "ga": 26460,
+     "subsume": 23,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 489,
+     "ga": 6769,
+     "subsume": 1149,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 409,
+     "ga": 16517,
+     "subsume": 2175,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 468,
+     "ga": 8441,
+     "subsume": 1023,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.01_pw0.5",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.01_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 373,
+     "ga": 4991,
+     "subsume": 700,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 334,
+     "ga": 4175,
+     "subsume": 1098,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 412,
+     "ga": 6747,
+     "subsume": 1889,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 466,
+     "ga": 8105,
+     "subsume": 2530,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 446,
+     "ga": 6266,
+     "subsume": 1438,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.01_pw0.75",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.01,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.01_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 324,
+     "ga": 2386,
+     "subsume": 93,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 256,
+     "ga": 1578,
+     "subsume": 47,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 281,
+     "ga": 1799,
+     "subsume": 25,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 302,
+     "ga": 2044,
+     "subsume": 104,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.01_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 288,
+     "ga": 2173,
+     "subsume": 74,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_ason_mu0.05_pw0.75",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": true,
+    "mu": 0.05,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    20250.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_ason_mu0.05_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      null,
+      19750,
+      20250
+     ],
+     "scores": [
+      30000,
+      19750,
+      20250
+     ],
+     "median": 20250.0,
+     "macro_end": 447,
+     "ga": 12746,
+     "subsume": 5473,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 545,
+     "ga": 5909,
+     "subsume": 1676,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 653,
+     "ga": 6959,
+     "subsume": 1700,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      18500
+     ],
+     "scores": [
+      30000,
+      30000,
+      18500
+     ],
+     "median": 30000.0,
+     "macro_end": 318,
+     "ga": 10712,
+     "subsume": 4622,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_ason_mu0.05_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      21500
+     ],
+     "scores": [
+      30000,
+      30000,
+      21500
+     ],
+     "median": 30000.0,
+     "macro_end": 390,
+     "ga": 8634,
+     "subsume": 3023,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.01_pw0.33",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.33
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.01_pw0.33",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 398,
+     "ga": 14174,
+     "subsume": 1547,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.33",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      27000
+     ],
+     "scores": [
+      30000,
+      30000,
+      27000
+     ],
+     "median": 30000.0,
+     "macro_end": 434,
+     "ga": 23911,
+     "subsume": 1405,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.33",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 502,
+     "ga": 7474,
+     "subsume": 1577,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.33",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 307,
+     "ga": 15841,
+     "subsume": 2411,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.33",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 446,
+     "ga": 9043,
+     "subsume": 1323,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.01_pw0.5",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.5
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.01_pw0.5",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 319,
+     "ga": 4037,
+     "subsume": 569,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.5",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 355,
+     "ga": 4602,
+     "subsume": 1049,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.5",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 385,
+     "ga": 7969,
+     "subsume": 2550,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.5",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 424,
+     "ga": 9029,
+     "subsume": 3222,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.5",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 382,
+     "ga": 6677,
+     "subsume": 1676,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "tga500_asoff_mu0.01_pw0.75",
+   "params": {
+    "theta_ga": 500,
+    "as_subsumption": false,
+    "mu": 0.01,
+    "p_wild": 0.75
+   },
+   "per_seed_median": [
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0,
+    30000.0
+   ],
+   "pooled_median": 30000.0,
+   "pooled_per_shift_median": 30000.0,
+   "rows": [
+    {
+     "config": "tga500_asoff_mu0.01_pw0.75",
+     "seed": 110,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 326,
+     "ga": 2367,
+     "subsume": 167,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.75",
+     "seed": 111,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 226,
+     "ga": 1514,
+     "subsume": 1,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.75",
+     "seed": 112,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 243,
+     "ga": 1748,
+     "subsume": 5,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.75",
+     "seed": 113,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 280,
+     "ga": 2011,
+     "subsume": 119,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "tga500_asoff_mu0.01_pw0.75",
+     "seed": 114,
+     "recoveries": [
+      null,
+      null,
+      null
+     ],
+     "scores": [
+      30000,
+      30000,
+      30000
+     ],
+     "median": 30000.0,
+     "macro_end": 320,
+     "ga": 2327,
+     "subsume": 96,
+     "audit_chain_valid": true
+    }
+   ]
+  }
+ ]
+}

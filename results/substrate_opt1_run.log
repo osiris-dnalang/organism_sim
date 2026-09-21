@@ -1,0 +1,45 @@
+START Substrate-Opt-1 family=16bit configs=55 tune_seeds=[110, 111, 112, 113, 114] judge_seeds=[40, 41, 42, 43, 44] workers=7
+  10/275 runs, 200s
+  20/275 runs, 380s
+  30/275 runs, 699s
+  40/275 runs, 1055s
+  50/275 runs, 1277s
+  60/275 runs, 1381s
+  70/275 runs, 1650s
+  80/275 runs, 1931s
+  90/275 runs, 2302s
+  100/275 runs, 2397s
+  110/275 runs, 2590s
+  120/275 runs, 2784s
+  130/275 runs, 3089s
+  140/275 runs, 3253s
+  150/275 runs, 3361s
+  160/275 runs, 3543s
+  170/275 runs, 3800s
+  180/275 runs, 4079s
+  190/275 runs, 4199s
+  200/275 runs, 4339s
+  210/275 runs, 4531s
+  220/275 runs, 4732s
+  230/275 runs, 4897s
+  240/275 runs, 5000s
+  250/275 runs, 5177s
+  260/275 runs, 5359s
+  270/275 runs, 5602s
+  275/275 runs, 5636s
+SWEEP tga25_ason_mu0.05_pw0.75         pooled_median=10000 per_seed=[11750.0, 9000.0, 10250.0, 7750.0, 10000.0]
+SWEEP tga25_asoff_mu0.05_pw0.5         pooled_median=10250 per_seed=[11750.0, 10000.0, 10250.0, 6750.0, 12250.0]
+SWEEP tga25_ason_mu0.04_pw0.33         pooled_median=10500 per_seed=[12250.0, 11250.0, 9500.0, 6750.0, 10500.0]
+SWEEP tga25_ason_mu0.05_pw0.33         pooled_median=10500 per_seed=[10750.0, 10500.0, 9750.0, 8250.0, 11500.0]
+SWEEP tga25_ason_mu0.05_pw0.5          pooled_median=10750 per_seed=[11750.0, 9750.0, 11000.0, 8750.0, 10750.0]
+SWEEP tga25_asoff_mu0.01_pw0.75        pooled_median=11000 per_seed=[11750.0, 10750.0, 12750.0, 8500.0, 11000.0]
+SWEEP tga25_asoff_mu0.05_pw0.75        pooled_median=11000 per_seed=[11000.0, 12250.0, 11000.0, 7250.0, 12750.0]
+SWEEP tga25_ason_mu0.01_pw0.33         pooled_median=11250 per_seed=[12000.0, 11250.0, 11250.0, 7500.0, 12500.0]
+SWEEP tga25_asoff_mu0.01_pw0.33        pooled_median=11250 per_seed=[11250.0, 13000.0, 13500.0, 8250.0, 11000.0]
+SWEEP tga25_asoff_mu0.05_pw0.33        pooled_median=11500 per_seed=[11250.0, 11500.0, 11750.0, 5500.0, 11750.0]
+SWEEP default tga25_ason_mu0.04_pw0.33 pooled_median=10500 rank=3
+WINNER tga25_ason_mu0.05_pw0.75 (sweep min 10000); judging on [40, 41, 42, 43, 44]
+  10/10 runs, 255s
+JUDGE winner tga25_ason_mu0.05_pw0.75 pooled_median=11500 per_seed=[9000.0, 11500.0, 9000.0, 13000.0, 11750.0] | default pooled_median=10000 per_seed=[10000.0, 9000.0, 10500.0, 11250.0, 9500.0] | winner<default 2/5
+VERDICT BOUNDED
+DONE 5891s

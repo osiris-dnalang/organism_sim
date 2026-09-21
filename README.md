@@ -366,6 +366,30 @@ learner is too slow to generate for. Both close on the base learner's sample eff
 the next pre-registration is XCS engineering (tournament selection, specify, N, θ_GA),
 not a layer or language mechanism.
 
+## Substrate-Opt-1 — the learner's own knobs at 16 bits, pre-registered, BOUNDED
+
+`experiments/substrate_opt.py`: after every layer above the learner failed to move 16-bit
+recovery, a 54-point grid *on* the learner — θ_GA ∈ {25, 100, 500}, action-set subsumption
+∈ {on, off} (`Params.as_subsumption`, new switch, default on), μ ∈ {0.01, 0.05, 0.10},
+P# ∈ {0.33, 0.50, 0.75} — plus the current default, on the M2b/M2c 16-bit family, no
+injection. Sweep on tuning seeds 110–114; the single best configuration judged against the
+default on fresh seeds 40–44. Decision committed first: PASS < 3,000; PARTIAL 3,000–8,000
+with a 4/5 win; BOUNDED otherwise.
+
+| sweep (seeds 110–114), pooled median over 55 configs | min **10,000** (θ_GA 25, AS on, μ 0.05, P# 0.75) · median 21,750 · max 30,000 (never recovers) · default 10,500, **rank 3/55** |
+|---|---|
+| marginal medians | θ_GA 25 → 11,500 · 100 → 18,625 · 500 → 26,375; μ 0.01 → 24,500 · 0.04 → 10,500 · 0.05 → 13,375 · 0.10 → 22,750; AS on/off 22,000 / 21,250; P# 0.33/0.5/0.75 21,250 / 21,375 / 23,000 |
+| judge (seeds 40–44) | winner **11,500** [9000, 11500, 9000, 13000, 11750] · default **10,000** [10000, 9000, 10500, 11250, 9500] · winner < default **2/5** |
+
+**BOUNDED** (`results/substrate_opt1_{sweep_seeds110-114,eval_seeds40-44}.json`,
+`substrate_opt1_run.log`, 5,891 s on 7 workers). The sweep's 5 % edge was a tuning-seed draw;
+on fresh seeds the default is faster. Every axis is either flat (subsumption, P#) or
+monotonically harmful away from the default (θ_GA, μ); 193 of 825 sweep shifts never
+recovered, and the fastest single recovery in the whole sweep was 5,000 trials — no
+configuration, seed or shift came within 60 % of the 3,000 target. The XCS substrate's
+sample efficiency at 16 bits is empirically bounded at ≈ 10,000 trials/shift on this
+family for the parameters it exposes.
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):

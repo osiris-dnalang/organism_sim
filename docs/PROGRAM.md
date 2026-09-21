@@ -138,6 +138,17 @@ The sweep minimum is reported next to the judged number so a lucky tuning-seed d
 be read as the result. Nothing in the grid, metric, family or budgets changes after the
 first run.
 
+**Result (2026-09-21): BOUNDED.** Sweep minimum 10,000 (θ_GA 25, AS on, μ 0.05, P# 0.75)
+against the default's 10,500 (rank 3 of 55); on the fresh judge seeds the winner scored
+11,500 vs the default's 10,000 and beat it on 2/5. θ_GA and μ are monotonically harmful
+away from the default, subsumption and P# are flat, 193/825 sweep shifts never recovered,
+and the fastest recovery observed anywhere was 5,000 trials. The learner's exposed
+parameters do not move the 16-bit ceiling. With M2/M2b/M2c/M3 this closes the question
+from both sides: neither the layers above the learner nor the learner's own knobs change
+wide-space sample efficiency on this family. What would: a different learner (e.g. a
+gradient or tree model over the register), or a task family with exploitable structure —
+both are new programs, not rungs of this one.
+
 ## 4. What this is not
 
 - Not a language model, and not competitive with one on language. The DSL is closed by

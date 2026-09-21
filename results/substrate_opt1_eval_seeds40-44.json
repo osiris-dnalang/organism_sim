@@ -1,0 +1,246 @@
+{
+ "seeds": [
+  40,
+  41,
+  42,
+  43,
+  44
+ ],
+ "winner": {
+  "config": "tga25_ason_mu0.05_pw0.75",
+  "params": {
+   "theta_ga": 25,
+   "as_subsumption": true,
+   "mu": 0.05,
+   "p_wild": 0.75
+  },
+  "per_seed_median": [
+   9000.0,
+   11500.0,
+   9000.0,
+   13000.0,
+   11750.0
+  ],
+  "pooled_median": 11500.0,
+  "pooled_per_shift_median": 10250.0,
+  "rows": [
+   {
+    "config": "tga25_ason_mu0.05_pw0.75",
+    "seed": 40,
+    "recoveries": [
+     9000,
+     8250,
+     10250
+    ],
+    "scores": [
+     9000,
+     8250,
+     10250
+    ],
+    "median": 9000.0,
+    "macro_end": 328,
+    "ga": 88014,
+    "subsume": 66185,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.05_pw0.75",
+    "seed": 41,
+    "recoveries": [
+     12750,
+     11500,
+     10000
+    ],
+    "scores": [
+     12750,
+     11500,
+     10000
+    ],
+    "median": 11500.0,
+    "macro_end": 370,
+    "ga": 88665,
+    "subsume": 63748,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.05_pw0.75",
+    "seed": 42,
+    "recoveries": [
+     9000,
+     8750,
+     9750
+    ],
+    "scores": [
+     9000,
+     8750,
+     9750
+    ],
+    "median": 9000.0,
+    "macro_end": 315,
+    "ga": 88948,
+    "subsume": 65173,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.05_pw0.75",
+    "seed": 43,
+    "recoveries": [
+     14750,
+     8500,
+     13000
+    ],
+    "scores": [
+     14750,
+     8500,
+     13000
+    ],
+    "median": 13000.0,
+    "macro_end": 396,
+    "ga": 90183,
+    "subsume": 61324,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.05_pw0.75",
+    "seed": 44,
+    "recoveries": [
+     11000,
+     13500,
+     11750
+    ],
+    "scores": [
+     11000,
+     13500,
+     11750
+    ],
+    "median": 11750.0,
+    "macro_end": 296,
+    "ga": 90277,
+    "subsume": 61490,
+    "audit_chain_valid": true
+   }
+  ]
+ },
+ "default": {
+  "config": "tga25_ason_mu0.04_pw0.33",
+  "params": {
+   "theta_ga": 25,
+   "as_subsumption": true,
+   "mu": 0.04,
+   "p_wild": 0.33
+  },
+  "per_seed_median": [
+   10000.0,
+   9000.0,
+   10500.0,
+   11250.0,
+   9500.0
+  ],
+  "pooled_median": 10000.0,
+  "pooled_per_shift_median": 10000.0,
+  "rows": [
+   {
+    "config": "tga25_ason_mu0.04_pw0.33",
+    "seed": 40,
+    "recoveries": [
+     10500,
+     10000,
+     8000
+    ],
+    "scores": [
+     10500,
+     10000,
+     8000
+    ],
+    "median": 10000.0,
+    "macro_end": 279,
+    "ga": 86523,
+    "subsume": 64386,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.04_pw0.33",
+    "seed": 41,
+    "recoveries": [
+     11500,
+     9000,
+     7250
+    ],
+    "scores": [
+     11500,
+     9000,
+     7250
+    ],
+    "median": 9000.0,
+    "macro_end": 342,
+    "ga": 87096,
+    "subsume": 64245,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.04_pw0.33",
+    "seed": 42,
+    "recoveries": [
+     13000,
+     8500,
+     10500
+    ],
+    "scores": [
+     13000,
+     8500,
+     10500
+    ],
+    "median": 10500.0,
+    "macro_end": 327,
+    "ga": 86260,
+    "subsume": 64495,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.04_pw0.33",
+    "seed": 43,
+    "recoveries": [
+     11250,
+     9500,
+     11250
+    ],
+    "scores": [
+     11250,
+     9500,
+     11250
+    ],
+    "median": 11250.0,
+    "macro_end": 218,
+    "ga": 86285,
+    "subsume": 64832,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "tga25_ason_mu0.04_pw0.33",
+    "seed": 44,
+    "recoveries": [
+     10500,
+     9250,
+     9500
+    ],
+    "scores": [
+     10500,
+     9250,
+     9500
+    ],
+    "median": 9500.0,
+    "macro_end": 213,
+    "ga": 87380,
+    "subsume": 64061,
+    "audit_chain_valid": true
+   }
+  ]
+ },
+ "winner_beats_default": "2/5",
+ "verdict": "BOUNDED",
+ "criteria": {
+  "pass_below": 3000.0,
+  "bounded_at": 8000.0,
+  "partial_needs_wins": 4
+ }
+}
