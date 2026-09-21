@@ -1,0 +1,12 @@
+// M1 meta-evolved regulatory genome: pop 8, 5 generations, tuning seeds 100-102,
+// fitness = mean per-seed median recovery. Frozen before evaluation on seeds 0-4.
+ORGANISM M1_EVOLVED {
+    META { version: "5", domain: "grn" }
+    GENOME {
+        GENE detect_shift { id: "G0", trigger: "when error > 11.2873", action: "(emit shift)", outputs: ["shift"], cluster: "sense" }
+        GENE inject_on_shift { id: "G1", trigger: "on_signal shift", action: "(seq (adjust inject 40) (adjust cusum_reset 1))", dependencies: ["G0"], cluster: "repair" }
+        GENE boost_explore { id: "G2", trigger: "when since_inject <= 104.726", action: "(adjust explore 0.724744)", cluster: "repair" }
+        GENE persistent_error { id: "G3", trigger: "when error < 0.35", action: "(if (eq (var since_inject) (var since_inject)) (adjust inject 43))", cluster: "repair" }
+        GENE settle { id: "G4", trigger: "when error < -0.00147595", action: "(adjust compact 1)", cluster: "maintain" }
+    }
+}

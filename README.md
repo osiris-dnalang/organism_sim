@@ -214,6 +214,35 @@ injection costs something (e.g. hardware shots). The mechanism is *random immigr
 (Grefenstette 1992; Cobb & Grefenstette 1993) with a change detector; the contribution here
 is the pre-registered measurement with blind-periodic and oracle controls, not the mechanism.
 
+## M1 — regulatory genes (dnalang v0.2), pre-registered, FAIL — and specification gaming
+
+`grn.py`: genes with `trigger` (`on_genesis` / `continuous` / `on_error` / `after G` /
+`on_signal s` / `when <metric> <op> <v>`), `dependencies`, `outputs`; a signal board;
+control genes in the closed DSL (`(adjust inject|explore|cusum_reset|compact …)`), rule
+genes that inject their rule on expression; `.dna` round-trip; mutation/crossover over
+triggers, wiring and parameters. `benchmarks/m1.py`: hand genome (`m1_hand.dna`) and a
+genome meta-evolved on seeds 100–102 (`m1_evolved.dna`, fitness = recovery speed), judged on
+0–4 against Experiment One's arms. Criterion committed first: evolved beats `cusum` on ≥ 4/5
+**and** ≤ 1 false injection / 10k.
+
+| arm | median recovery | injections / 15k | false / 10k |
+|---|---|---|---|
+| plain | 1250 | 0 | — |
+| cusum | 950 | 4.6 | 0.27 |
+| periodic | 650 | 30 | — |
+| grn-hand | 750 | 16 | 1.1 |
+| grn-evolved | **400** | **284** | **169** |
+
+C1 5/5, C2 failed → **FAIL** (`results/m1_eval_seeds0-4.json`, `results/m1_evolution_seeds100-102.json`).
+Evolution disabled the detector (`when error > 11.29`), made the injection gene fire almost
+always (`when error < 0.35`), and ran at the one-per-50-ticks floor — the fitness priced
+recovery speed and not interventions, so that was the optimum. Specification gaming, caught
+by the pre-registered false-alarm criterion. Two honest readings: on this family injection
+is monotonically better up to the floor and detection is unnecessary when injection is
+free; and the hand-composed cascade beat the single mechanism on 4/5 seeds (exploratory).
+Design rule recorded for the ladder: **any evolved learner's fitness must price its
+interventions.**
+
 ## Substrate reference numbers
 
 Single organism, default triggers (`repair_threshold` 0.45 over a 0.40 noise floor):

@@ -1,0 +1,16 @@
+hand fitness (mean median95, seeds 100-102): 833.3333333333334
+gen {'gen': 0, 'best': 433.3333333333333, 'mean': 583.3333333333334}
+gen {'gen': 1, 'best': 416.6666666666667, 'mean': 462.5}
+gen {'gen': 2, 'best': 383.3333333333333, 'mean': 447.91666666666663}
+gen {'gen': 3, 'best': 383.3333333333333, 'mean': 495.83333333333337}
+gen {'gen': 4, 'best': 383.3333333333333, 'mean': 487.5}
+evolved genome: [('G0', 'when error > 11.2873', '(emit shift)'), ('G1', 'on_signal shift', '(seq (adjust inject 40) (adjust cusum_reset 1))'), ('G2', 'when since_inject <= 104.726', '(adjust explore 0.724744)'), ('G3', 'when error < 0.35', '(if (eq (var since_inject) (var since_inject)) (adjust injec'), ('G4', 'when error < -0.00147595', '(adjust compact 1)')]
+evolved fitness: 383.3333333333333
+EVAL pooled {"plain": 1250.0, "cusum": 950.0, "periodic": 650.0, "grn-hand": 750.0, "grn-evolved": 400.0}
+VERDICT {"C1_count": 5, "C1": true, "false_per_10k": 168.8, "C2": false, "n": 5, "exploratory_evolved_beats_periodic": 5, "exploratory_evolved_beats_plain": 5, "exploratory_hand_beats_cusum": 4, "pass": false}
+0 {'plain': (1050.0, 0, 0), 'cusum': (1100.0, 5, 1), 'periodic': (650.0, 30, 26), 'grn-hand': (850.0, 13, 3), 'grn-evolved': (300.0, 289, 258)}
+1 {'plain': (1300.0, 0, 0), 'cusum': (1200.0, 4, 0), 'periodic': (750.0, 30, 26), 'grn-hand': (650.0, 20, 1), 'grn-evolved': (400.0, 287, 256)}
+2 {'plain': (1650.0, 0, 0), 'cusum': (800.0, 5, 1), 'periodic': (850.0, 30, 26), 'grn-hand': (800.0, 16, 1), 'grn-evolved': (500.0, 283, 252)}
+3 {'plain': (900.0, 0, 0), 'cusum': (850.0, 5, 0), 'periodic': (550.0, 30, 26), 'grn-hand': (750.0, 13, 1), 'grn-evolved': (450.0, 278, 246)}
+4 {'plain': (1250.0, 0, 0), 'cusum': (950.0, 4, 0), 'periodic': (550.0, 30, 26), 'grn-hand': (700.0, 18, 2), 'grn-evolved': (400.0, 285, 254)}
+DONE 1215s

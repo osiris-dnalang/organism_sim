@@ -28,7 +28,7 @@ def test_own_error_cusum_calls_handler_and_skips_explore_trials():
 
 
 def test_arms_run_and_record():
-    for arm in ARMS:
+    for arm in [a for a in ARMS if a != "grn"]:          # grn needs a genome; covered in test_grn
         lg = run_arm(arm, seed=0, trials=4000, shift_every=2000, probe_every=100,
                      cusum=(0.05, 0.1, 4.0), period=500)
         assert lg.shifts == [2000] and len(lg.recoveries95) == 1 and len(lg.recoveries99) == 1

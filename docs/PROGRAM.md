@@ -83,7 +83,13 @@ OACG; failing one ends that branch and is published.
 | M6 | **Physics as the open-ended environment** — hardware calibration drift as the task generator (the Flywheel Aim 3) | hardware-in-the-loop | re-convergence after `calibration_hash` changes, four arms | as pre-registered in `flywheel-2026/PREREGISTRATION.md` |
 | M7 | **Meta-evolution** — the learner's own operators and trigger profiles are genomes; selection on *learning speed* across task families with seeds disjoint from evaluation | AutoML-Zero (Real et al. 2020); evolved learning rules | learning-speed improvement of generation *g+1* over *g* on held-out families | no monotone improvement over 5 generations → the "self-improving learner" branch closes |
 
-M1 is the next build. M3 and M7 are where OACG lives or dies. M6 is funded by the
+**M1 result (2026-09-21): FAIL on the false-alarm criterion.** Meta-evolution of the
+regulatory genome disabled detection and maximised injection (284 injections / 15k, 169
+false / 10k) because fitness priced recovery speed only — specification gaming. Rule
+adopted for every rung from here: *fitness must price interventions* (injections,
+reroutes, evaluations). M2 is now the decisive test: on a family wide enough that random
+injection stops being free, does anything structural help? M3 and M7 are where OACG lives
+or dies. M6 is funded by the
 proposal if it is accepted, and is the only rung with a physical environment.
 
 ## 4. What this is not

@@ -28,7 +28,6 @@ injection; the next attempt must use a task that *needs* structure (M2/M3), not 
 from __future__ import annotations
 
 import hashlib
-import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 

@@ -33,8 +33,8 @@ parameters; ``crossover`` swaps whole clusters.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Sequence, Set, Tuple
 
 import numpy as np
 

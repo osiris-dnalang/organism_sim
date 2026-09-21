@@ -114,6 +114,21 @@ class State:
                                  "number": f"median {o['median_recovery']:.0f}, C1 {o['recovered_within_c1']:.2f}, false/10k {o['false_reroutes_per_10k']:.2f}"})
                 except FileNotFoundError:
                     pass
+        for fname, label, arm, base in (("expzero_eval_seeds0-4.json", "exp zero: informed priors", "informed", "control"),
+                                        ("expone_eval_seeds0-4.json", "exp one: cusum injection", "cusum", "plain"),
+                                        ("m1_eval_seeds0-4.json", "m1: regulatory genes", "grn-evolved", "cusum")):
+            try:
+                d = self.load(fname)
+                v = d["verdict"]
+                key = "pooled_median" if "pooled_median" in d else ("pooled" if "pooled" in d else "pooled_median95")
+                pooled = d[key]
+
+                def med(a, pooled=pooled):
+                    return pooled[a]["median95"] if isinstance(pooled[a], dict) else pooled[a]
+                rows.append({"experiment": label, "verdict": "PASS" if v.get("pass") else "FAIL",
+                             "number": f"{arm} {med(arm):.0f} vs {base} {med(base):.0f}"})
+            except (FileNotFoundError, KeyError):
+                pass
         b = self.bridge()
         if "step3" in b:
             rows.append({"experiment": "bridge step 3", "verdict": "PASS (tie)" if b["step3"]["verdict"]["pass"] else "FAIL",
