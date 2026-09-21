@@ -67,6 +67,7 @@ class Params:
     theta_del: int = 20        # deletion experience threshold
     delta: float = 0.1         # deletion fitness fraction
     theta_sub: int = 20        # subsumption experience threshold
+    as_subsumption: bool = True  # action-set subsumption after each update (GA subsumption stays on)
     p_wild: float = 0.33       # covering wildcard probability
     p_init: float = 0.01
     eps_init: float = 0.01
@@ -319,7 +320,8 @@ class RuleEngine:
         tot = sum(a * r.numerosity for a, r in zip(acc, aset))
         for a, r in zip(acc, aset):
             r.fitness += p.beta * ((a * r.numerosity / tot if tot > 0 else 0.0) - r.fitness)
-        self._action_set_subsumption(aset)
+        if p.as_subsumption:
+            self._action_set_subsumption(aset)
 
     def _action_set_subsumption(self, aset: List[Rule]) -> None:
         p = self.p

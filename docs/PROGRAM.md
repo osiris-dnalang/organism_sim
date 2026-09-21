@@ -114,6 +114,30 @@ bits: tournament selection, specify operator, N, θ_GA), because both M3 and M7 
 on it. M3 and M7 remain where OACG lives or dies. M6 is funded by the
 proposal if it is accepted, and is the only rung with a physical environment.
 
+### Substrate-Opt-1 — the learner's own knobs at 16 bits (pre-registered 2026-09-21)
+
+Every rung above the learner left 16-bit recovery at ≈ 9,500–12,000 trials/shift. This is
+the first experiment *on* the learner: `experiments/substrate_opt.py`, a 54-point grid over
+XCS parameters — GA period θ_GA ∈ {25, 100, 500}, action-set subsumption ∈ {on, off} (new
+`Params.as_subsumption`, default on = today's behaviour), mutation μ ∈ {0.01, 0.05, 0.10},
+covering wildcard P# ∈ {0.33, 0.50, 0.75} — plus the current default as a 55th point, on the
+M2b/M2c 16-bit family with its budgets, no injection of any kind.
+
+Two stages, disjoint seeds, because a grid search is tuning: **sweep** every configuration
+on tuning seeds 110–114 (score = pooled median of per-seed median recovery, cap 30,000);
+**judge** the single best configuration and the default on fresh seeds 40–44. Decision,
+stated before the run, on the judge seeds only:
+
+| verdict | condition | consequence |
+|---|---|---|
+| PASS | winner pooled median < 3,000 | adopt as the mandatory 16-bit default |
+| PARTIAL | 3,000 ≤ winner < 8,000 and winner < default on ≥ 4/5 judge seeds | real improvement, target missed; record, do not adopt as mandatory |
+| BOUNDED | winner ≥ 8,000, or no 4/5 win over default | the XCS substrate's sample-efficiency ceiling at 16 bits is empirically bounded on this family: none of θ_GA, action-set subsumption, μ, P# moves it |
+
+The sweep minimum is reported next to the judged number so a lucky tuning-seed draw cannot
+be read as the result. Nothing in the grid, metric, family or budgets changes after the
+first run.
+
 ## 4. What this is not
 
 - Not a language model, and not competitive with one on language. The DSL is closed by
