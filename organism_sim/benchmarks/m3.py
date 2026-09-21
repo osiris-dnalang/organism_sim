@@ -32,7 +32,6 @@ PRE-REGISTERED CRITERION (committed before the first run; fresh seeds 20–24; n
 from __future__ import annotations
 
 import copy
-import json
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
@@ -94,7 +93,7 @@ class Task:
             elif r < 0.85:
                 child.data = list(map(int, rng.permutation(child.data)))
             else:
-                used = set(child.addr) | set(child.data)
+                used = set(child.addr) | set(child.data) | ({child.twist} if child.twist is not None else set())
                 free = [i for i in range(w) if i not in used]
                 if free:
                     child.addr[int(rng.integers(2))] = int(rng.choice(free))
