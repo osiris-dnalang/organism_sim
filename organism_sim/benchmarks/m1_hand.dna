@@ -1,0 +1,13 @@
+// M1 hand-written regulatory genome. Composes the mechanisms measured so far
+// (CUSUM detection, random-immigrant injection, exploration boost, compaction)
+// as a regulatory cascade. Written before any M1 run; seeds the meta-evolution.
+ORGANISM M1_HAND {
+    META { version: "1", domain: "grn" }
+    GENOME {
+        GENE detect_shift  { id: "G0", trigger: "when cusum > 8", action: "(emit shift)", outputs: ["shift"], cluster: "sense" }
+        GENE inject_on_shift { id: "G1", trigger: "on_signal shift", action: "(seq (adjust inject 40) (adjust cusum_reset 1))", dependencies: ["G0"], cluster: "repair" }
+        GENE boost_explore { id: "G2", trigger: "after G1", action: "(adjust explore 0.8)", cluster: "repair" }
+        GENE persistent_error { id: "G3", trigger: "when error > 0.35", action: "(if (eq (var since_inject) (var since_inject)) (adjust inject 20))", cluster: "repair" }
+        GENE settle { id: "G4", trigger: "when error < 0.05", action: "(adjust compact 1)", cluster: "maintain" }
+    }
+}

@@ -45,7 +45,7 @@ from ..lcs import Params
 from .expzero import DriftingHidden, inject, random_rules
 from .mux import _inputs
 
-ARMS = ("plain", "cusum", "periodic", "oracle")
+ARMS = ("plain", "cusum", "periodic", "oracle", "grn")
 
 
 @dataclass
@@ -81,9 +81,11 @@ def _probe(agent: LCSAgent, inputs: List[str], truth) -> float:
 def run_arm(arm: str, seed: int, trials: int = 15000, shift_every: int = 3000,
             probe_every: int = 100, n_inject: int = 20, cusum: Tuple[float, float, float] = (0.05, 0.10, 4.0),
             cooldown: int = 300, period: int = 500, false_window: int = 400,
-            params: Optional[Params] = None) -> OneLog:
+            params: Optional[Params] = None, grn_genome=None) -> OneLog:
     if arm not in ARMS:
         raise ValueError(arm)
+    if arm == "grn" and grn_genome is None:
+        raise ValueError("grn arm needs grn_genome")
     rng = np.random.default_rng(seed)
     inputs = _inputs(np.random.default_rng(seed + 10_000), 256)
     env = DriftingHidden(seed, shift_every)
@@ -103,6 +105,10 @@ def run_arm(arm: str, seed: int, trials: int = 15000, shift_every: int = 3000,
     agent = LCSAgent("O", input_len=6, actions=["(emit 0)", "(emit 1)"], params=params, seed=seed,
                      cusum=None, cusum_signal="error",
                      cusum_on=do_inject if arm == "cusum" else None)
+    grn = None
+    if arm == "grn":
+        from ..grn import GRN
+        grn = GRN(grn_genome, agent, seed=seed, cusum=cusum)
     # warm-up window is not scored (all arms start from nothing); shifts are scored.
     # The detector arms only once the agent has converged (first probe >= 0.95), so
     # initial learning cannot be mistaken for a shift.
@@ -122,7 +128,13 @@ def run_arm(arm: str, seed: int, trials: int = 15000, shift_every: int = 3000,
             do_inject(agent)
         bits = "".join(map(str, rng.integers(0, 2, 6)))
         agent.act(bits)
-        agent.reward(1.0 if agent.emitted() == env.truth(bits) else 0.0)
+        r = 1.0 if agent.emitted() == env.truth(bits) else 0.0
+        agent.reward(r)
+        if grn is not None and armed_at is not None:
+            grn.observe(r, agent.engine.last_explore)
+            grn.step()
+            if len(grn.injections) > len(log.injections):
+                log.injections.append(trial)
         agent.tick()
         if trial % probe_every == 0 or trial == trials:
             acc = _probe(agent, inputs, env.truth)
@@ -147,6 +159,7 @@ def run_arm(arm: str, seed: int, trials: int = 15000, shift_every: int = 3000,
                  "false_injections": log.false_injections, "cusum_fires": agent.cusum_fires,
                  "recoveries95": log.recoveries95, "recoveries99": log.recoveries99,
                  "macro_end": agent.engine.macro_size(),
+                 "grn_expressions": dict(grn.expressions) if grn is not None else None,
                  "audit_chain_valid": agent.organism.chain.verify()}
     return log
 
