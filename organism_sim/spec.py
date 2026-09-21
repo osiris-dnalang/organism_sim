@@ -240,8 +240,37 @@ class OrganismSpec:
         return cls.from_dict(json.loads(text))
 
 
+def _from_language(text: str):
+    from dnalang import parse as dl_parse
+    org = dl_parse(text)
+    if not org.kv_genes:
+        raise ValueError("no key-value genes (circuit organism)")
+    genes: List[Gene] = []
+    for i, g in enumerate(org.kv_genes):
+        f = g.fields
+        genes.append(Gene(
+            id=str(f.get("id", f"G{i}")), name=g.name, expression=float(f.get("expression", 1.0)),
+            trigger=str(f.get("trigger", "on_tick")), action=str(f.get("action", "")),
+            dependencies=[str(x) for x in (f.get("dependencies") or [])],
+            outputs=[str(x) for x in (f.get("outputs") or [])],
+            phase_deg=float(f.get("phase_deg", 0.0)), cluster=str(f.get("cluster", "default")),
+            condition=str(f.get("condition", "")),
+        ))
+    if genes and not any(g.phase_deg for g in genes):
+        for g, ph in zip(genes, uniform_phases(len(genes))):
+            g.phase_deg = ph
+    dna = org.sections.get("dna", {})
+    metrics = org.sections.get("metrics", {})
+    return OrganismSpec(
+        name=org.name, genome=Genome(genes=genes, purpose=str(dna.get("purpose", ""))),
+        domain=str(org.meta.get("domain", "general")), version=str(org.meta.get("version", "0.1.0")),
+        meta={"raw_meta": dict(org.meta), "raw_dna": dict(dna), "raw_metrics": dict(metrics),
+              "parsed_by": "dnalang"},
+    )
+
+
 # ─────────────────────────────────────────────────────────────────────────────
-# .dna genome-file reader
+# .dna genome-file reader (legacy fallback)
 # ─────────────────────────────────────────────────────────────────────────────
 # Reads the legacy ``organism/*.dna`` files as plain ALife genomes. Numeric
 # values in their META/DNA/METRICS sections are preserved in ``meta`` as raw
@@ -320,7 +349,17 @@ def _sections(body: str) -> Dict[str, str]:
 
 
 def parse_dna(text: str) -> OrganismSpec:
-    """Parse ``ORGANISM X { … GENE Y {…} }`` or ``organism x { genome { gene[001] = y {…} } }``."""
+    """Parse a ``.dna`` genome into an ``OrganismSpec``.
+
+    Canonical and 2025 key-value files go through the language (``dnalang.parse``), so
+    the AST, checks and hashes are the language's. Files the language rejects (2025 files
+    with prose/pseudo-code blocks, the v7 ``gene[001] = name`` form) fall back to the
+    tolerant regex reader below.
+    """
+    try:
+        return _from_language(text)
+    except Exception:
+        pass
     src = _strip_comments(text)
     m = _ORG_RE.search(src)
     if not m:

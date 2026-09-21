@@ -21,6 +21,15 @@ python -m organism_sim.cli run   --ticks 100                      # substrate on
 python -m organism_sim.cli swarm --n 8 --ticks 200 --ramp 0.005 --csv pop.csv
 ```
 
+## Language
+
+`organism_sim` consumes **dna::}{::lang** (`pip install dnalang`, repo `dnalang-core`): the
+closed action DSL (`organism_sim.rules` re-exports `dnalang.action_dsl`), the trigger grammar
+(`dnalang.regulation.Trigger`), and the parser (`spec.parse_dna` goes through `dnalang.parse`
+for canonical and 2025 key-value genomes; a tolerant regex reader remains only for old files
+with prose blocks). Rule genes lower to `RuleSet` (the LCS population), regulator genes to
+`RegulatoryGraph` (the `grn` runtime). The language imports nothing from here.
+
 ## Program
 
 `docs/PROGRAM.md` — the research program: an operational target (open-ended, auditable

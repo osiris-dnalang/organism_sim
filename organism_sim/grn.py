@@ -33,8 +33,7 @@ parameters; ``crossover`` swaps whole clusters.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
-from typing import Dict, List, Optional, Sequence, Set, Tuple
+from typing import Dict, List, Sequence, Set, Tuple
 
 import numpy as np
 
@@ -44,55 +43,13 @@ from .spec import Gene, Genome
 
 METRICS = ("error", "acc", "cusum", "noise_rate", "entropy_bits", "since_inject",
            "since_shift_est", "tick", "explore")
-OPS = {"<": lambda a, b: a < b, "<=": lambda a, b: a <= b, ">": lambda a, b: a > b,
-       ">=": lambda a, b: a >= b, "==": lambda a, b: a == b}
 PARAMS = ("inject", "explore", "cusum_reset", "compact")
-_WHEN = re.compile(r"^when\s+(\w+)\s*(<=|>=|==|<|>)\s*(-?[0-9.]+)$")
 
+# The trigger grammar is part of the language.
+from dnalang.regulation import OPS as _TRIG_OPS  # noqa: E402
+from dnalang.regulation import Trigger  # noqa: E402
 
-@dataclass
-class Trigger:
-    kind: str                      # genesis | continuous | error | after | signal | when
-    ref: Optional[str] = None      # gene id (after) | signal name (signal) | metric (when)
-    op: Optional[str] = None
-    value: float = 0.0
-
-    @classmethod
-    def parse(cls, text: str) -> "Trigger":
-        t = " ".join(text.strip().lower().split())
-        if t in ("on_genesis", "genesis"):
-            return cls("genesis")
-        if t in ("continuous", "on_tick", "always"):
-            return cls("continuous")
-        if t == "on_error":
-            return cls("error")
-        if t.startswith("after "):
-            return cls("after", ref=t.split(None, 1)[1].strip().upper())
-        if t.startswith("on_signal "):
-            return cls("signal", ref=t.split(None, 1)[1].strip())
-        m = _WHEN.match(t)
-        if m and m.group(1) in METRICS:
-            return cls("when", ref=m.group(1), op=m.group(2), value=float(m.group(3)))
-        raise ValueError(f"unknown trigger {text!r}")
-
-    def render(self) -> str:
-        return {"genesis": "on_genesis", "continuous": "continuous", "error": "on_error",
-                "after": f"after {self.ref}", "signal": f"on_signal {self.ref}",
-                "when": f"when {self.ref} {self.op} {self.value:g}"}[self.kind]
-
-    def fires(self, tick: int, metrics: Dict[str, float], board: Set[str],
-              expressed_last: Set[str]) -> bool:
-        if self.kind == "genesis":
-            return tick == 1
-        if self.kind == "continuous":
-            return True
-        if self.kind == "error":
-            return metrics.get("last_error", 0.0) >= 1.0
-        if self.kind == "after":
-            return self.ref in expressed_last
-        if self.kind == "signal":
-            return self.ref in board
-        return OPS[self.op](metrics.get(self.ref, 0.0), self.value)
+OPS = _TRIG_OPS
 
 
 class GRN:
@@ -106,6 +63,9 @@ class GRN:
         self.agent = agent
         self.rng = np.random.default_rng(seed + 9001)
         self.triggers: Dict[str, Trigger] = {g.id: Trigger.parse(g.trigger) for g in genome.genes}
+        for gid, t in self.triggers.items():
+            if t.kind == "when" and t.ref not in METRICS:
+                raise ValueError(f"gene {gid}: unknown metric {t.ref!r}; runtime metrics are {METRICS}")
         self.by_id = {g.id: g for g in genome.genes}
         self.order = self._topo()
         self.interp = Interpreter(64)

@@ -116,7 +116,8 @@ class State:
                     pass
         for fname, label, arm, base in (("expzero_eval_seeds0-4.json", "exp zero: informed priors", "informed", "control"),
                                         ("expone_eval_seeds0-4.json", "exp one: cusum injection", "cusum", "plain"),
-                                        ("m1_eval_seeds0-4.json", "m1: regulatory genes", "grn-evolved", "cusum")):
+                                        ("m1_eval_seeds0-4.json", "m1: regulatory genes", "grn-evolved", "cusum"),
+                                        ("m2_eval_seeds0-4.json", "m2: priors, 16-bit family", "informed", "shape")):
             try:
                 d = self.load(fname)
                 v = d["verdict"]

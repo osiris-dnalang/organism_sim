@@ -27,9 +27,11 @@ def test_trigger_grammar_and_render_roundtrip():
         t = Trigger.parse(text)
         assert Trigger.parse(t.render()).__dict__ == t.__dict__
     with pytest.raises(ValueError):
-        Trigger.parse("when consciousness > 1")
-    with pytest.raises(ValueError):
         Trigger.parse("whenever")
+    # the language accepts any metric name; the runtime rejects ones it does not compute
+    with pytest.raises(ValueError, match="unknown metric"):
+        GRN(Genome(genes=[Gene(id="G0", name="x", trigger="when consciousness > 1",
+                               action="(emit a)")]), _agent(), seed=0)
 
 
 def test_cascade_signal_dependency_after():

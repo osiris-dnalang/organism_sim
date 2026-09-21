@@ -49,7 +49,7 @@ That is the unbuilt half of the language.
   L3  OPEN  │  task generator co-evolves with the population (POET-style);  │  hypothesis
             │  library of abstracted genes grows (DreamCoder-style)         │
             ├───────────────────────────────────────────────────────────────┤
-  L2  GRN   │  dnalang v0.2: genes with triggers / dependencies / outputs   │  to build
+  L2  GRN   │  dnalang v0.2: genes with triggers / dependencies / outputs   │  built (M1 FAIL)
             │  = regulatory graph; development = staged expression;          │
             │  compiled to L1 rule sets, DSL programs, circuits             │
             ├───────────────────────────────────────────────────────────────┤
@@ -62,8 +62,9 @@ That is the unbuilt half of the language.
   Reasoner (offline): scaffold → external model → text → reviewed → committed. Never in a loop.
 ```
 
-Rules that hold at every layer: neither `organism_sim` nor `dnalang-core` imports the
-other; every hardware or simulated evaluation writes a ledger row before it runs; every
+Rules that hold at every layer: the language (`dnalang`) imports nothing from any runtime;
+`organism_sim` and `bridge` consume its targets (`RuleSet`, `RegulatoryGraph`, `Circuit`)
+and never the reverse; every hardware or simulated evaluation writes a ledger row before it runs; every
 structural change writes a telemetry row; a claim exists only after a pre-registered
 criterion has been met on evaluation seeds never used for tuning; negative results are
 kept and cited.
