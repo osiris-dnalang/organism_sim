@@ -19,12 +19,12 @@ def test_own_error_cusum_calls_handler_and_skips_explore_trials():
     a.reward(0.0)
     a.tick()
     assert a.cusum_s == 0.0 and not fired
-    # exploit misses accumulate and fire the handler (not a reroute)
-    for _ in range(2):
-        a.act("000000", explore=False)
-        a.reward(0.0)
-        a.tick()
-    assert fired and a.cusum_fires == 1 and a.cusum_s == 0.0 and a.routes == set()
+    # an exploit miss adds 1 − μ₀ − k = 0.85 > h: the handler fires (not a reroute) and S resets
+    a.act("000000", explore=False)
+    a.reward(0.0)
+    a.tick()
+    assert len(fired) == 1 and a.cusum_fires == 1 and a.cusum_s == 0.0
+    assert a.routes == set() and a.reroutes == []
 
 
 def test_arms_run_and_record():
