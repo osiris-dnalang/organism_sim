@@ -177,3 +177,32 @@ on the drifting hidden-mux family (Experiment One's harness), equal evaluations,
 
 **Cost:** three to four days. **Data it produces:** the first measurement of whether
 dnalang's central unbuilt idea — regulation — does anything at all.
+
+## 6. Scorecard (generated from `results/`)
+
+<!-- scorecard:start -->
+| experiment | verdict | number |
+|---|---|---|
+| signalling (50 seeds) | quantified | 9/50 full, 36/50 partial, 5/50 pooling |
+| concept drift 6-mux | FAIL | ratio 0.8 |
+| relay dead (threshold) | PASS | median 100, C1 1.00, false/10k 0.00 |
+| relay dead (cusum) | PASS | median 200, C1 1.00, false/10k 0.25 |
+| relay poisoned (threshold) | FAIL | median 200, C1 0.67, false/10k 0.00 |
+| relay poisoned (cusum) | FAIL | median 200, C1 0.80, false/10k 0.08 |
+| exp zero: informed priors | FAIL | informed 1000 vs control 900 |
+| exp one: cusum injection | PASS | cusum 950 vs plain 1250 |
+| m1: regulatory genes | FAIL | grn-evolved 400 vs cusum 950 |
+| m2: priors, 16-bit family | FAIL | informed 9500 vs shape 8250 |
+| m2b: specificity prior, 16-bit | FAIL | shape 9500 vs covering 9750 vs periodic 10500 |
+| m2c: specificity prior replication, 16-bit | FAIL | shape 10750 vs covering 9500 vs periodic 11750; C1 1/5 C2 3/5 p=0.856/0.063 |
+| m3: open-ended tasks, 6-10 bit | FAIL | poet 46 vs random 52 ANNECS |
+| substrate-opt-1: XCS grid, 16-bit | BOUNDED | winner tga25_ason_mu0.05_pw0.75 11500 vs default 10000 (winner<default 2/5) |
+| bridge step 3 | PASS (tie) | organism 0.9763 / GA 0.9758 / baseline 0.9705 |
+| bridge tier 4 shock | FAIL | organism-structural 14, organism-plain 11, ga-continued 30, ga-restarted 38 |
+<!-- scorecard:end -->
+
+The program's empirical boundary, in one line: **the substrate delivers topological
+self-repair and small-space diversity injection; nothing above the learner, and none of the
+learner's exposed parameters, changes wide-space sample efficiency.** The remaining rungs
+that depend on wide-space learning (M3 at width, M7) are blocked until a different base
+learner is pre-registered; M4, M5 and M6 do not depend on it.

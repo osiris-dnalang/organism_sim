@@ -93,3 +93,18 @@ def test_cli_ask(tmp_path):
     assert r.returncode == 0, r.stderr
     d = json.loads(r.stdout)
     assert d["intent"]["intent"] == "QUERY_RESULTS" and d["answer"]["seeds"] == 50
+
+
+def test_scorecard_in_docs_matches_result_files():
+    """README.md and docs/PROGRAM.md carry the scorecard between markers; it must equal the
+    table generated from the checked-in result files."""
+    import re
+
+    from organism_sim.terminal.state import State
+    table = State().scorecard_markdown()
+    assert table.count("\n") >= 15                     # 14+ result rows
+    for doc in (ROOT / "README.md", ROOT / "docs" / "PROGRAM.md"):
+        text = doc.read_text()
+        m = re.search(r"<!-- scorecard:start -->\n(.*?)\n<!-- scorecard:end -->", text, re.S)
+        assert m, doc
+        assert m.group(1) == table, f"{doc.name} scorecard drifted; regenerate with State().scorecard_markdown()"

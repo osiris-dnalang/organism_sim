@@ -90,6 +90,14 @@ class State:
                             "verdict": d["verdict"]}
         return out
 
+    def scorecard_markdown(self) -> str:
+        """The scorecard as a Markdown table, generated from the result files. README.md and
+        docs/PROGRAM.md carry it between ``<!-- scorecard:start -->`` / ``<!-- scorecard:end -->``
+        markers; a test regenerates it and fails if the documents have drifted."""
+        rows = ["| experiment | verdict | number |", "|---|---|---|"]
+        rows += [f"| {r['experiment']} | {r['verdict']} | {r['number']} |" for r in self.scorecard()]
+        return "\n".join(rows)
+
     def scorecard(self) -> List[Dict[str, Any]]:
         rows = []
         try:
