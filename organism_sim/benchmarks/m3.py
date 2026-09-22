@@ -175,7 +175,8 @@ class M3Log:
 def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000, n_pairs: int = 4,
             gen_every: int = 3, children_per_task: int = 2, max_tasks: int = 8, transfer_every: int = 5,
             mc_lo: float = 0.6, mc_hi: float = 0.95, solved_at: float = 0.95,
-            space: Space = DEFAULT_SPACE) -> M3Log:
+            space: Space = DEFAULT_SPACE, progress=None) -> M3Log:
+    """``progress(row)`` is called after each iteration's log row (observability only)."""
     if arm not in ARMS:
         raise ValueError(arm)
     rng = np.random.default_rng(seed)
@@ -267,6 +268,8 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
         log.rows.append({"iter": it, "n_tasks": len(tasks), "archive": len(archive), "annecs": annecs,
                          "max_width": max(t.width for t in tasks), "twisted": sum(t.twist is not None for t in tasks),
                          "mean_acc": float(np.mean(accs)), "transfers": transfers})
+        if progress is not None:
+            progress(log.rows[-1])
     log.tasks = [t.describe() for t in archive]
     log.final = {"arm": arm, "seed": seed, "annecs": log.rows[-1]["annecs"], "archive": len(archive),
                  "max_width": max(r["max_width"] for r in log.rows), "transfers": transfers,
@@ -286,10 +289,11 @@ def final_distribution_score(tasks: Sequence[Task], agents: Dict[int, LCSAgent],
     return float(np.mean([max([evaluate(a, t, rng) for a in agents.values()] or [0.0]) for t in tasks]))
 
 
-def compare_row(seed: int, final_distribution: bool = False, **kw) -> Dict[str, Any]:
-    """Both arms on one seed (and, for M3b, both arms' agents on poet's final tasks)."""
-    p = run_arm("poet", seed, **kw)
-    r = run_arm("random", seed, **kw)
+def compare_row(seed: int, final_distribution: bool = False, progress=None, **kw) -> Dict[str, Any]:
+    """Both arms on one seed (and, for M3b, both arms' agents on poet's final tasks).
+    ``progress(arm, row)`` reports each iteration."""
+    p = run_arm("poet", seed, progress=(lambda row: progress("poet", row)) if progress else None, **kw)
+    r = run_arm("random", seed, progress=(lambda row: progress("random", row)) if progress else None, **kw)
     row: Dict[str, Any] = {"seed": seed, "poet": p.final, "random": r.final}
     if final_distribution:
         frng = np.random.default_rng(seed + 2)

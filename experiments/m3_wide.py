@@ -54,16 +54,33 @@ KW: Dict[str, Any] = {"iterations": 30, "train_trials": 3000, "n_pairs": 4, "gen
                       "mc_lo": 0.6, "mc_hi": 0.95, "solved_at": 0.95}
 
 
+RESULTS = ROOT / "results"
+
+
+def _checkpoint(seed: int) -> Path:
+    return RESULTS / f"m3b_seed{seed}.json"
+
+
 def _job(seed: int) -> Dict[str, Any]:
+    """One seed, both arms; the row is checkpointed so a restart resumes, not repeats."""
+    cp = _checkpoint(seed)
+    if cp.exists():
+        return json.loads(cp.read_text())
     t0 = time.time()
-    row = compare_row(seed, final_distribution=True, space=SPACE, **KW)
+
+    def progress(arm: str, row: Dict[str, Any]) -> None:
+        print(f"  seed {seed} {arm} it {row['iter']}/{KW['iterations']} tasks {row['n_tasks']} "
+              f"archive {row['archive']} annecs {row['annecs']} acc {row['mean_acc']:.2f} "
+              f"{time.time() - t0:.0f}s", flush=True)
+    row = compare_row(seed, final_distribution=True, progress=progress, space=SPACE, **KW)
     row["wall_s"] = round(time.time() - t0)
+    cp.write_text(json.dumps(row))
     return row
 
 
 def main(argv: Sequence[str] = ()) -> int:
     workers = int(argv[0]) if argv else min(len(SEEDS), max(1, mp.cpu_count() - 1))
-    results = ROOT / "results"
+    results = RESULTS
     logf = open(results / "m3b_run.log", "a")
 
     def log(s: str) -> None:
@@ -87,6 +104,8 @@ def main(argv: Sequence[str] = ()) -> int:
     params = dict(KW, space={"k": SPACE.k, "widths": list(SPACE.widths), "params": PARAMS16.to_dict()})
     out = verdict(rows, SEEDS, final_distribution=True, params=params)
     (results / "m3b_eval_seeds60-64.json").write_text(json.dumps(out, indent=1))
+    for sd in SEEDS:                               # checkpoints are folded into the result file
+        _checkpoint(sd).unlink(missing_ok=True)
     v = out["verdict"]
     log(f"POOLED annecs {out['pooled_annecs']} ratio {out['ratio']:.3f} C1 {v['C1_count']}/5 "
         f"C3 {v['C3_count']}/5 still_rising {v['exploratory_still_rising']}/5")
