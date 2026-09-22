@@ -172,6 +172,14 @@ class State:
                                    f"(winner<default {d['winner_beats_default']})"})
         except (FileNotFoundError, KeyError):
             pass
+        try:
+            d = self.load("substrate_opt2_eval_seeds50-54.json")
+            w, df = d["winner"], d["default"]
+            rows.append({"experiment": "substrate-opt-2: tournament/specify/N, 16-bit", "verdict": d["verdict"],
+                         "number": f"winner {w['config']} {w['pooled_median']:.0f} vs default {df['pooled_median']:.0f} "
+                                   f"(winner<default {d['winner_beats_default']})"})
+        except (FileNotFoundError, KeyError):
+            pass
         b = self.bridge()
         if "step3" in b:
             rows.append({"experiment": "bridge step 3", "verdict": "PASS (tie)" if b["step3"]["verdict"]["pass"] else "FAIL",

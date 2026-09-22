@@ -60,6 +60,7 @@ if it drifts from them):
 | m2c: specificity prior replication, 16-bit | FAIL | shape 10750 vs covering 9500 vs periodic 11750; C1 1/5 C2 3/5 p=0.856/0.063 |
 | m3: open-ended tasks, 6-10 bit | FAIL | poet 46 vs random 52 ANNECS |
 | substrate-opt-1: XCS grid, 16-bit | BOUNDED | winner tga25_ason_mu0.05_pw0.75 11500 vs default 10000 (winner<default 2/5) |
+| substrate-opt-2: tournament/specify/N, 16-bit | PASS | winner N4000_selectiontournament_specifyon 6000 vs default 8750 (winner<default 5/5) |
 | bridge step 3 | PASS (tie) | organism 0.9763 / GA 0.9758 / baseline 0.9705 |
 | bridge tier 4 shock | FAIL | organism-structural 14, organism-plain 11, ga-continued 30, ga-restarted 38 |
 <!-- scorecard:end -->
@@ -437,6 +438,30 @@ recovered, and the fastest single recovery in the whole sweep was 5,000 trials �
 configuration, seed or shift came within 60 % of the 3,000 target. The XCS substrate's
 sample efficiency at 16 bits is empirically bounded at ≈ 10,000 trials/shift on this
 family for the parameters it exposes.
+
+## Substrate-Opt-2 — tournament selection, specify, N at 16 bits, pre-registered, PASS
+
+`experiments/substrate_opt2.py`: the three XCS mechanisms Opt-1 did not test and the
+multiplexer literature names — tournament selection in the GA (Butz, Sastry & Goldberg
+2003), Lanzi's specify operator (1997), population size N (Wilson 1995) — now `Params`
+switches (`selection`, `specify`, `N`; defaults unchanged). 2 × 2 × 3 = 12 configurations
+including the default; sweep on tuning seeds 120–124, winner and default judged on fresh
+seeds 50–54; family, budgets, metric, threshold as Opt-1. Criterion first: winner < 7,000
+and < default on ≥ 4/5 judge seeds.
+
+| sweep (seeds 120–124), pooled median | N 1000 / 2000 / 4000 → **9,750 / 7,375 / 6,375**; roulette / tournament → 7,375 / 7,000; specify off / on → 7,125 / 7,500. Default 9,500, rank 10/12. Top three all tournament: N4000+specify 5,750 · N4000 6,000 · N2000 6,250 |
+|---|---|
+| judge (seeds 50–54) | winner N4000 · tournament · specify **6,000** [6000, 7250, 5750, 5500, 6500] · default **8,750** [9500, 11000, 6250, 8750, 8750] · winner < default **5/5** |
+
+**PASS** (`results/substrate_opt2_{sweep_seeds120-124,eval_seeds50-54}.json`, 4,761 s).
+The first result in this program to move the 16-bit ceiling: −31 % on fresh seeds, every
+seed. Decomposition: population size does most of it; tournament selection adds a
+consistent ≈ 500 trials at N ≥ 2000; specify is within noise. Cost: N = 4000 is ≈ 4.5× the
+wall time per trial, so ≈ 2.7× the compute per recovered shift — the criterion was trials
+and the record says so. Consequence, as pre-registered: the judged configuration is
+`lcs.PARAMS16`, the learner for any further 16-bit rung, and M3 at width is unblocked *for
+that learner*. Opt-1's 3,000 line was not reached (fastest judged shift 4,750); what was
+bounded in Opt-1 was the knobs it tested, not XCS.
 
 ## Substrate reference numbers
 

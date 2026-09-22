@@ -1,0 +1,25 @@
+START Substrate-Opt-2 configs=12 tune_seeds=[120, 121, 122, 123, 124] judge_seeds=[50, 51, 52, 53, 54] workers=7
+  10/60 runs, 411s
+  20/60 runs, 839s
+  30/60 runs, 1560s
+  40/60 runs, 2038s
+  50/60 runs, 2691s
+  60/60 runs, 3839s
+SWEEP N4000_selectiontournament_specifyon          pooled_median=5750 per_seed=[5750.0, 5500.0, 6000.0, 6250.0, 5000.0]
+SWEEP N4000_selectiontournament_specifyoff         pooled_median=6000 per_seed=[6250.0, 5750.0, 6000.0, 7250.0, 5750.0]
+SWEEP N2000_selectiontournament_specifyoff         pooled_median=6250 per_seed=[7000.0, 6000.0, 6750.0, 6250.0, 6250.0]
+SWEEP N4000_selectionroulette_specifyoff           pooled_median=6750 per_seed=[7250.0, 5750.0, 6250.0, 6750.0, 8000.0]
+SWEEP N4000_selectionroulette_specifyon            pooled_median=7000 per_seed=[7000.0, 6250.0, 7250.0, 7750.0, 6000.0]
+SWEEP N2000_selectionroulette_specifyon            pooled_median=7250 per_seed=[8250.0, 6000.0, 6750.0, 8250.0, 7250.0]
+SWEEP N2000_selectionroulette_specifyoff           pooled_median=7500 per_seed=[7750.0, 5250.0, 6250.0, 8000.0, 7500.0]
+SWEEP N2000_selectiontournament_specifyon          pooled_median=7750 per_seed=[8750.0, 5250.0, 6250.0, 7750.0, 8000.0]
+SWEEP N1000_selectiontournament_specifyon          pooled_median=9500 per_seed=[8250.0, 8500.0, 13000.0, 10000.0, 9500.0]
+SWEEP N1000_selectionroulette_specifyoff           pooled_median=9500 per_seed=[7000.0, 10250.0, 9500.0, 9000.0, 10250.0]
+SWEEP N1000_selectionroulette_specifyon            pooled_median=10000 per_seed=[11250.0, 6750.0, 10750.0, 10000.0, 9500.0]
+SWEEP N1000_selectiontournament_specifyoff         pooled_median=10250 per_seed=[10250.0, 10250.0, 10750.0, 11000.0, 10250.0]
+SWEEP default N1000_selectionroulette_specifyoff pooled_median=9500 rank=10
+WINNER N4000_selectiontournament_specifyon (sweep min 5750); judging on [50, 51, 52, 53, 54]
+  10/10 runs, 922s
+JUDGE winner N4000_selectiontournament_specifyon pooled_median=6000 per_seed=[6000.0, 7250.0, 5750.0, 5500.0, 6500.0] | default pooled_median=8750 per_seed=[9500.0, 11000.0, 6250.0, 8750.0, 8750.0] | winner<default 5/5
+VERDICT PASS
+DONE 4761s

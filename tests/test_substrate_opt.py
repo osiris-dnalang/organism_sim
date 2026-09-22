@@ -107,3 +107,14 @@ def test_specify_tolerates_an_action_set_of_deleted_rules():
     eng.reward(0.0, "010101", terminal=True)               # must not raise
     eng.action_set = [Rule(condition="######", action="(emit 0)", prediction=0.5, error=0.5, fitness=0.1, numerosity=0)]
     eng.reward(0.0, "010101", terminal=True)
+
+
+def test_params16_is_the_judged_opt2_winner():
+    import json
+
+    from organism_sim.lcs import PARAMS16
+    d = json.loads((ROOT / "results" / "substrate_opt2_eval_seeds50-54.json").read_text())
+    assert d["verdict"] == "PASS"
+    w = d["winner"]["params"]
+    assert (PARAMS16.N, PARAMS16.selection, PARAMS16.specify) == (w["N"], w["selection"], w["specify"])
+    assert d["winner"]["pooled_median"] < 7000 and d["winner_beats_default"] == "5/5"

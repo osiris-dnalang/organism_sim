@@ -1,0 +1,1379 @@
+{
+ "seeds": [
+  120,
+  121,
+  122,
+  123,
+  124
+ ],
+ "table": [
+  {
+   "config": "N4000_selectiontournament_specifyon",
+   "params": {
+    "selection": "tournament",
+    "specify": true,
+    "N": 4000
+   },
+   "per_seed_median": [
+    5750.0,
+    5500.0,
+    6000.0,
+    6250.0,
+    5000.0
+   ],
+   "pooled_median": 5750.0,
+   "pooled_per_shift_median": 5750.0,
+   "rows": [
+    {
+     "config": "N4000_selectiontournament_specifyon",
+     "seed": 120,
+     "recoveries": [
+      5750,
+      5750,
+      7500
+     ],
+     "scores": [
+      5750,
+      5750,
+      7500
+     ],
+     "median": 5750.0,
+     "macro_end": 2067,
+     "ga": 111016,
+     "subsume": 51554,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyon",
+     "seed": 121,
+     "recoveries": [
+      5500,
+      8750,
+      4500
+     ],
+     "scores": [
+      5500,
+      8750,
+      4500
+     ],
+     "median": 5500.0,
+     "macro_end": 1843,
+     "ga": 110995,
+     "subsume": 51152,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyon",
+     "seed": 122,
+     "recoveries": [
+      6500,
+      4250,
+      6000
+     ],
+     "scores": [
+      6500,
+      4250,
+      6000
+     ],
+     "median": 6000.0,
+     "macro_end": 2023,
+     "ga": 110811,
+     "subsume": 51611,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyon",
+     "seed": 123,
+     "recoveries": [
+      6250,
+      6750,
+      5250
+     ],
+     "scores": [
+      6250,
+      6750,
+      5250
+     ],
+     "median": 6250.0,
+     "macro_end": 2013,
+     "ga": 111633,
+     "subsume": 50126,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyon",
+     "seed": 124,
+     "recoveries": [
+      4500,
+      7500,
+      5000
+     ],
+     "scores": [
+      4500,
+      7500,
+      5000
+     ],
+     "median": 5000.0,
+     "macro_end": 2029,
+     "ga": 111194,
+     "subsume": 51378,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N4000_selectiontournament_specifyoff",
+   "params": {
+    "selection": "tournament",
+    "specify": false,
+    "N": 4000
+   },
+   "per_seed_median": [
+    6250.0,
+    5750.0,
+    6000.0,
+    7250.0,
+    5750.0
+   ],
+   "pooled_median": 6000.0,
+   "pooled_per_shift_median": 6250.0,
+   "rows": [
+    {
+     "config": "N4000_selectiontournament_specifyoff",
+     "seed": 120,
+     "recoveries": [
+      6000,
+      6250,
+      7500
+     ],
+     "scores": [
+      6000,
+      6250,
+      7500
+     ],
+     "median": 6250.0,
+     "macro_end": 1856,
+     "ga": 111185,
+     "subsume": 50264,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyoff",
+     "seed": 121,
+     "recoveries": [
+      5750,
+      6750,
+      5500
+     ],
+     "scores": [
+      5750,
+      6750,
+      5500
+     ],
+     "median": 5750.0,
+     "macro_end": 1888,
+     "ga": 110999,
+     "subsume": 50833,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyoff",
+     "seed": 122,
+     "recoveries": [
+      6500,
+      4750,
+      6000
+     ],
+     "scores": [
+      6500,
+      4750,
+      6000
+     ],
+     "median": 6000.0,
+     "macro_end": 2123,
+     "ga": 111278,
+     "subsume": 50273,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyoff",
+     "seed": 123,
+     "recoveries": [
+      7250,
+      7250,
+      7000
+     ],
+     "scores": [
+      7250,
+      7250,
+      7000
+     ],
+     "median": 7250.0,
+     "macro_end": 2033,
+     "ga": 111654,
+     "subsume": 48073,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectiontournament_specifyoff",
+     "seed": 124,
+     "recoveries": [
+      5750,
+      7750,
+      5500
+     ],
+     "scores": [
+      5750,
+      7750,
+      5500
+     ],
+     "median": 5750.0,
+     "macro_end": 1984,
+     "ga": 111326,
+     "subsume": 49929,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N2000_selectiontournament_specifyoff",
+   "params": {
+    "selection": "tournament",
+    "specify": false,
+    "N": 2000
+   },
+   "per_seed_median": [
+    7000.0,
+    6000.0,
+    6750.0,
+    6250.0,
+    6250.0
+   ],
+   "pooled_median": 6250.0,
+   "pooled_per_shift_median": 6250.0,
+   "rows": [
+    {
+     "config": "N2000_selectiontournament_specifyoff",
+     "seed": 120,
+     "recoveries": [
+      7000,
+      6250,
+      10000
+     ],
+     "scores": [
+      7000,
+      6250,
+      10000
+     ],
+     "median": 7000.0,
+     "macro_end": 920,
+     "ga": 103837,
+     "subsume": 48909,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyoff",
+     "seed": 121,
+     "recoveries": [
+      6500,
+      4750,
+      6000
+     ],
+     "scores": [
+      6500,
+      4750,
+      6000
+     ],
+     "median": 6000.0,
+     "macro_end": 975,
+     "ga": 103424,
+     "subsume": 50506,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyoff",
+     "seed": 122,
+     "recoveries": [
+      6750,
+      6000,
+      8750
+     ],
+     "scores": [
+      6750,
+      6000,
+      8750
+     ],
+     "median": 6750.0,
+     "macro_end": 962,
+     "ga": 104046,
+     "subsume": 49606,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyoff",
+     "seed": 123,
+     "recoveries": [
+      6250,
+      8500,
+      5250
+     ],
+     "scores": [
+      6250,
+      8500,
+      5250
+     ],
+     "median": 6250.0,
+     "macro_end": 958,
+     "ga": 103564,
+     "subsume": 49377,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyoff",
+     "seed": 124,
+     "recoveries": [
+      6250,
+      5750,
+      7500
+     ],
+     "scores": [
+      6250,
+      5750,
+      7500
+     ],
+     "median": 6250.0,
+     "macro_end": 991,
+     "ga": 103333,
+     "subsume": 50619,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N4000_selectionroulette_specifyoff",
+   "params": {
+    "selection": "roulette",
+    "specify": false,
+    "N": 4000
+   },
+   "per_seed_median": [
+    7250.0,
+    5750.0,
+    6250.0,
+    6750.0,
+    8000.0
+   ],
+   "pooled_median": 6750.0,
+   "pooled_per_shift_median": 6750.0,
+   "rows": [
+    {
+     "config": "N4000_selectionroulette_specifyoff",
+     "seed": 120,
+     "recoveries": [
+      5500,
+      8000,
+      7250
+     ],
+     "scores": [
+      5500,
+      8000,
+      7250
+     ],
+     "median": 7250.0,
+     "macro_end": 943,
+     "ga": 98428,
+     "subsume": 84695,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyoff",
+     "seed": 121,
+     "recoveries": [
+      7500,
+      5750,
+      4500
+     ],
+     "scores": [
+      7500,
+      5750,
+      4500
+     ],
+     "median": 5750.0,
+     "macro_end": 827,
+     "ga": 97496,
+     "subsume": 87739,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyoff",
+     "seed": 122,
+     "recoveries": [
+      6250,
+      4500,
+      7250
+     ],
+     "scores": [
+      6250,
+      4500,
+      7250
+     ],
+     "median": 6250.0,
+     "macro_end": 887,
+     "ga": 96771,
+     "subsume": 86025,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyoff",
+     "seed": 123,
+     "recoveries": [
+      6500,
+      7500,
+      6750
+     ],
+     "scores": [
+      6500,
+      7500,
+      6750
+     ],
+     "median": 6750.0,
+     "macro_end": 1040,
+     "ga": 98610,
+     "subsume": 83200,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyoff",
+     "seed": 124,
+     "recoveries": [
+      5750,
+      8000,
+      8500
+     ],
+     "scores": [
+      5750,
+      8000,
+      8500
+     ],
+     "median": 8000.0,
+     "macro_end": 843,
+     "ga": 97160,
+     "subsume": 84768,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N4000_selectionroulette_specifyon",
+   "params": {
+    "selection": "roulette",
+    "specify": true,
+    "N": 4000
+   },
+   "per_seed_median": [
+    7000.0,
+    6250.0,
+    7250.0,
+    7750.0,
+    6000.0
+   ],
+   "pooled_median": 7000.0,
+   "pooled_per_shift_median": 6500.0,
+   "rows": [
+    {
+     "config": "N4000_selectionroulette_specifyon",
+     "seed": 120,
+     "recoveries": [
+      5750,
+      7000,
+      8750
+     ],
+     "scores": [
+      5750,
+      7000,
+      8750
+     ],
+     "median": 7000.0,
+     "macro_end": 1581,
+     "ga": 100473,
+     "subsume": 88721,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyon",
+     "seed": 121,
+     "recoveries": [
+      7750,
+      6250,
+      4250
+     ],
+     "scores": [
+      7750,
+      6250,
+      4250
+     ],
+     "median": 6250.0,
+     "macro_end": 1700,
+     "ga": 99959,
+     "subsume": 91095,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyon",
+     "seed": 122,
+     "recoveries": [
+      7250,
+      4750,
+      10250
+     ],
+     "scores": [
+      7250,
+      4750,
+      10250
+     ],
+     "median": 7250.0,
+     "macro_end": 1639,
+     "ga": 99540,
+     "subsume": 90601,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyon",
+     "seed": 123,
+     "recoveries": [
+      8000,
+      6000,
+      7750
+     ],
+     "scores": [
+      8000,
+      6000,
+      7750
+     ],
+     "median": 7750.0,
+     "macro_end": 1400,
+     "ga": 101380,
+     "subsume": 86296,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N4000_selectionroulette_specifyon",
+     "seed": 124,
+     "recoveries": [
+      6000,
+      6500,
+      6000
+     ],
+     "scores": [
+      6000,
+      6500,
+      6000
+     ],
+     "median": 6000.0,
+     "macro_end": 1686,
+     "ga": 100264,
+     "subsume": 90891,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N2000_selectionroulette_specifyon",
+   "params": {
+    "selection": "roulette",
+    "specify": true,
+    "N": 2000
+   },
+   "per_seed_median": [
+    8250.0,
+    6000.0,
+    6750.0,
+    8250.0,
+    7250.0
+   ],
+   "pooled_median": 7250.0,
+   "pooled_per_shift_median": 7250.0,
+   "rows": [
+    {
+     "config": "N2000_selectionroulette_specifyon",
+     "seed": 120,
+     "recoveries": [
+      8250,
+      8250,
+      7250
+     ],
+     "scores": [
+      8250,
+      8250,
+      7250
+     ],
+     "median": 8250.0,
+     "macro_end": 786,
+     "ga": 93594,
+     "subsume": 78904,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyon",
+     "seed": 121,
+     "recoveries": [
+      7250,
+      6000,
+      5500
+     ],
+     "scores": [
+      7250,
+      6000,
+      5500
+     ],
+     "median": 6000.0,
+     "macro_end": 856,
+     "ga": 91426,
+     "subsume": 83408,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyon",
+     "seed": 122,
+     "recoveries": [
+      7000,
+      5000,
+      6750
+     ],
+     "scores": [
+      7000,
+      5000,
+      6750
+     ],
+     "median": 6750.0,
+     "macro_end": 700,
+     "ga": 93445,
+     "subsume": 80004,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyon",
+     "seed": 123,
+     "recoveries": [
+      7000,
+      8500,
+      8250
+     ],
+     "scores": [
+      7000,
+      8500,
+      8250
+     ],
+     "median": 8250.0,
+     "macro_end": 917,
+     "ga": 92072,
+     "subsume": 81132,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyon",
+     "seed": 124,
+     "recoveries": [
+      6750,
+      8000,
+      7250
+     ],
+     "scores": [
+      6750,
+      8000,
+      7250
+     ],
+     "median": 7250.0,
+     "macro_end": 699,
+     "ga": 92253,
+     "subsume": 82371,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N2000_selectionroulette_specifyoff",
+   "params": {
+    "selection": "roulette",
+    "specify": false,
+    "N": 2000
+   },
+   "per_seed_median": [
+    7750.0,
+    5250.0,
+    6250.0,
+    8000.0,
+    7500.0
+   ],
+   "pooled_median": 7500.0,
+   "pooled_per_shift_median": 7000.0,
+   "rows": [
+    {
+     "config": "N2000_selectionroulette_specifyoff",
+     "seed": 120,
+     "recoveries": [
+      7750,
+      8250,
+      7000
+     ],
+     "scores": [
+      7750,
+      8250,
+      7000
+     ],
+     "median": 7750.0,
+     "macro_end": 523,
+     "ga": 90624,
+     "subsume": 76855,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyoff",
+     "seed": 121,
+     "recoveries": [
+      5250,
+      6250,
+      5000
+     ],
+     "scores": [
+      5250,
+      6250,
+      5000
+     ],
+     "median": 5250.0,
+     "macro_end": 457,
+     "ga": 88566,
+     "subsume": 82581,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyoff",
+     "seed": 122,
+     "recoveries": [
+      6250,
+      4250,
+      8250
+     ],
+     "scores": [
+      6250,
+      4250,
+      8250
+     ],
+     "median": 6250.0,
+     "macro_end": 434,
+     "ga": 89768,
+     "subsume": 77215,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyoff",
+     "seed": 123,
+     "recoveries": [
+      8000,
+      8750,
+      7000
+     ],
+     "scores": [
+      8000,
+      8750,
+      7000
+     ],
+     "median": 8000.0,
+     "macro_end": 409,
+     "ga": 92486,
+     "subsume": 75538,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectionroulette_specifyoff",
+     "seed": 124,
+     "recoveries": [
+      7750,
+      7500,
+      6750
+     ],
+     "scores": [
+      7750,
+      7500,
+      6750
+     ],
+     "median": 7500.0,
+     "macro_end": 371,
+     "ga": 90562,
+     "subsume": 77111,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N2000_selectiontournament_specifyon",
+   "params": {
+    "selection": "tournament",
+    "specify": true,
+    "N": 2000
+   },
+   "per_seed_median": [
+    8750.0,
+    5250.0,
+    6250.0,
+    7750.0,
+    8000.0
+   ],
+   "pooled_median": 7750.0,
+   "pooled_per_shift_median": 7750.0,
+   "rows": [
+    {
+     "config": "N2000_selectiontournament_specifyon",
+     "seed": 120,
+     "recoveries": [
+      7250,
+      9250,
+      8750
+     ],
+     "scores": [
+      7250,
+      9250,
+      8750
+     ],
+     "median": 8750.0,
+     "macro_end": 996,
+     "ga": 104204,
+     "subsume": 49392,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyon",
+     "seed": 121,
+     "recoveries": [
+      7750,
+      5000,
+      5250
+     ],
+     "scores": [
+      7750,
+      5000,
+      5250
+     ],
+     "median": 5250.0,
+     "macro_end": 947,
+     "ga": 102937,
+     "subsume": 52515,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyon",
+     "seed": 122,
+     "recoveries": [
+      6250,
+      5750,
+      9750
+     ],
+     "scores": [
+      6250,
+      5750,
+      9750
+     ],
+     "median": 6250.0,
+     "macro_end": 1034,
+     "ga": 104022,
+     "subsume": 50238,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyon",
+     "seed": 123,
+     "recoveries": [
+      7750,
+      9500,
+      6000
+     ],
+     "scores": [
+      7750,
+      9500,
+      6000
+     ],
+     "median": 7750.0,
+     "macro_end": 1133,
+     "ga": 104242,
+     "subsume": 48603,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N2000_selectiontournament_specifyon",
+     "seed": 124,
+     "recoveries": [
+      5500,
+      9000,
+      8000
+     ],
+     "scores": [
+      5500,
+      9000,
+      8000
+     ],
+     "median": 8000.0,
+     "macro_end": 956,
+     "ga": 103853,
+     "subsume": 50158,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N1000_selectiontournament_specifyon",
+   "params": {
+    "selection": "tournament",
+    "specify": true,
+    "N": 1000
+   },
+   "per_seed_median": [
+    8250.0,
+    8500.0,
+    13000.0,
+    10000.0,
+    9500.0
+   ],
+   "pooled_median": 9500.0,
+   "pooled_per_shift_median": 9500.0,
+   "rows": [
+    {
+     "config": "N1000_selectiontournament_specifyon",
+     "seed": 120,
+     "recoveries": [
+      8250,
+      12250,
+      8250
+     ],
+     "scores": [
+      8250,
+      12250,
+      8250
+     ],
+     "median": 8250.0,
+     "macro_end": 585,
+     "ga": 94961,
+     "subsume": 39897,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyon",
+     "seed": 121,
+     "recoveries": [
+      7750,
+      10250,
+      8500
+     ],
+     "scores": [
+      7750,
+      10250,
+      8500
+     ],
+     "median": 8500.0,
+     "macro_end": 554,
+     "ga": 94540,
+     "subsume": 42084,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyon",
+     "seed": 122,
+     "recoveries": [
+      13000,
+      8500,
+      16750
+     ],
+     "scores": [
+      13000,
+      8500,
+      16750
+     ],
+     "median": 13000.0,
+     "macro_end": 687,
+     "ga": 95851,
+     "subsume": 37429,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyon",
+     "seed": 123,
+     "recoveries": [
+      11250,
+      10000,
+      8250
+     ],
+     "scores": [
+      11250,
+      10000,
+      8250
+     ],
+     "median": 10000.0,
+     "macro_end": 647,
+     "ga": 94565,
+     "subsume": 40176,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyon",
+     "seed": 124,
+     "recoveries": [
+      8500,
+      10250,
+      9500
+     ],
+     "scores": [
+      8500,
+      10250,
+      9500
+     ],
+     "median": 9500.0,
+     "macro_end": 596,
+     "ga": 94778,
+     "subsume": 40842,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N1000_selectionroulette_specifyoff",
+   "params": {
+    "selection": "roulette",
+    "specify": false,
+    "N": 1000
+   },
+   "per_seed_median": [
+    7000.0,
+    10250.0,
+    9500.0,
+    9000.0,
+    10250.0
+   ],
+   "pooled_median": 9500.0,
+   "pooled_per_shift_median": 9750.0,
+   "rows": [
+    {
+     "config": "N1000_selectionroulette_specifyoff",
+     "seed": 120,
+     "recoveries": [
+      6750,
+      7000,
+      11500
+     ],
+     "scores": [
+      6750,
+      7000,
+      11500
+     ],
+     "median": 7000.0,
+     "macro_end": 308,
+     "ga": 85093,
+     "subsume": 69048,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyoff",
+     "seed": 121,
+     "recoveries": [
+      11000,
+      10250,
+      7250
+     ],
+     "scores": [
+      11000,
+      10250,
+      7250
+     ],
+     "median": 10250.0,
+     "macro_end": 288,
+     "ga": 85754,
+     "subsume": 67097,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyoff",
+     "seed": 122,
+     "recoveries": [
+      9500,
+      6250,
+      11250
+     ],
+     "scores": [
+      9500,
+      6250,
+      11250
+     ],
+     "median": 9500.0,
+     "macro_end": 329,
+     "ga": 85022,
+     "subsume": 68000,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyoff",
+     "seed": 123,
+     "recoveries": [
+      14250,
+      9000,
+      8250
+     ],
+     "scores": [
+      14250,
+      9000,
+      8250
+     ],
+     "median": 9000.0,
+     "macro_end": 326,
+     "ga": 86753,
+     "subsume": 64710,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyoff",
+     "seed": 124,
+     "recoveries": [
+      10750,
+      9750,
+      10250
+     ],
+     "scores": [
+      10750,
+      9750,
+      10250
+     ],
+     "median": 10250.0,
+     "macro_end": 290,
+     "ga": 86848,
+     "subsume": 64680,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N1000_selectionroulette_specifyon",
+   "params": {
+    "selection": "roulette",
+    "specify": true,
+    "N": 1000
+   },
+   "per_seed_median": [
+    11250.0,
+    6750.0,
+    10750.0,
+    10000.0,
+    9500.0
+   ],
+   "pooled_median": 10000.0,
+   "pooled_per_shift_median": 10000.0,
+   "rows": [
+    {
+     "config": "N1000_selectionroulette_specifyon",
+     "seed": 120,
+     "recoveries": [
+      11250,
+      12500,
+      10250
+     ],
+     "scores": [
+      11250,
+      12500,
+      10250
+     ],
+     "median": 11250.0,
+     "macro_end": 437,
+     "ga": 86826,
+     "subsume": 64708,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyon",
+     "seed": 121,
+     "recoveries": [
+      12000,
+      6750,
+      6750
+     ],
+     "scores": [
+      12000,
+      6750,
+      6750
+     ],
+     "median": 6750.0,
+     "macro_end": 380,
+     "ga": 85958,
+     "subsume": 70422,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyon",
+     "seed": 122,
+     "recoveries": [
+      10750,
+      10000,
+      13500
+     ],
+     "scores": [
+      10750,
+      10000,
+      13500
+     ],
+     "median": 10750.0,
+     "macro_end": 430,
+     "ga": 87119,
+     "subsume": 64286,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyon",
+     "seed": 123,
+     "recoveries": [
+      10000,
+      10000,
+      10250
+     ],
+     "scores": [
+      10000,
+      10000,
+      10250
+     ],
+     "median": 10000.0,
+     "macro_end": 488,
+     "ga": 87126,
+     "subsume": 66390,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectionroulette_specifyon",
+     "seed": 124,
+     "recoveries": [
+      8250,
+      9500,
+      9750
+     ],
+     "scores": [
+      8250,
+      9500,
+      9750
+     ],
+     "median": 9500.0,
+     "macro_end": 423,
+     "ga": 86103,
+     "subsume": 68802,
+     "audit_chain_valid": true
+    }
+   ]
+  },
+  {
+   "config": "N1000_selectiontournament_specifyoff",
+   "params": {
+    "selection": "tournament",
+    "specify": false,
+    "N": 1000
+   },
+   "per_seed_median": [
+    10250.0,
+    10250.0,
+    10750.0,
+    11000.0,
+    10250.0
+   ],
+   "pooled_median": 10250.0,
+   "pooled_per_shift_median": 10250.0,
+   "rows": [
+    {
+     "config": "N1000_selectiontournament_specifyoff",
+     "seed": 120,
+     "recoveries": [
+      8000,
+      10250,
+      10250
+     ],
+     "scores": [
+      8000,
+      10250,
+      10250
+     ],
+     "median": 10250.0,
+     "macro_end": 567,
+     "ga": 94717,
+     "subsume": 42894,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyoff",
+     "seed": 121,
+     "recoveries": [
+      10250,
+      13250,
+      7750
+     ],
+     "scores": [
+      10250,
+      13250,
+      7750
+     ],
+     "median": 10250.0,
+     "macro_end": 487,
+     "ga": 95752,
+     "subsume": 42010,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyoff",
+     "seed": 122,
+     "recoveries": [
+      10750,
+      12500,
+      8000
+     ],
+     "scores": [
+      10750,
+      12500,
+      8000
+     ],
+     "median": 10750.0,
+     "macro_end": 589,
+     "ga": 95612,
+     "subsume": 40671,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyoff",
+     "seed": 123,
+     "recoveries": [
+      13500,
+      9000,
+      11000
+     ],
+     "scores": [
+      13500,
+      9000,
+      11000
+     ],
+     "median": 11000.0,
+     "macro_end": 581,
+     "ga": 95955,
+     "subsume": 39304,
+     "audit_chain_valid": true
+    },
+    {
+     "config": "N1000_selectiontournament_specifyoff",
+     "seed": 124,
+     "recoveries": [
+      7000,
+      11500,
+      10250
+     ],
+     "scores": [
+      7000,
+      11500,
+      10250
+     ],
+     "median": 10250.0,
+     "macro_end": 486,
+     "ga": 95651,
+     "subsume": 41145,
+     "audit_chain_valid": true
+    }
+   ]
+  }
+ ]
+}

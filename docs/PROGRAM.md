@@ -78,7 +78,7 @@ OACG; failing one ends that branch and is published.
 |---|---|---|---|---|
 | M1 | **Regulatory genes** — dnalang v0.2 interpreter: genes with `trigger`, `dependencies`, `outputs`; staged expression; compiles to an L1 rule set | artificial GRNs (Banzhaf; Bongard) | on the drifting hidden-mux family, a GRN-encoded organism vs a flat LCS at equal evaluations | **FAIL (specification gaming; hand cascade 4/5 exploratory).** Language built (`dnalang` 0.2) |
 | M2 | **Content must matter** — priors vs random injection on a 12–16-bit family where random rules almost never match | Experiment Zero, widened | B (informed) vs C (random) vs periodic, as before | **FAIL (0/5 vs shape-matched control).** LLM-prior branch closed. Specificity prior: M2b FAIL (3/5), M2c FAIL (1/5) — closed |
-| M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | **FAIL at 6–10 bits (ratio 0.885, 1/5):** no hard tasks to reach, so the generator is overhead. Blocked on learner sample efficiency at wide inputs |
+| M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | **FAIL at 6–10 bits (ratio 0.885, 1/5):** no hard tasks to reach, so the generator is overhead. Was blocked on learner sample efficiency at wide inputs; Substrate-Opt-2 PASS unblocks a 16-bit run with `PARAMS16` |
 | M4 | **Library learning** — evolved DSL programs are abstracted into new primitives when they recur; the DSL grows | DreamCoder (Ellis et al. 2021); ADFs (Koza) | held-out task solve rate and description length before/after abstraction | no gain in solve rate on held-out families → abstraction adds nothing |
 | M5 | **Division of labour** — populations on the bus with the signalling result (18 % full protocols, 50 seeds) as baseline; tasks that require ≥ 2 agents | emergent communication; Lewis signalling | fraction of communication-dependent tasks solved; protocol injectivity rate | no rise over the 18 % baseline with structure (M1) present → communication is not helped by regulation |
 | M6 | **Physics as the open-ended environment** — hardware calibration drift as the task generator (the Flywheel Aim 3) | hardware-in-the-loop | re-convergence after `calibration_hash` changes, four arms | as pre-registered in `flywheel-2026/PREREGISTRATION.md` |
@@ -170,6 +170,17 @@ Opt-1's 3,000 line is reported, not required. Cost (N = 4000 ≈ 4.5× wall time
 the criterion is trials. One tuning-seed observation motivated the run and is not evidence:
 tournament + specify + N 4000 on seed 120 recovered in 5,750 / 5,750 / 7,500.
 
+**Result (2026-09-21): PASS.** Judge seeds 50–54: winner (N 4000, tournament, specify) 6,000
+[6000, 7250, 5750, 5500, 6500] vs default 8,750 [9500, 11000, 6250, 8750, 8750], 5/5. Sweep
+marginals: N 1000 / 2000 / 4000 → 9,750 / 7,375 / 6,375; tournament −375; specify +375
+(noise). Population size is the mechanism; tournament selection is a consistent small gain;
+specify is not established. `lcs.PARAMS16` is the pre-registered 16-bit learner from here.
+What this changes in the boundary statement: the ceiling Opt-1 bounded was over its four
+knobs, not over XCS — the substrate's sample efficiency at 16 bits is ≈ 6,000 trials/shift
+at N 4000, at 2.7× the compute per shift. What it does not change: nothing above the
+learner moved it; the gain came from the learner. **Next rung: M3 at 16 bits with
+`PARAMS16`**, pre-registered below.
+
 ## 4. What this is not
 
 - Not a language model, and not competitive with one on language. The DSL is closed by
@@ -218,6 +229,7 @@ dnalang's central unbuilt idea — regulation — does anything at all.
 | m2c: specificity prior replication, 16-bit | FAIL | shape 10750 vs covering 9500 vs periodic 11750; C1 1/5 C2 3/5 p=0.856/0.063 |
 | m3: open-ended tasks, 6-10 bit | FAIL | poet 46 vs random 52 ANNECS |
 | substrate-opt-1: XCS grid, 16-bit | BOUNDED | winner tga25_ason_mu0.05_pw0.75 11500 vs default 10000 (winner<default 2/5) |
+| substrate-opt-2: tournament/specify/N, 16-bit | PASS | winner N4000_selectiontournament_specifyon 6000 vs default 8750 (winner<default 5/5) |
 | bridge step 3 | PASS (tie) | organism 0.9763 / GA 0.9758 / baseline 0.9705 |
 | bridge tier 4 shock | FAIL | organism-structural 14, organism-plain 11, ga-continued 30, ga-restarted 38 |
 <!-- scorecard:end -->

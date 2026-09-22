@@ -1,0 +1,246 @@
+{
+ "seeds": [
+  50,
+  51,
+  52,
+  53,
+  54
+ ],
+ "winner": {
+  "config": "N4000_selectiontournament_specifyon",
+  "params": {
+   "selection": "tournament",
+   "specify": true,
+   "N": 4000
+  },
+  "per_seed_median": [
+   6000.0,
+   7250.0,
+   5750.0,
+   5500.0,
+   6500.0
+  ],
+  "pooled_median": 6000.0,
+  "pooled_per_shift_median": 6000.0,
+  "rows": [
+   {
+    "config": "N4000_selectiontournament_specifyon",
+    "seed": 50,
+    "recoveries": [
+     6500,
+     6000,
+     5500
+    ],
+    "scores": [
+     6500,
+     6000,
+     5500
+    ],
+    "median": 6000.0,
+    "macro_end": 2034,
+    "ga": 111584,
+    "subsume": 50145,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N4000_selectiontournament_specifyon",
+    "seed": 51,
+    "recoveries": [
+     7250,
+     7500,
+     5750
+    ],
+    "scores": [
+     7250,
+     7500,
+     5750
+    ],
+    "median": 7250.0,
+    "macro_end": 2127,
+    "ga": 111690,
+    "subsume": 49709,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N4000_selectiontournament_specifyon",
+    "seed": 52,
+    "recoveries": [
+     5750,
+     4750,
+     7000
+    ],
+    "scores": [
+     5750,
+     4750,
+     7000
+    ],
+    "median": 5750.0,
+    "macro_end": 1781,
+    "ga": 111249,
+    "subsume": 51382,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N4000_selectiontournament_specifyon",
+    "seed": 53,
+    "recoveries": [
+     5500,
+     5500,
+     5500
+    ],
+    "scores": [
+     5500,
+     5500,
+     5500
+    ],
+    "median": 5500.0,
+    "macro_end": 2159,
+    "ga": 111492,
+    "subsume": 51679,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N4000_selectiontournament_specifyon",
+    "seed": 54,
+    "recoveries": [
+     6500,
+     6000,
+     9250
+    ],
+    "scores": [
+     6500,
+     6000,
+     9250
+    ],
+    "median": 6500.0,
+    "macro_end": 1997,
+    "ga": 111003,
+    "subsume": 50374,
+    "audit_chain_valid": true
+   }
+  ]
+ },
+ "default": {
+  "config": "N1000_selectionroulette_specifyoff",
+  "params": {
+   "selection": "roulette",
+   "specify": false,
+   "N": 1000
+  },
+  "per_seed_median": [
+   9500.0,
+   11000.0,
+   6250.0,
+   8750.0,
+   8750.0
+  ],
+  "pooled_median": 8750.0,
+  "pooled_per_shift_median": 8750.0,
+  "rows": [
+   {
+    "config": "N1000_selectionroulette_specifyoff",
+    "seed": 50,
+    "recoveries": [
+     8250,
+     9500,
+     12500
+    ],
+    "scores": [
+     8250,
+     9500,
+     12500
+    ],
+    "median": 9500.0,
+    "macro_end": 290,
+    "ga": 86937,
+    "subsume": 63671,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N1000_selectionroulette_specifyoff",
+    "seed": 51,
+    "recoveries": [
+     12250,
+     8750,
+     11000
+    ],
+    "scores": [
+     12250,
+     8750,
+     11000
+    ],
+    "median": 11000.0,
+    "macro_end": 290,
+    "ga": 86571,
+    "subsume": 64712,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N1000_selectionroulette_specifyoff",
+    "seed": 52,
+    "recoveries": [
+     6250,
+     6000,
+     8250
+    ],
+    "scores": [
+     6250,
+     6000,
+     8250
+    ],
+    "median": 6250.0,
+    "macro_end": 304,
+    "ga": 84916,
+    "subsume": 69884,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N1000_selectionroulette_specifyoff",
+    "seed": 53,
+    "recoveries": [
+     12250,
+     8750,
+     7750
+    ],
+    "scores": [
+     12250,
+     8750,
+     7750
+    ],
+    "median": 8750.0,
+    "macro_end": 270,
+    "ga": 85289,
+    "subsume": 66842,
+    "audit_chain_valid": true
+   },
+   {
+    "config": "N1000_selectionroulette_specifyoff",
+    "seed": 54,
+    "recoveries": [
+     8750,
+     11750,
+     8500
+    ],
+    "scores": [
+     8750,
+     11750,
+     8500
+    ],
+    "median": 8750.0,
+    "macro_end": 208,
+    "ga": 87311,
+    "subsume": 64376,
+    "audit_chain_valid": true
+   }
+  ]
+ },
+ "winner_beats_default": "5/5",
+ "verdict": "PASS",
+ "criteria": {
+  "pass_below": 7000.0,
+  "bounded_at": 8000.0,
+  "partial_needs_wins": 4,
+  "pass_needs_wins": 4
+ },
+ "sweep_min": 5750.0
+}

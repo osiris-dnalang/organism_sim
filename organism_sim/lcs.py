@@ -92,6 +92,14 @@ class Params:
         return self.__dict__.copy()
 
 
+# Substrate-Opt-2 (2026-09-21, results/substrate_opt2_eval_seeds50-54.json): the pre-registered
+# learner for any 16-bit rung — judged on fresh seeds 50–54 at 6,000 trials/shift vs 8,750 for
+# Params(N=1000), 5/5. Population size did most of the work, tournament selection a consistent
+# ~500 trials at N >= 2000, specify was within noise (kept because it is the configuration that
+# was judged, not because its contribution is established). ~4.5x the wall time of N=1000.
+PARAMS16 = Params(N=4000, selection="tournament", specify=True, p_explore=0.5)
+
+
 @dataclass
 class Rule:
     condition: str
@@ -543,4 +551,4 @@ class RuleEngine:
                 "counters": dict(self.counters), "actions": list(self.actions)}
 
 
-__all__ = ["Params", "Rule", "RuleEngine"]
+__all__ = ["PARAMS16", "Params", "Rule", "RuleEngine"]
