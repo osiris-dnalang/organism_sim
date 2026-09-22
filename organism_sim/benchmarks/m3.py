@@ -44,6 +44,27 @@ ARMS = ("poet", "random")
 WIDTHS = (6, 10)
 
 
+@dataclass(frozen=True)
+class Space:
+    """A task space: k address bits select one of 2^k data positions inside ``widths``; the
+    learner every agent is built from. The default is M3's (k=2, 6–10 bits, N=400) and
+    reproduces it exactly; M3b uses k=3, 12–16 bits, ``lcs.PARAMS16``."""
+    k: int = 2
+    widths: Tuple[int, int] = WIDTHS
+    params: Params = field(default_factory=lambda: Params(N=400, p_explore=0.5))
+
+    @property
+    def n_data(self) -> int:
+        return 1 << self.k
+
+    @property
+    def min_width(self) -> int:
+        return self.k + self.n_data
+
+
+DEFAULT_SPACE = Space()
+
+
 @dataclass
 class Task:
     tid: int
@@ -59,7 +80,10 @@ class Task:
 
     def truth(self, bits: str) -> str:
         b = [int(c) for c in bits]
-        out = b[self.data[2 * b[self.addr[0]] + b[self.addr[1]]]]
+        idx = 0
+        for a in self.addr:                         # k=2: 2*b[a0] + b[a1], as before
+            idx = (idx << 1) | b[a]
+        out = b[self.data[idx]]
         if self.twist is not None:
             out ^= b[self.twist]
         return str(1 - out if self.invert else out)
@@ -68,19 +92,24 @@ class Task:
         return asdict(self)
 
     @staticmethod
-    def sample(rng: np.random.Generator, tid: int, it: int = 0, width: Optional[int] = None) -> "Task":
-        w = int(width or rng.integers(WIDTHS[0], WIDTHS[1] + 1))
+    def sample(rng: np.random.Generator, tid: int, it: int = 0, width: Optional[int] = None,
+               space: Space = DEFAULT_SPACE) -> "Task":
+        k, nd = space.k, space.n_data
+        w = int(width or rng.integers(space.widths[0], space.widths[1] + 1))
+        if w < space.min_width:
+            raise ValueError(f"width {w} < k + 2^k = {space.min_width}")
         perm = list(map(int, rng.permutation(w)))
-        irrelevant = perm[6:]
+        irrelevant = perm[k + nd:]
         twist = int(rng.choice(irrelevant)) if irrelevant and rng.random() < 0.5 else None
-        return Task(tid, w, perm[:2], perm[2:6], bool(rng.integers(2)), twist, None, it)
+        return Task(tid, w, perm[:k], perm[k:k + nd], bool(rng.integers(2)), twist, None, it)
 
-    def mutate(self, rng: np.random.Generator, tid: int, it: int) -> "Task":
+    def mutate(self, rng: np.random.Generator, tid: int, it: int,
+               space: Space = DEFAULT_SPACE) -> "Task":
         w = self.width
         r = rng.random()
         if r < 0.3:
-            w = int(min(WIDTHS[1], max(WIDTHS[0], w + int(rng.choice([-1, 1])))))
-            child = Task.sample(rng, tid, it, w)
+            w = int(min(space.widths[1], max(space.widths[0], w + int(rng.choice([-1, 1])))))
+            child = Task.sample(rng, tid, it, w, space)
             child.invert = self.invert
         else:
             child = Task(tid, w, list(self.addr), list(self.data), self.invert, self.twist, None, it)
@@ -96,14 +125,14 @@ class Task:
                 used = set(child.addr) | set(child.data) | ({child.twist} if child.twist is not None else set())
                 free = [i for i in range(w) if i not in used]
                 if free:
-                    child.addr[int(rng.integers(2))] = int(rng.choice(free))
+                    child.addr[int(rng.integers(len(child.addr)))] = int(rng.choice(free))
         child.parent = self.tid
         return child
 
 
-def _agent(width: int, seed: int) -> LCSAgent:
+def _agent(width: int, seed: int, space: Space = DEFAULT_SPACE) -> LCSAgent:
     return LCSAgent(f"A{width}", input_len=width, actions=["(emit 0)", "(emit 1)"],
-                    params=Params(N=400, p_explore=0.5), seed=seed)
+                    params=space.params, seed=seed)
 
 
 def evaluate(agent: LCSAgent, task: Task, rng: np.random.Generator, n: int = 128) -> float:
@@ -134,14 +163,18 @@ class M3Log:
     rows: List[Dict[str, Any]] = field(default_factory=list)
     tasks: List[Dict[str, Any]] = field(default_factory=list)
     final: Dict[str, Any] = field(default_factory=dict)
+    live: Optional[Tuple[List[Task], Dict[int, LCSAgent]]] = field(default=None, repr=False, compare=False)
 
     def to_dict(self) -> Dict[str, Any]:
-        return asdict(self)
+        d = asdict(self)
+        d.pop("live", None)
+        return d
 
 
 def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000, n_pairs: int = 4,
             gen_every: int = 3, children_per_task: int = 2, max_tasks: int = 8, transfer_every: int = 5,
-            mc_lo: float = 0.6, mc_hi: float = 0.95, solved_at: float = 0.95) -> M3Log:
+            mc_lo: float = 0.6, mc_hi: float = 0.95, solved_at: float = 0.95,
+            space: Space = DEFAULT_SPACE) -> M3Log:
     if arm not in ARMS:
         raise ValueError(arm)
     rng = np.random.default_rng(seed)
@@ -154,8 +187,8 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
         next_tid += 1
         return next_tid - 1
 
-    tasks: List[Task] = [Task.sample(rng, new_tid(), 0) for _ in range(n_pairs)]
-    agents: Dict[int, LCSAgent] = {t.tid: _agent(t.width, seed * 100 + t.tid) for t in tasks}
+    tasks: List[Task] = [Task.sample(rng, new_tid(), 0, space=space) for _ in range(n_pairs)]
+    agents: Dict[int, LCSAgent] = {t.tid: _agent(t.width, seed * 100 + t.tid, space) for t in tasks}
     archive: List[Task] = list(tasks)             # every task ever created (for ANNECS)
     transfers = 0
     created_random = 0
@@ -178,7 +211,7 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
                 children = []
                 for t in tasks:
                     for _ in range(children_per_task):
-                        c = t.mutate(rng, new_tid(), it)
+                        c = t.mutate(rng, new_tid(), it, space)
                         s, _ = best_score(c)
                         if mc_lo <= s < mc_hi:                 # minimal criterion
                             c.unsolved_at_creation = True
@@ -195,10 +228,10 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
                     if parent_agent is not None and parent_agent.input_len == c.width:
                         agents[c.tid] = copy.deepcopy(parent_agent)
                     else:
-                        agents[c.tid] = _agent(c.width, seed * 100 + c.tid)
+                        agents[c.tid] = _agent(c.width, seed * 100 + c.tid, space)
             else:
                 for _ in range(len(tasks) * children_per_task // 2):   # matched creation rate
-                    c = Task.sample(rng, new_tid(), it)
+                    c = Task.sample(rng, new_tid(), it, space=space)
                     s, _ = best_score(c)
                     c.unsolved_at_creation = s < solved_at
                     created_random += 1
@@ -208,7 +241,7 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
                         agents.pop(oldest.tid, None)
                     tasks.append(c)
                     archive.append(c)
-                    agents[c.tid] = _agent(c.width, seed * 100 + c.tid)
+                    agents[c.tid] = _agent(c.width, seed * 100 + c.tid, space)
         # transfer (poet only)
         if arm == "poet" and it % transfer_every == 0:
             for t in tasks:
@@ -238,29 +271,67 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
                  "max_width": max(r["max_width"] for r in log.rows), "transfers": transfers,
                  "annecs_curve": [r["annecs"] for r in log.rows],
                  "audit_chains_valid": all(a.organism.chain.verify() for a in agents.values())}
+    log.live = (list(tasks), dict(agents))
     return log
 
 
-def compare(seeds: Sequence[int] = range(20, 25), **kw) -> Dict[str, Any]:
-    rows = []
-    for sd in seeds:
-        p = run_arm("poet", sd, **kw)
-        r = run_arm("random", sd, **kw)
-        rows.append({"seed": sd, "poet": p.final, "random": r.final})
+def final_distribution_score(tasks: Sequence[Task], agents: Dict[int, LCSAgent],
+                             rng: np.random.Generator) -> float:
+    """Mean over *tasks* of the best accuracy any agent in *agents* reaches on it (0 when no
+    agent has the task's width). Used to judge one arm's agents on the other arm's final
+    task population."""
+    if not tasks:
+        return 0.0
+    return float(np.mean([max([evaluate(a, t, rng) for a in agents.values()] or [0.0]) for t in tasks]))
+
+
+def compare_row(seed: int, final_distribution: bool = False, **kw) -> Dict[str, Any]:
+    """Both arms on one seed (and, for M3b, both arms' agents on poet's final tasks)."""
+    p = run_arm("poet", seed, **kw)
+    r = run_arm("random", seed, **kw)
+    row: Dict[str, Any] = {"seed": seed, "poet": p.final, "random": r.final}
+    if final_distribution:
+        frng = np.random.default_rng(seed + 2)
+        ptasks, pagents = p.live
+        _, ragents = r.live
+        row["final_distribution"] = {"n_tasks": len(ptasks),
+                                     "poet_agents": final_distribution_score(ptasks, pagents, frng),
+                                     "random_agents": final_distribution_score(ptasks, ragents, frng)}
+    return row
+
+
+def verdict(rows: List[Dict[str, Any]], seeds: Sequence[int], final_distribution: bool = False,
+            params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     n = len(rows)
     c1 = sum(r["poet"]["annecs"] > r["random"]["annecs"] for r in rows)
     pooled_p = float(np.median([r["poet"]["annecs"] for r in rows]))
     pooled_r = float(np.median([r["random"]["annecs"] for r in rows]))
     ratio = pooled_p / pooled_r if pooled_r > 0 else (float("inf") if pooled_p > 0 else 1.0)
-    out = {"seeds": list(seeds), "params": kw, "rows": rows,
+    out = {"seeds": list(seeds), "params": params or {}, "rows": rows,
            "pooled_annecs": {"poet": pooled_p, "random": pooled_r}, "ratio": ratio,
            "verdict": {"C1_count": c1, "C1": c1 >= 4 if n >= 5 else c1 == n, "C2": ratio >= 1.25, "n": n,
                        "exploratory_max_width": {a: [r[a]["max_width"] for r in rows] for a in ARMS},
                        "exploratory_transfers": [r["poet"]["transfers"] for r in rows],
                        "exploratory_still_rising": sum(
                            r["poet"]["annecs_curve"][-1] > r["poet"]["annecs_curve"][-6] for r in rows)}}
-    out["verdict"]["pass"] = bool(out["verdict"]["C1"] and out["verdict"]["C2"])
+    if final_distribution:
+        c3 = sum(r["final_distribution"]["poet_agents"] > r["final_distribution"]["random_agents"] for r in rows)
+        out["verdict"]["C3_count"] = c3
+        out["verdict"]["C3"] = c3 >= 4 if n >= 5 else c3 == n
+        out["verdict"]["pass"] = bool(out["verdict"]["C1"] and out["verdict"]["C2"] and out["verdict"]["C3"])
+    else:
+        out["verdict"]["pass"] = bool(out["verdict"]["C1"] and out["verdict"]["C2"])
     return out
 
 
-__all__ = ["Task", "ARMS", "WIDTHS", "evaluate", "train", "run_arm", "compare"]
+def compare(seeds: Sequence[int] = range(20, 25), final_distribution: bool = False,
+            **kw) -> Dict[str, Any]:
+    rows = [compare_row(sd, final_distribution, **kw) for sd in seeds]
+    params = {k: (v if not isinstance(v, Space) else {"k": v.k, "widths": list(v.widths),
+                                                       "params": v.params.to_dict()})
+              for k, v in kw.items()}
+    return verdict(rows, seeds, final_distribution, params)
+
+
+__all__ = ["Task", "Space", "DEFAULT_SPACE", "ARMS", "WIDTHS", "evaluate", "train", "run_arm",
+           "compare", "compare_row", "verdict", "final_distribution_score"]

@@ -61,3 +61,40 @@ def test_arms_run_and_annecs_monotone():
         assert all(set(r) >= {"iter", "n_tasks", "annecs", "max_width", "mean_acc"} for r in lg.rows)
         if arm == "random":
             assert lg.final["transfers"] == 0
+
+
+# ── Space generalisation (M3b) ───────────────────────────────────────────────
+
+def test_default_space_is_m3_and_k3_tasks_are_well_formed():
+    import numpy as np
+
+    from organism_sim.benchmarks.m3 import DEFAULT_SPACE, Space, Task
+    from organism_sim.lcs import PARAMS16
+    assert (DEFAULT_SPACE.k, DEFAULT_SPACE.widths, DEFAULT_SPACE.params.N) == (2, (6, 10), 400)
+    sp = Space(k=3, widths=(12, 16), params=PARAMS16)
+    rng = np.random.default_rng(3)
+    for _ in range(50):
+        t = Task.sample(rng, 0, space=sp)
+        assert 12 <= t.width <= 16 and len(t.addr) == 3 and len(t.data) == 8
+        used = set(t.addr) | set(t.data) | ({t.twist} if t.twist is not None else set())
+        assert len(used) == 11 + (t.twist is not None)
+        bits = "".join(map(str, rng.integers(0, 2, t.width)))
+        b = [int(c) for c in bits]
+        idx = 4 * b[t.addr[0]] + 2 * b[t.addr[1]] + b[t.addr[2]]
+        expect = b[t.data[idx]] ^ (b[t.twist] if t.twist is not None else 0)
+        assert t.truth(bits) == str(1 - expect if t.invert else expect)
+        c = t.mutate(rng, 1, 1, sp)
+        assert 12 <= c.width <= 16 and len(c.addr) == 3 and c.parent == 0
+    import pytest
+    with pytest.raises(ValueError):
+        Task.sample(rng, 0, width=10, space=sp)
+
+
+def test_m3b_driver_is_pre_registered_on_fresh_seeds():
+    import sys
+    sys.path.insert(0, str(ROOT / "experiments"))
+    import m3_wide
+    assert set(m3_wide.SEEDS) == set(range(60, 65))
+    assert not set(m3_wide.SEEDS) & (set(range(0, 55)) | set(range(100, 125)))
+    assert m3_wide.SPACE.k == 3 and m3_wide.SPACE.widths == (12, 16) and m3_wide.SPACE.params.N == 4000
+    assert m3_wide.KW["train_trials"] == 3000 and m3_wide.KW["iterations"] == 30

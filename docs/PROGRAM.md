@@ -181,6 +181,26 @@ at N 4000, at 2.7× the compute per shift. What it does not change: nothing abov
 learner moved it; the gain came from the learner. **Next rung: M3 at 16 bits with
 `PARAMS16`**, pre-registered below.
 
+### M3b — open-ended task generation at 12–16 bits with `PARAMS16` (pre-registered 2026-09-21)
+
+The rung Substrate-Opt-2 unblocked. `benchmarks/m3.py` is generalised to a `Space`
+(k address bits, width range, learner) whose default reproduces M3 bit-for-bit (verified:
+seed 20 poet — ANNECS 48, archive 69, transfers 10, identical curve). `experiments/m3_wide.py`:
+k = 3, widths 12–16, learner `PARAMS16`; 30 iterations × 3,000 training trials per task, 4
+initial pairs, ≤ 8 tasks, every other harness parameter M3's; fresh seeds 60–64.
+
+| criterion | statement |
+|---|---|
+| C1 | ANNECS(poet) > ANNECS(random) on ≥ 4/5 seeds |
+| C2 | pooled ANNECS ratio ≥ 1.25 |
+| C3 | on the poet arm's final task population (the self-generated distribution), the best accuracy reachable by poet's agents exceeds that reachable by the random arm's agents on ≥ 4/5 — competence over the self-generated distribution beats a fixed-curriculum learner of equal budget on that same distribution |
+
+PASS ⇔ C1 ∧ C2 ∧ C3. Reported, not judged: ANNECS still rising over the last 5 iterations
+(continuous growth), max width, transfers. If PASS: the first positive wide-space result for
+open-ended generation; next rungs M4 / M7 on this learner. If FAIL: with the learner no
+longer the excuse, the POET loop itself is what does not deliver on this family, and M3
+closes.
+
 ## 4. What this is not
 
 - Not a language model, and not competitive with one on language. The DSL is closed by
