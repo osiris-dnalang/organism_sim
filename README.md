@@ -61,6 +61,7 @@ if it drifts from them):
 | m3: open-ended tasks, 6-10 bit | FAIL | poet 46 vs random 52 ANNECS |
 | substrate-opt-1: XCS grid, 16-bit | BOUNDED | winner tga25_ason_mu0.05_pw0.75 11500 vs default 10000 (winner<default 2/5) |
 | substrate-opt-2: tournament/specify/N, 16-bit | PASS | winner N4000_selectiontournament_specifyon 6000 vs default 8750 (winner<default 5/5) |
+| m3b: open-ended tasks, 12-16 bit, PARAMS16 | PASS | poet 35 vs random 25 ANNECS, ratio 1.40, C1 4/5 C3 5/5 |
 | bridge step 3 | PASS (tie) | organism 0.9763 / GA 0.9758 / baseline 0.9705 |
 | bridge tier 4 shock | FAIL | organism-structural 14, organism-plain 11, ga-continued 30, ga-restarted 38 |
 <!-- scorecard:end -->
@@ -464,6 +465,43 @@ and the record says so. Consequence, as pre-registered: the judged configuration
 `lcs.PARAMS16`, the learner for any further 16-bit rung, and M3 at width is unblocked *for
 that learner*. Opt-1's 3,000 line was not reached (fastest judged shift 4,750); what was
 bounded in Opt-1 was the knobs it tested, not XCS.
+
+## M3b — open-ended task generation at 12–16 bits with `PARAMS16`, pre-registered, PASS
+
+`experiments/m3_wide.py` over `benchmarks/m3.py` generalised to a `Space` (k address bits,
+width range, learner; the default reproduces M3 bit-for-bit — verified on seed 20). k = 3,
+widths 12–16, learner `PARAMS16`; 30 iterations × 3,000 training trials per task, 4 initial
+pairs, ≤ 8 tasks, every other parameter M3's; fresh seeds 60–64; both arms' agents are then
+scored on the poet arm's final task population. Criteria first: C1 ANNECS(poet) >
+ANNECS(random) on ≥ 4/5; C2 pooled ratio ≥ 1.25; C3 poet's agents beat the random arm's
+agents on poet's final tasks on ≥ 4/5.
+
+| seed | poet ANNECS / created | random ANNECS / created | final-distribution poet / random |
+|---|---|---|---|
+| 60 | 33 / 38 | 25 / 80 | 0.776 / 0.496 |
+| 61 | 41 / 49 | 25 / 80 | 0.798 / 0.000 † |
+| 62 | 26 / 34 | **30** / 80 | 0.687 / 0.193 |
+| 63 | 35 / 41 | 24 / 80 | 0.913 / 0.283 |
+| 64 | 38 / 53 | 23 / 80 | 0.776 / 0.557 |
+
+Pooled ANNECS **35 vs 25, ratio 1.40**; C1 **4/5**, C2 ✓, C3 **5/5**; the poet ANNECS curve is
+still rising over the last five iterations on 5/5 seeds; transfers 5–9 per seed; max width
+reached 14–16 → **PASS** (`results/m3b_eval_seeds60-64.json`, `m3b_run.log`,
+`m3b_iterations.log`; 9,577 s on 5 workers). Poet solved 75–85 % of what it created, the
+random stream ≈ 30 % of what it created. This is the reverse of M3 at 6–10 bits: there every
+task fell in a few iterations and uniform sampling out-generated the loop; at 12–16 bits
+with a learner that needs ≈ 6,000 trials per instance, tasks are hard enough that admitting
+only the just-unsolvable ones is what produces solved-later tasks. The first positive
+wide-space result for the program's central mechanism.
+
+Two caveats are part of the result. † C3 on seed 61 reads 0.000 because `evaluate` returns
+0 when no agent has the task's width: none of the random arm's eight agents shared a width
+with poet's final tasks, so C3 partly measures width coverage, not competence — the
+substantive criteria are C1/C2. And the poet arm's advantage bundles two mechanisms, the
+minimal criterion (curriculum) and children inheriting a copy of the parent's agent
+(competence transfer); this run does not separate them. That separation — poet with fresh
+child agents vs poet with inheritance vs random — is pre-registered as M3c in
+`docs/PROGRAM.md` and has not been run.
 
 ## Substrate reference numbers
 

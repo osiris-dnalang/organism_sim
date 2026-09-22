@@ -1,0 +1,9 @@
+START M3b seeds=[60, 61, 62, 63, 64] space=k3_w12-16 learner=PARAMS16(N=4000,tournament,specify=True) kw={'iterations': 30, 'train_trials': 3000, 'n_pairs': 4, 'gen_every': 3, 'children_per_task': 2, 'max_tasks': 8, 'transfer_every': 5, 'mc_lo': 0.6, 'mc_hi': 0.95, 'solved_at': 0.95} workers=5
+seed 60 poet annecs 33 w 16 tr 9 | random annecs 25 w 16 | final-dist poet 0.776 random 0.496 n 8 | 8439s
+seed 61 poet annecs 41 w 14 tr 5 | random annecs 25 w 16 | final-dist poet 0.798 random 0.000 n 8 | 8557s
+seed 62 poet annecs 26 w 15 tr 7 | random annecs 30 w 16 | final-dist poet 0.687 random 0.193 n 8 | 8915s
+seed 63 poet annecs 35 w 16 tr 5 | random annecs 24 w 16 | final-dist poet 0.913 random 0.283 n 8 | 9373s
+seed 64 poet annecs 38 w 15 tr 7 | random annecs 23 w 16 | final-dist poet 0.776 random 0.557 n 8 | 9577s
+POOLED annecs {'poet': 35.0, 'random': 25.0} ratio 1.400 C1 4/5 C3 5/5 still_rising 5/5
+VERDICT PASS {"C1": true, "C2": true, "C3": true}
+DONE 9577s

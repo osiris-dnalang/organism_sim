@@ -180,6 +180,15 @@ class State:
                                    f"(winner<default {d['winner_beats_default']})"})
         except (FileNotFoundError, KeyError):
             pass
+        try:
+            d = self.load("m3b_eval_seeds60-64.json")
+            v = d["verdict"]
+            rows.append({"experiment": "m3b: open-ended tasks, 12-16 bit, PARAMS16",
+                         "verdict": "PASS" if v["pass"] else "FAIL",
+                         "number": f"poet {d['pooled_annecs']['poet']:.0f} vs random {d['pooled_annecs']['random']:.0f} ANNECS, "
+                                   f"ratio {d['ratio']:.2f}, C1 {v['C1_count']}/5 C3 {v['C3_count']}/5"})
+        except (FileNotFoundError, KeyError):
+            pass
         b = self.bridge()
         if "step3" in b:
             rows.append({"experiment": "bridge step 3", "verdict": "PASS (tie)" if b["step3"]["verdict"]["pass"] else "FAIL",
