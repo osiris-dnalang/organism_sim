@@ -221,7 +221,16 @@ poet-fresh on ≥ 4/5 → inheritance adds to it. Four outcomes, all informative
 mechanisms), A ∧ ¬B (curriculum is the mechanism), ¬A ∧ B (inheritance is the mechanism —
 M3b's PASS was competence transfer, not task generation), ¬A ∧ ¬B (M3b does not replicate).
 C3 is dropped as a judged criterion (width-coverage confound) and reported width-matched
-instead. Cost ≈ 4 h on 5 workers. Launch is the next step; nothing is tuned before it.
+instead. Cost ≈ 4 h on 5 workers.
+
+**Clarification recorded before the run (2026-09-22).** The `poet` arm has *two* competence-
+transfer paths — an admitted child starts from a copy of its parent's agent, and every
+`transfer_every` iterations a better agent is copied onto a task — so "every admitted child
+gets a fresh agent — curriculum only" switches off **both**; leaving transfer on would make
+the ablation partial. `poet-fresh` therefore keeps only the minimal criterion. Verified
+before launch: with the ablation arm added, M3's recorded `poet` and `random` arms on seed
+20 still reproduce exactly (ANNECS 48 / 44, archives 69 / 80, transfers 10 / 0). There is no
+"PASS" for this run — the result is which of the four outcomes it is.
 
 ## 4. What this is not
 

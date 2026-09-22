@@ -40,7 +40,10 @@ import numpy as np
 from ..agent import LCSAgent
 from ..lcs import Params
 
-ARMS = ("poet", "random")
+ARMS = ("poet", "random")                       # the two-arm comparison (M3, M3b) — unchanged
+# M3c adds an ablation arm: minimal criterion kept, but no competence transfer of any kind
+# (no inheriting the parent's agent, no periodic transfer) — the curriculum on its own.
+ALL_ARMS = ("poet", "poet-fresh", "random")
 WIDTHS = (6, 10)
 
 
@@ -177,7 +180,7 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
             mc_lo: float = 0.6, mc_hi: float = 0.95, solved_at: float = 0.95,
             space: Space = DEFAULT_SPACE, progress=None) -> M3Log:
     """``progress(row)`` is called after each iteration's log row (observability only)."""
-    if arm not in ARMS:
+    if arm not in ALL_ARMS:
         raise ValueError(arm)
     rng = np.random.default_rng(seed)
     erng = np.random.default_rng(seed + 1)
@@ -209,7 +212,7 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
             train(agents[t.tid], t, rng, train_trials)
         # task generation
         if it % gen_every == 0:
-            if arm == "poet":
+            if arm.startswith("poet"):
                 children = []
                 for t in tasks:
                     for _ in range(children_per_task):
@@ -225,8 +228,9 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
                         agents.pop(oldest.tid, None)
                     tasks.append(c)
                     archive.append(c)
-                    # the child inherits (a copy of) its parent's agent when widths match
-                    parent_agent = agents.get(c.parent)
+                    # the child inherits (a copy of) its parent's agent when widths match;
+                    # "poet-fresh" never inherits — that is the ablation
+                    parent_agent = agents.get(c.parent) if arm == "poet" else None
                     if parent_agent is not None and parent_agent.input_len == c.width:
                         agents[c.tid] = copy.deepcopy(parent_agent)
                     else:
@@ -245,7 +249,7 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
                     archive.append(c)
                     agents[c.tid] = _agent(c.width, seed * 100 + c.tid, space)
         # transfer (poet only)
-        if arm == "poet" and it % transfer_every == 0:
+        if arm == "poet" and it % transfer_every == 0:   # "poet-fresh": no transfer either
             for t in tasks:
                 own = evaluate(agents[t.tid], t, erng)
                 best, who = own, t.tid
@@ -280,13 +284,18 @@ def run_arm(arm: str, seed: int, iterations: int = 30, train_trials: int = 2000,
 
 
 def final_distribution_score(tasks: Sequence[Task], agents: Dict[int, LCSAgent],
-                             rng: np.random.Generator) -> float:
-    """Mean over *tasks* of the best accuracy any agent in *agents* reaches on it (0 when no
-    agent has the task's width). Used to judge one arm's agents on the other arm's final
-    task population."""
-    if not tasks:
-        return 0.0
-    return float(np.mean([max([evaluate(a, t, rng) for a in agents.values()] or [0.0]) for t in tasks]))
+                             rng: np.random.Generator, width_matched: bool = False) -> Dict[str, Any]:
+    """Best accuracy any agent in *agents* reaches on each of *tasks*.
+
+    An agent of the wrong width scores 0 (``evaluate``), so an arm that happens to hold no
+    agent of a task's width scores 0 on it for a reason that is not competence.
+    ``width_matched=True`` restricts the mean to tasks whose width *agents* actually covers,
+    and ``n_scored`` says how many that was — M3b's seed-61 confound, reported not judged."""
+    widths = {a.input_len for a in agents.values()}
+    scored = [t for t in tasks if not width_matched or t.width in widths]
+    mean = float(np.mean([max([evaluate(a, t, rng) for a in agents.values()] or [0.0])
+                          for t in scored])) if scored else 0.0
+    return {"mean": mean, "n_scored": len(scored), "n_tasks": len(tasks), "widths": sorted(widths)}
 
 
 def compare_row(seed: int, final_distribution: bool = False, progress=None, **kw) -> Dict[str, Any]:
@@ -300,8 +309,8 @@ def compare_row(seed: int, final_distribution: bool = False, progress=None, **kw
         ptasks, pagents = p.live
         _, ragents = r.live
         row["final_distribution"] = {"n_tasks": len(ptasks),
-                                     "poet_agents": final_distribution_score(ptasks, pagents, frng),
-                                     "random_agents": final_distribution_score(ptasks, ragents, frng)}
+                                     "poet_agents": final_distribution_score(ptasks, pagents, frng)["mean"],
+                                     "random_agents": final_distribution_score(ptasks, ragents, frng)["mean"]}
     return row
 
 
@@ -338,5 +347,5 @@ def compare(seeds: Sequence[int] = range(20, 25), final_distribution: bool = Fal
     return verdict(rows, seeds, final_distribution, params)
 
 
-__all__ = ["Task", "Space", "DEFAULT_SPACE", "ARMS", "WIDTHS", "evaluate", "train", "run_arm",
-           "compare", "compare_row", "verdict", "final_distribution_score"]
+__all__ = ["Task", "Space", "DEFAULT_SPACE", "ARMS", "ALL_ARMS", "WIDTHS", "evaluate", "train",
+           "run_arm", "compare", "compare_row", "verdict", "final_distribution_score"]

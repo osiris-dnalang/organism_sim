@@ -98,3 +98,71 @@ def test_m3b_driver_is_pre_registered_on_fresh_seeds():
     assert not set(m3_wide.SEEDS) & (set(range(0, 55)) | set(range(100, 125)))
     assert m3_wide.SPACE.k == 3 and m3_wide.SPACE.widths == (12, 16) and m3_wide.SPACE.params.N == 4000
     assert m3_wide.KW["train_trials"] == 3000 and m3_wide.KW["iterations"] == 30
+
+
+# ── M3c ablation ─────────────────────────────────────────────────────────────
+
+def test_poet_fresh_keeps_the_curriculum_and_drops_every_transfer_path():
+    """poet-fresh must admit children by the same minimal criterion but never copy an agent."""
+    from organism_sim.benchmarks.m3 import ALL_ARMS, Space, run_arm
+    from organism_sim.lcs import Params
+    assert ALL_ARMS == ("poet", "poet-fresh", "random")
+    sp = Space(k=2, widths=(6, 8), params=Params(N=200, p_explore=0.5), audit_window=500)
+    kw = dict(iterations=9, train_trials=300, n_pairs=3, gen_every=3, children_per_task=2,
+              max_tasks=6, transfer_every=3, space=sp)
+    poet = run_arm("poet", 5, **kw)
+    fresh = run_arm("poet-fresh", 5, **kw)
+    rand = run_arm("random", 5, **kw)
+    assert fresh.final["transfers"] == 0                      # no transfer at all
+    assert poet.final["transfers"] >= 0
+    # the curriculum is intact: both poet arms create by mutation under the minimal
+    # criterion, so they create far fewer tasks than the uniform stream
+    assert fresh.final["archive"] <= rand.final["archive"]
+    assert all(t.get("parent") is not None or t["created_iter"] == 0 for t in fresh.tasks)
+    assert run_arm("poet-fresh", 5, **kw).final == fresh.final   # deterministic
+
+
+def test_width_matched_final_distribution_reports_coverage():
+    import numpy as np
+
+    from organism_sim.benchmarks.m3 import Space, final_distribution_score, run_arm
+    from organism_sim.lcs import Params
+    sp = Space(k=2, widths=(6, 8), params=Params(N=200), audit_window=500)
+    lg = run_arm("poet", 5, iterations=3, train_trials=200, n_pairs=3, gen_every=3, space=sp)
+    tasks, agents = lg.live
+    rng = np.random.default_rng(0)
+    allt = final_distribution_score(tasks, agents, rng)
+    matched = final_distribution_score(tasks, agents, rng, width_matched=True)
+    assert allt["n_scored"] == len(tasks) and matched["n_scored"] <= len(tasks)
+    assert set(matched["widths"]) == {a.input_len for a in agents.values()}
+    empty = final_distribution_score(tasks, {}, rng, width_matched=True)
+    assert empty["mean"] == 0.0 and empty["n_scored"] == 0      # no agents → nothing scored
+
+
+def test_m3c_driver_is_pre_registered_on_fresh_seeds():
+    import sys
+    sys.path.insert(0, str(ROOT / "experiments"))
+    import m3_ablate
+    assert set(m3_ablate.SEEDS) == set(range(70, 75))
+    assert not set(m3_ablate.SEEDS) & (set(range(0, 65)) | set(range(100, 125)))
+    assert m3_ablate.ARMS == ("poet", "poet-fresh", "random")
+    assert m3_ablate.KW == {"iterations": 30, "train_trials": 3000, "n_pairs": 4, "gen_every": 3,
+                            "children_per_task": 2, "max_tasks": 8, "transfer_every": 5,
+                            "mc_lo": 0.6, "mc_hi": 0.95, "solved_at": 0.95}   # M3b's, unchanged
+    assert m3_ablate.SPACE.k == 3 and m3_ablate.SPACE.params.N == 4000
+
+    def row(seed, p, f, r):
+        curve = [0] * 5
+        return {"seed": seed,
+                **{a: {"annecs": v, "archive": 50, "max_width": 16, "transfers": 0,
+                       "annecs_curve": curve + [v]}
+                   for a, v in (("poet", p), ("poet-fresh", f), ("random", r))},
+                "final_distribution": {a: {"mean": 0.5, "n_scored": 5, "n_tasks": 8} for a in m3_ablate.ARMS}}
+    both = m3_ablate.outcome([row(i, 40, 35, 20) for i in range(5)])
+    assert both["A"] and both["B"] and both["outcome"].startswith("A and B")
+    curr = m3_ablate.outcome([row(i, 35, 35, 20) for i in range(5)])
+    assert curr["A"] and not curr["B"] and "curriculum is the mechanism" in curr["outcome"]
+    inh = m3_ablate.outcome([row(i, 40, 20, 20) for i in range(5)])
+    assert not inh["A"] and inh["B"] and "inheritance is the mechanism" in inh["outcome"]
+    none = m3_ablate.outcome([row(i, 20, 20, 25) for i in range(5)])
+    assert not none["A"] and not none["B"] and none["outcome"].startswith("neither")
