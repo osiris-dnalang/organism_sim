@@ -340,3 +340,23 @@ def test_cli_dump_spec_reload(tmp_path):
     p.write_text(_cli("dump-spec").stdout)
     r = _cli("run", "--spec", str(p), "--ticks", "5")
     assert r.returncode == 0 and "ALPHA" in r.stdout
+
+
+def test_audit_chain_window_keeps_head_continuity():
+    from organism_sim.audit import GENESIS_HASH, AuditChain
+    from organism_sim.spec import TelemetryRecord
+
+    def rec(i):
+        return TelemetryRecord(tick=i, timestamp=0.0, state={}, metrics={}, decision=None,
+                               confidence=0.0, events=[], generation=0, sink_load=0.0, prev_hash="")
+    full, windowed = AuditChain(), AuditChain(max_records=3)
+    for i in range(1, 11):
+        full.append(rec(i))
+        windowed.append(rec(i))
+    assert len(full) == len(windowed) == 10 and len(windowed.records) == 3 and windowed.dropped == 7
+    assert windowed.head == full.head != GENESIS_HASH          # same chain, same head
+    assert full.verify() and windowed.verify()
+    windowed.records[1].tick = 999                             # tamper inside the window
+    assert not windowed.verify()
+    empty = AuditChain(max_records=2)
+    assert empty.verify() and empty.head == GENESIS_HASH

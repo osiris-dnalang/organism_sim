@@ -46,7 +46,7 @@ class LCSAgent(Processor):
                  pressure_window: int = 20, sever_pressure: float = 0.8,
                  structural: bool = False, frozen: bool = False,
                  cusum: Optional[Tuple[float, float, float]] = None,
-                 cusum_signal: str = "pressure", cusum_on=None):
+                 cusum_signal: str = "pressure", cusum_on=None, audit_window: Optional[int] = None):
         self.name = name
         self.structural = structural    # False → organism repair/mutation leave the rule set alone
         self.frozen = frozen            # True → never learns; always exploits (fixed protocol)
@@ -67,7 +67,7 @@ class LCSAgent(Processor):
         spec = OrganismSpec(name=name, genome=Genome(genes=genes), domain="lcs",
                             triggers=self.triggers)
         env = Environment(n_genes=len(genes), seed=seed, **QUIET)
-        self.organism = Organism(spec, env=env, seed=seed)
+        self.organism = Organism(spec, env=env, seed=seed, audit_window=audit_window)
         self.organism.processor = self
         self.bus = bus
         self.routes: Set[str] = set()

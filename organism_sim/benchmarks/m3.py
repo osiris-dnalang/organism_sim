@@ -52,6 +52,7 @@ class Space:
     k: int = 2
     widths: Tuple[int, int] = WIDTHS
     params: Params = field(default_factory=lambda: Params(N=400, p_explore=0.5))
+    audit_window: Optional[int] = None   # bound each agent's retained telemetry (memory only)
 
     @property
     def n_data(self) -> int:
@@ -132,7 +133,7 @@ class Task:
 
 def _agent(width: int, seed: int, space: Space = DEFAULT_SPACE) -> LCSAgent:
     return LCSAgent(f"A{width}", input_len=width, actions=["(emit 0)", "(emit 1)"],
-                    params=space.params, seed=seed)
+                    params=space.params, seed=seed, audit_window=space.audit_window)
 
 
 def evaluate(agent: LCSAgent, task: Task, rng: np.random.Generator, n: int = 128) -> float:

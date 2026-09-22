@@ -97,7 +97,8 @@ class Organism:
     PERIOD_TICKS = 47         # cycle_position metric period
 
     def __init__(self, spec: OrganismSpec, env: Optional[Environment] = None,
-                 seed: Optional[int] = 0, audit_secret: Optional[bytes] = None):
+                 seed: Optional[int] = 0, audit_secret: Optional[bytes] = None,
+                 audit_window: Optional[int] = None):
         self.spec = spec
         self.triggers: Triggers = spec.triggers
         self.rng = np.random.default_rng(seed)
@@ -117,7 +118,7 @@ class Organism:
         self.tick = 0
         self.generation = 0
         self.sink_load = 0.0
-        self.chain = AuditChain(audit_secret)
+        self.chain = AuditChain(audit_secret, max_records=audit_window)
         self.phase: Phase = Phase.LOG
         self.phase_trace: List[Phase] = []
         self.status = Status.IDLE

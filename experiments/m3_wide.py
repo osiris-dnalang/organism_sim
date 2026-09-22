@@ -48,7 +48,7 @@ from organism_sim.benchmarks.m3 import Space, compare_row, verdict  # noqa: E402
 from organism_sim.lcs import PARAMS16  # noqa: E402
 
 SEEDS = tuple(range(60, 65))
-SPACE = Space(k=3, widths=(12, 16), params=PARAMS16)
+SPACE = Space(k=3, widths=(12, 16), params=PARAMS16, audit_window=2000)   # memory: 16 live agents/worker
 KW: Dict[str, Any] = {"iterations": 30, "train_trials": 3000, "n_pairs": 4, "gen_every": 3,
                       "children_per_task": 2, "max_tasks": 8, "transfer_every": 5,
                       "mc_lo": 0.6, "mc_hi": 0.95, "solved_at": 0.95}
