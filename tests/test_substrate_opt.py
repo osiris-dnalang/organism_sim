@@ -96,3 +96,14 @@ def test_tournament_and_specify_learn_the_6mux_and_are_deterministic():
     assert all(r.numerosity > 0 for r in RuleEngine(6, ["(emit 0)"], both).rules)
     acc_t, c_t, _ = run(Params(N=400, selection="tournament"))
     assert acc_t >= 0.9 and c_t["specify"] == 0
+
+
+def test_specify_tolerates_an_action_set_of_deleted_rules():
+    from organism_sim.lcs import Rule
+    eng = RuleEngine(6, ["(emit 0)", "(emit 1)"], Params(N=4, specify=True, selection="tournament"), seed=0)
+    eng.step("010101")
+    for r in eng.action_set:
+        r.numerosity = 0                                   # as if deleted after matching
+    eng.reward(0.0, "010101", terminal=True)               # must not raise
+    eng.action_set = [Rule(condition="######", action="(emit 0)", prediction=0.5, error=0.5, fitness=0.1, numerosity=0)]
+    eng.reward(0.0, "010101", terminal=True)

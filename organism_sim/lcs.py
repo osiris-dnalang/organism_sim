@@ -397,6 +397,7 @@ class RuleEngine:
         specialised copy of one rule of [A] — each '#' replaced by the register bit with
         probability p_spec. Counted in ``counters["specify"]``; deletion keeps |P| <= N."""
         p = self.p
+        aset = [r for r in aset if r.numerosity > 0]      # rules deleted since matching
         if not aset or not self.rules:
             return
         n_a = sum(r.numerosity for r in aset)
