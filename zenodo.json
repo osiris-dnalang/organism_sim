@@ -1,0 +1,55 @@
+{
+  "title": "organism_sim: open-ended task generation at 12-16 bits with a pre-registered XCS base learner (v0.4.0)",
+  "description": "<p>Archival release of <code>organism_sim</code>, an artificial-life simulation of rule-evolving agents (XCS-lineage Learning Classifier System, closed s-expression action DSL from dna::}{::lang 0.2, routed message bus, hash-chained telemetry). Pure NumPy, seeded and deterministic; no hardware, no physical constants, no language model in the execution loop.</p><p>This release adds two pre-registered positive results and their data: <strong>Substrate-Opt-2</strong>, which reduces 16-bit drift recovery from 8,750 to 6,000 trials per shift on 5/5 held-out seeds (population size N=4000 with tournament selection; the judged configuration is frozen as <code>lcs.PARAMS16</code>), and <strong>M3b</strong>, in which POET-style open-ended task generation reaches pooled ANNECS 35 vs 25 (ratio 1.40, 4/5 seeds) at 12-16 bits - reversing the same machinery's earlier documented FAIL at 6-10 bits.</p><p>Two confounds in M3b are reported with the result: a width-coverage artifact in one auxiliary criterion, and the fact that the winning arm bundles curriculum with competence inheritance. The ablation separating them (M3c, fresh seeds 70-74) is pre-registered in docs/PROGRAM.md and was executing at the time of this deposit.</p><p>Seven of the eleven pre-registered experiments in this record are negative and are retained in full: offline and LLM-authored priors, specificity-matched priors (three independent samples), evolved regulatory genes (which exhibited specification gaming), concept drift, and a 55-point XCS grid that failed to move the same ceiling Substrate-Opt-2 later moved. Every criterion was committed to git before its run; evaluation seeds are disjoint from tuning seeds; the scorecard in README.md is generated from the files under results/ and guarded by a test.</p>",
+  "upload_type": "software",
+  "publication_date": "2026-09-22",
+  "version": "v0.4.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Davis, Devin Phillip",
+      "affiliation": "Agile Defense Systems LLC"
+    }
+  ],
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "keywords": [
+    "open-ended evolution",
+    "POET",
+    "minimal criterion coevolution",
+    "learning classifier systems",
+    "XCS",
+    "artificial life",
+    "curriculum learning",
+    "pre-registration",
+    "negative results",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.22862566",
+      "relation": "isNewVersionOf",
+      "resource_type": "software"
+    },
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/osiris-dnalang/organism_sim",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    },
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/osiris-dnalang/dnalang-core",
+      "relation": "requires",
+      "resource_type": "software"
+    }
+  ],
+  "references": [
+    "Wang, R., Lehman, J., Clune, J., Stanley, K. O. (2019). Paired Open-Ended Trailblazer (POET).",
+    "Brant, J. C., Stanley, K. O. (2017). Minimal criterion coevolution.",
+    "Butz, M. V., Sastry, K., Goldberg, D. E. (2003). Tournament selection in XCS.",
+    "Lanzi, P. L. (1997). A study of the generalization capabilities of XCS.",
+    "Wilson, S. W. (1995). Classifier fitness based on accuracy."
+  ]
+}
