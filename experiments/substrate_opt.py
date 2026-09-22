@@ -74,7 +74,13 @@ def configs() -> List[Dict[str, Any]]:
 
 
 def config_id(c: Dict[str, Any]) -> str:
-    return f"tga{c['theta_ga']}_as{'on' if c['as_subsumption'] else 'off'}_mu{c['mu']:g}_pw{c['p_wild']:g}"
+    if set(c) == set(GRID):                       # Substrate-Opt-1's ids, kept stable for its results
+        return f"tga{c['theta_ga']}_as{'on' if c['as_subsumption'] else 'off'}_mu{c['mu']:g}_pw{c['p_wild']:g}"
+    parts = []
+    for k in sorted(c):
+        v = c[k]
+        parts.append(f"{k}{'on' if v is True else 'off' if v is False else v}")
+    return "_".join(parts)
 
 
 def make_params(c: Dict[str, Any], family: str = FAMILY) -> Params:
@@ -146,21 +152,25 @@ def sweep(cfgs: Sequence[Dict[str, Any]], seeds: Sequence[int], workers: int,
     return {"seeds": list(seeds), "table": table}
 
 
-def judge(winner: Dict[str, Any], seeds: Sequence[int], workers: int, log=print) -> Dict[str, Any]:
-    res = sweep([winner, DEFAULT], seeds, workers, log)
+def judge(winner: Dict[str, Any], seeds: Sequence[int], workers: int, log=print,
+          default: Dict[str, Any] = DEFAULT, pass_below: float = PASS_BELOW,
+          bounded_at: float = BOUNDED_AT, partial_needs_wins: int = 4,
+          pass_needs_wins: int = 0) -> Dict[str, Any]:
+    res = sweep([winner, default], seeds, workers, log)
     by = {t["config"]: t for t in res["table"]}
-    w, d = by[config_id(winner)], by[config_id(DEFAULT)]
+    w, d = by[config_id(winner)], by[config_id(default)]
     wins = sum(a < b for a, b in zip(w["per_seed_median"], d["per_seed_median"]))
     wm = w["pooled_median"]
-    if wm < PASS_BELOW:
+    if wm < pass_below and wins >= pass_needs_wins:
         verdict = "PASS"
-    elif wm < BOUNDED_AT and wins >= 4:
+    elif wm < bounded_at and wins >= partial_needs_wins:
         verdict = "PARTIAL"
     else:
         verdict = "BOUNDED"
     return {"seeds": list(seeds), "winner": w, "default": d, "winner_beats_default": f"{wins}/{len(seeds)}",
-            "verdict": verdict, "criteria": {"pass_below": PASS_BELOW, "bounded_at": BOUNDED_AT,
-                                              "partial_needs_wins": 4}}
+            "verdict": verdict, "criteria": {"pass_below": pass_below, "bounded_at": bounded_at,
+                                              "partial_needs_wins": partial_needs_wins,
+                                              "pass_needs_wins": pass_needs_wins}}
 
 
 def main(argv: Sequence[str] = ()) -> int:

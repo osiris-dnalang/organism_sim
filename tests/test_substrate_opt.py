@@ -49,3 +49,50 @@ def test_run_config_is_deterministic_and_reports_every_shift():
     b = so.run_config(c, seed=0, family="6bit")
     assert a == b
     assert len(a["scores"]) == 4 and a["audit_chain_valid"] and a["config"] == "tga25_ason_mu0.05_pw0.5"
+
+
+# ── Substrate-Opt-2: tournament selection, specify, N ────────────────────────
+
+def test_opt2_grid_default_and_fresh_seeds():
+    import substrate_opt2 as so2
+    cfgs = so2.configs()
+    assert len(cfgs) == 12 and so2.DEFAULT in cfgs
+    assert len({so.config_id(c) for c in cfgs}) == 12
+    used = set(range(0, 45)) | set(range(100, 115))
+    assert not set(so2.TUNE_SEEDS) & used and not set(so2.JUDGE_SEEDS) & used
+    assert not set(so2.TUNE_SEEDS) & set(so2.JUDGE_SEEDS)
+    p = Params()
+    assert (p.selection, p.specify, p.N) == ("roulette", False, 400)         # engine defaults untouched
+    assert so.make_params(so2.DEFAULT).N == 1000 and so.config_id(so2.DEFAULT) == "N1000_selectionroulette_specifyoff"
+
+
+def test_tournament_and_specify_learn_the_6mux_and_are_deterministic():
+    import numpy as np
+
+    def truth(b):
+        b = [int(c) for c in b]
+        return str(b[2 + 2 * b[0] + b[1]])
+
+    def run(params, seed=0, trials=3000):
+        eng = RuleEngine(6, ["(emit 0)", "(emit 1)"], params, seed=seed)
+        rng = np.random.default_rng(seed)
+        for _ in range(trials):
+            bits = "".join(map(str, rng.integers(0, 2, 6)))
+            eng.step(bits)
+            eng.reward(1.0 if (eng.last_ctx.emits and eng.last_ctx.emits[0] == truth(bits)) else 0.0,
+                       bits, terminal=True)
+        ok = 0
+        probe = np.random.default_rng(7)
+        for _ in range(200):
+            bits = "".join(map(str, probe.integers(0, 2, 6)))
+            eng.step(bits, explore=False)
+            ok += bool(eng.last_ctx.emits) and eng.last_ctx.emits[0] == truth(bits)
+        return ok / 200, dict(eng.counters), [r.condition for r in eng.rules]
+
+    both = Params(N=400, selection="tournament", specify=True)
+    acc, counters, rules = run(both)
+    assert acc >= 0.9 and counters["specify"] > 0 and counters["ga"] > 0
+    assert run(both) == (acc, counters, rules)                       # seeded, deterministic
+    assert all(r.numerosity > 0 for r in RuleEngine(6, ["(emit 0)"], both).rules)
+    acc_t, c_t, _ = run(Params(N=400, selection="tournament"))
+    assert acc_t >= 0.9 and c_t["specify"] == 0

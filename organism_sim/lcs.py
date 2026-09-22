@@ -68,6 +68,14 @@ class Params:
     delta: float = 0.1         # deletion fitness fraction
     theta_sub: int = 20        # subsumption experience threshold
     as_subsumption: bool = True  # action-set subsumption after each update (GA subsumption stays on)
+    selection: str = "roulette"  # GA parent selection: "roulette" (fitness-proportionate) or
+                                 # "tournament" (Butz, Sastry & Goldberg 2003: each rule enters with
+                                 # probability tau, the fittest per microclassifier wins)
+    tau: float = 0.4             # tournament participation fraction
+    specify: bool = False        # Lanzi's specify operator: when [A]'s mean error exceeds twice the
+                                 # population's, copy one experienced rule of [A] with each '#'
+                                 # set to the current register bit with probability p_spec
+    p_spec: float = 0.5
     p_wild: float = 0.33       # covering wildcard probability
     p_init: float = 0.01
     eps_init: float = 0.01
@@ -135,7 +143,7 @@ class RuleEngine:
         self.last_pa: Dict[str, float] = {}
         self.last_explore = False
         self.last_ctx: Optional[Context] = None
-        self.counters = {"cover": 0, "ga": 0, "subsume": 0, "delete": 0, "compact": 0,
+        self.counters = {"cover": 0, "ga": 0, "subsume": 0, "delete": 0, "compact": 0, "specify": 0,
                          "mutate": 0, "budget_exceeded": 0}
         for r in rules:
             self._insert(r)
@@ -298,6 +306,9 @@ class RuleEngine:
             return
         self._update(self.action_set, r)
         if register is not None:
+            if self.p.specify:
+                self._specify(self.action_set, register)
+                self.action_set = [r for r in self.action_set if r.numerosity > 0]  # deletion may empty a rule
             self._run_ga(self.action_set, register)
 
     def _update(self, aset: List[Rule], reward: float) -> None:
@@ -351,8 +362,15 @@ class RuleEngine:
         for r in aset:
             r.time_stamp = self.t
         self.counters["ga"] += 1
-        fit = np.array([max(r.fitness, 1e-12) for r in aset])
-        pick = lambda: aset[int(self.rng.choice(len(aset), p=fit / fit.sum()))]  # noqa: E731
+        if p.selection == "tournament":
+            def pick() -> Rule:
+                cands = [r for r in aset if r.numerosity > 0 and self.rng.random() < p.tau]
+                if not cands:
+                    cands = [aset[int(self.rng.integers(len(aset)))]]
+                return max(cands, key=lambda r: (r.fitness / max(r.numerosity, 1), -r.id))
+        else:
+            fit = np.array([max(r.fitness, 1e-12) for r in aset])
+            pick = lambda: aset[int(self.rng.choice(len(aset), p=fit / fit.sum()))]  # noqa: E731
         p1, p2 = pick(), pick()
         c1, c2 = list(p1.condition), list(p2.condition)
         a1, a2 = p1.action, p2.action
@@ -371,6 +389,33 @@ class RuleEngine:
             if self._ga_subsumes(p1, child) or self._ga_subsumes(p2, child):
                 continue
             self._insert(child)
+        self._delete_excess()
+
+    def _specify(self, aset: List[Rule], register: str) -> None:
+        """Lanzi (1997): if the action set's mean prediction error is more than twice the
+        population's and the set is experienced (mean experience > theta_sub), insert a
+        specialised copy of one rule of [A] — each '#' replaced by the register bit with
+        probability p_spec. Counted in ``counters["specify"]``; deletion keeps |P| <= N."""
+        p = self.p
+        if not aset or not self.rules:
+            return
+        n_a = sum(r.numerosity for r in aset)
+        mean_exp = sum(r.experience * r.numerosity for r in aset) / n_a
+        if mean_exp <= p.theta_sub:
+            return
+        err_a = sum(r.error * r.numerosity for r in aset) / n_a
+        n_p = sum(r.numerosity for r in self.rules)
+        err_p = sum(r.error * r.numerosity for r in self.rules) / n_p
+        if err_a <= 2.0 * err_p:
+            return
+        src = aset[int(self.rng.integers(len(aset)))]
+        cond = "".join(b if (c == "#" and self.rng.random() < p.p_spec) else c
+                       for c, b in zip(src.condition, register))
+        if cond == src.condition:
+            return
+        child = self._new_rule(cond, src.action, p=src.prediction, e=src.error, f=src.fitness)
+        self._insert(child)
+        self.counters["specify"] += 1
         self._delete_excess()
 
     def _mutate_condition(self, cond: str, register: str) -> str:

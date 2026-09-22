@@ -149,6 +149,27 @@ wide-space sample efficiency on this family. What would: a different learner (e.
 gradient or tree model over the register), or a task family with exploitable structure —
 both are new programs, not rungs of this one.
 
+### Substrate-Opt-2 — the literature's XCS mechanisms at 16 bits (pre-registered 2026-09-21)
+
+Substrate-Opt-1 bounded the four knobs it tested. Three mechanisms it did not test are the
+ones the multiplexer literature names as what lets XCS scale: **tournament selection** in the
+GA (Butz, Sastry & Goldberg 2003), Lanzi's **specify** operator (1997), and **population
+size N** (Wilson 1995: 20-mux at N = 2000; the 16-bit family here ran at 1000). All three are
+now `Params` switches (`selection`, `specify`, `N`), defaults unchanged so no earlier result
+moves. `experiments/substrate_opt2.py`: 2 × 2 × 3 = 12 configurations including the default;
+sweep on tuning seeds 120–124, winner and default judged on fresh seeds 50–54; family,
+budgets, metric and threshold as Opt-1.
+
+| verdict | condition (judge seeds) | consequence |
+|---|---|---|
+| PASS | winner < 7,000 and winner < default on ≥ 4/5 | winner becomes `Params16`, the pre-registered learner for any further 16-bit rung; M3 at width is unblocked for that learner |
+| PARTIAL | 7,000 ≤ winner < 8,000 and ≥ 4/5 | improvement recorded, not adopted |
+| BOUNDED | otherwise | the literature's mechanisms do not move this family; the next step is a different learner |
+
+Opt-1's 3,000 line is reported, not required. Cost (N = 4000 ≈ 4.5× wall time) is reported;
+the criterion is trials. One tuning-seed observation motivated the run and is not evidence:
+tournament + specify + N 4000 on seed 120 recovered in 5,750 / 5,750 / 7,500.
+
 ## 4. What this is not
 
 - Not a language model, and not competitive with one on language. The DSL is closed by
