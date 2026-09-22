@@ -78,13 +78,15 @@ dynamical-decoupling search with hardware-faithful noise (bridge step 3).
 ≈ 9,500–12,000 trials per shift and nothing tried moves it: offline / LLM-authored priors
 (Experiment Zero, M2), specificity-matched priors (M2b, M2c — three samples reading +13 %,
 +3 %, −13 %), blind injection (hurts), evolved regulatory genes (M1, which gamed its
-fitness), open-ended task generation (M3, overhead even at 6–10 bits), or the learner's own
-GA period, subsumption, mutation and wildcard parameters (Substrate-Opt-1 — the shipped
-default is at the floor of a 55-point grid). Mechanisms above the learner cannot buy back
-sample efficiency the learner does not have, and on this family the XCS learner's exposed
-parameters do not have it either. The bound is empirical and specific — this family, these
-budgets, this learner — not a theorem; what would move it is a different base learner or a
-task family with structure the learner can exploit, and either is a new program.
+fitness), open-ended task generation (M3, overhead even at 6–10 bits), or the learner's GA
+period, subsumption, mutation and wildcard parameters (Substrate-Opt-1 — the shipped
+default is at the floor of a 55-point grid). What did move it is the learner itself:
+population size N = 4000 with tournament selection (Substrate-Opt-2) takes 16-bit recovery
+to ≈ 6,000 trials/shift on fresh seeds, 5/5, at ≈ 2.7× the compute per shift. So the
+boundary reads: *mechanisms above the learner cannot buy back sample efficiency the learner
+does not have; the learner's own capacity and selection pressure can, at a cost that is
+paid in compute, not in cleverness.* The bound is empirical and specific — this family,
+these budgets, this learner — not a theorem. Opt-1's 3,000-trial line is still unreached.
 
 ## Terminal (local routing, no model in the loop)
 
