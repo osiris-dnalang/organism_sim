@@ -78,7 +78,7 @@ OACG; failing one ends that branch and is published.
 |---|---|---|---|---|
 | M1 | **Regulatory genes** — dnalang v0.2 interpreter: genes with `trigger`, `dependencies`, `outputs`; staged expression; compiles to an L1 rule set | artificial GRNs (Banzhaf; Bongard) | on the drifting hidden-mux family, a GRN-encoded organism vs a flat LCS at equal evaluations | **FAIL (specification gaming; hand cascade 4/5 exploratory).** Language built (`dnalang` 0.2) |
 | M2 | **Content must matter** — priors vs random injection on a 12–16-bit family where random rules almost never match | Experiment Zero, widened | B (informed) vs C (random) vs periodic, as before | **FAIL (0/5 vs shape-matched control).** LLM-prior branch closed. Specificity prior: M2b FAIL (3/5), M2c FAIL (1/5) — closed |
-| M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | **FAIL at 6–10 bits (ratio 0.885, 1/5)** — no hard tasks to reach; **PASS at 12–16 bits with `PARAMS16` (M3b: ratio 1.40, 4/5)** — with hard tasks the minimal criterion is what produces solved-later tasks. M3c (curriculum vs inheritance) pre-registered |
+| M3 | **Open-ended task generation** — the environment is a population too: instances mutate, are kept if "just solvable" by some agent | POET (Wang et al. 2019); minimal-criterion coevolution (Brant & Stanley 2017) | ANNECS: count of tasks solved by later agents that no earlier agent solved, vs a fixed random task stream | **FAIL at 6–10 bits (ratio 0.885, 1/5)** — no hard tasks to reach; **PASS at 12–16 bits with `PARAMS16` (M3b: ratio 1.40, 4/5)** — with hard tasks the minimal criterion is what produces solved-later tasks. **M3c: A ∧ B** — curriculum alone beats random (1.32, 4/5, weak: 1.14 on means) and inheritance adds (4/5) |
 | M4 | **Library learning** — evolved DSL programs are abstracted into new primitives when they recur; the DSL grows | DreamCoder (Ellis et al. 2021); ADFs (Koza) | held-out task solve rate and description length before/after abstraction | no gain in solve rate on held-out families → abstraction adds nothing |
 | M5 | **Division of labour** — populations on the bus with the signalling result (18 % full protocols, 50 seeds) as baseline; tasks that require ≥ 2 agents | emergent communication; Lewis signalling | fraction of communication-dependent tasks solved; protocol injectivity rate | no rise over the 18 % baseline with structure (M1) present → communication is not helped by regulation |
 | M6 | **Physics as the open-ended environment** — hardware calibration drift as the task generator (the Flywheel Aim 3) | hardware-in-the-loop | re-convergence after `calibration_hash` changes, four arms | as pre-registered in `flywheel-2026/PREREGISTRATION.md` |
@@ -211,7 +211,7 @@ the ladder: M3 is no longer FAIL-and-blocked; at a width where tasks are hard, t
 POET-style loop out-generates a random stream. What it does not yet say: which of the two
 bundled mechanisms carries it.
 
-### M3c — curriculum or inheritance? (pre-registered 2026-09-22, not yet run)
+### M3c — curriculum or inheritance? (pre-registered 2026-09-22; run 2026-09-22/23 — outcome A ∧ B)
 
 Three arms, same harness, budgets and fresh seeds 70–74: `poet` (as M3b), `poet-fresh`
 (minimal criterion kept, every admitted child gets a fresh agent — curriculum only), and
@@ -231,6 +231,19 @@ the ablation partial. `poet-fresh` therefore keeps only the minimal criterion. V
 before launch: with the ablation arm added, M3's recorded `poet` and `random` arms on seed
 20 still reproduce exactly (ANNECS 48 / 44, archives 69 / 80, transfers 10 / 0). There is no
 "PASS" for this run — the result is which of the four outcomes it is.
+
+**Result (seeds 70–74, `results/m3c_eval_seeds70-74.json`, `m3c_run.log`, ≈ 5.3 h on 5
+workers): outcome A ∧ B — curriculum and inheritance both contribute.** Per-seed ANNECS
+(poet / poet-fresh / random): 70: 32 / 23 / 22 · 71: 26 / 12 / 22 · 72: 35 / 29 / 18 ·
+73: 32 / 31 / 22 · 74: 31 / 34 / 29. Pooled (median, as pre-registered and as in M3/M3b):
+32 / 29 / 22. **A** holds — poet-fresh > random on 4/5, ratio 29/22 = 1.32 ≥ 1.25. **B**
+holds — poet > poet-fresh on 4/5. All audit chains valid. Caveats recorded with the result:
+two of the eight seed wins are by a single task (seed 70 for A, 23 vs 22; seed 73 for B,
+32 vs 31); A's ratio clears 1.25 only on the pre-registered median — on means it is 25.8 vs
+22.6 = 1.14, which would not — so "the minimal criterion alone produces the effect" is a
+weak pass, not a robust one; the width-matched final-distribution score (exploratory) had
+no scorable tasks for poet-fresh on seeds 70 and 74. What this changes: M3b's PASS is not
+only competence transfer; the curriculum carries part of it, and inheritance adds to it.
 
 ## 4. What this is not
 
@@ -282,6 +295,7 @@ dnalang's central unbuilt idea — regulation — does anything at all.
 | substrate-opt-1: XCS grid, 16-bit | BOUNDED | winner tga25_ason_mu0.05_pw0.75 11500 vs default 10000 (winner<default 2/5) |
 | substrate-opt-2: tournament/specify/N, 16-bit | PASS | winner N4000_selectiontournament_specifyon 6000 vs default 8750 (winner<default 5/5) |
 | m3b: open-ended tasks, 12-16 bit, PARAMS16 | PASS | poet 35 vs random 25 ANNECS, ratio 1.40, C1 4/5 C3 5/5 |
+| m3c: curriculum vs inheritance, 12-16 bit | A and B | poet 32 / poet-fresh 29 / random 22 ANNECS, fresh/random 1.32, A 4/5 B 4/5 |
 | bridge step 3 | PASS (tie) | organism 0.9763 / GA 0.9758 / baseline 0.9705 |
 | bridge tier 4 shock | FAIL | organism-structural 14, organism-plain 11, ga-continued 30, ga-restarted 38 |
 <!-- scorecard:end -->

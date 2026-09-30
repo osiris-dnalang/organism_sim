@@ -189,6 +189,17 @@ class State:
                                    f"ratio {d['ratio']:.2f}, C1 {v['C1_count']}/5 C3 {v['C3_count']}/5"})
         except (FileNotFoundError, KeyError):
             pass
+        try:
+            d = self.load("m3c_eval_seeds70-74.json")
+            v = d["verdict"]
+            pa = v["pooled_annecs"]
+            rows.append({"experiment": "m3c: curriculum vs inheritance, 12-16 bit",
+                         "verdict": " and ".join(("A" if v["A"] else "not A", "B" if v["B"] else "not B")),
+                         "number": f"poet {pa['poet']:.0f} / poet-fresh {pa['poet-fresh']:.0f} / random {pa['random']:.0f} ANNECS, "
+                                   f"fresh/random {v['ratio_poet_fresh_vs_random']:.2f}, A {v['A_poet_fresh_beats_random']} "
+                                   f"B {v['B_poet_beats_poet_fresh']}"})
+        except (FileNotFoundError, KeyError):
+            pass
         b = self.bridge()
         if "step3" in b:
             rows.append({"experiment": "bridge step 3", "verdict": "PASS (tie)" if b["step3"]["verdict"]["pass"] else "FAIL",

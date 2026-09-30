@@ -1,0 +1,9 @@
+START M3c arms=['poet', 'poet-fresh', 'random'] seeds=[70, 71, 72, 73, 74] space=k3_w12-16 learner=PARAMS16(N=4000,tournament,specify=True) kw={'iterations': 30, 'train_trials': 3000, 'n_pairs': 4, 'gen_every': 3, 'children_per_task': 2, 'max_tasks': 8, 'transfer_every': 5, 'mc_lo': 0.6, 'mc_hi': 0.95, 'solved_at': 0.95} workers=5
+seed 74 poet annecs 31/39 w 16 fd 0.852 (n 8/8) | poet-fresh annecs 34/46 w 16 fd 0.000 (n 0/8) | random annecs 29/80 w 16 fd 0.552 (n 7/8) | 13647s
+seed 73 poet annecs 32/45 w 16 fd 0.787 (n 8/8) | poet-fresh annecs 31/47 w 16 fd 0.602 (n 8/8) | random annecs 22/80 w 16 fd 0.488 (n 8/8) | 17472s
+seed 72 poet annecs 35/53 w 16 fd 0.697 (n 8/8) | poet-fresh annecs 29/44 w 16 fd 0.589 (n 8/8) | random annecs 18/80 w 16 fd 0.000 (n 0/8) | 17518s
+seed 70 poet annecs 32/45 w 15 fd 0.849 (n 8/8) | poet-fresh annecs 23/32 w 15 fd 0.000 (n 0/8) | random annecs 22/80 w 16 fd 0.521 (n 8/8) | 18127s
+seed 71 poet annecs 26/46 w 16 fd 0.908 (n 8/8) | poet-fresh annecs 12/55 w 16 fd 0.588 (n 4/8) | random annecs 22/80 w 16 fd 0.525 (n 8/8) | 19021s
+POOLED {'poet': 32.0, 'poet-fresh': 29.0, 'random': 22.0} ratio(fresh/random) 1.318 A 4/5 B 4/5
+OUTCOME A=True B=True — A and B: curriculum and inheritance both contribute
+DONE 19021s
