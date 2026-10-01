@@ -47,7 +47,7 @@ from .swarm import (
     sync_order_parameter,
 )
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 __all__ = [
     "__version__", "AuditChain", "GENESIS_HASH", "Organism", "Processor", "shannon_bits",

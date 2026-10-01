@@ -2,10 +2,11 @@
 
 **Author:** Devin Phillip Davis · `osiris.dnalang@gmail.com`
 **Repositories:** [`organism_sim`](https://github.com/osiris-dnalang/organism_sim) · [`dnalang-core`](https://github.com/osiris-dnalang/dnalang-core) · [`bridge`](https://github.com/osiris-dnalang/bridge)
-**Version:** v0.4.0 (draft, 2026-09-22) · **License:** Apache-2.0
+**Version:** v0.4.0 (2026-10-01) · **License:** Apache-2.0
 **Status:** working paper. Every number below is read from a file under `results/`; every experiment
 was pre-registered (criterion committed to git before the run) and is reported whether it passed or
-failed. One experiment (M3c) is **running as this draft is written** and its result is not yet known.
+failed. M3c, running when the first draft was written (2026-09-22), finished on 2026-09-23; its
+result (§3.5) was recorded on 2026-09-29 and changes no earlier number.
 
 ---
 
@@ -176,15 +177,22 @@ reported width-matched from here on.
 **inheritance** (an admitted child starts from a copy of its parent's agent; a better agent is
 periodically transferred onto a task). M3b cannot say which carried the result.
 
-### 3.5 Curriculum or inheritance — M3c (pre-registered, **running**)
+### 3.5 Curriculum or inheritance — M3c (pre-registered; outcome A ∧ B)
 
 Three arms on **fresh seeds 70–74**: `poet` (as M3b), `poet-fresh` (minimal criterion kept, **both**
 transfer paths off — the curriculum alone), `random`. Criteria committed before the run: **A** —
 poet-fresh > random on ≥ 4/5 and pooled ratio ≥ 1.25 (the curriculum alone produces the effect);
 **B** — poet > poet-fresh on ≥ 4/5 (inheritance adds to it). The four outcomes (A∧B, A∧¬B, ¬A∧B,
-¬A∧¬B) are all informative, and `¬A ∧ B` would mean M3b's PASS was competence transfer rather than
-task generation. This section will be completed with the result; **it is not yet known, and no claim
-in this paper depends on it.**
+¬A∧¬B) are all informative, and `¬A ∧ B` would have meant M3b's PASS was competence transfer rather
+than task generation.
+
+**Result (`results/m3c_eval_seeds70-74.json`): A ∧ B — both mechanisms contribute.** Per-seed ANNECS
+(poet / poet-fresh / random): 70: 32 / 23 / 22 · 71: 26 / 12 / 22 · 72: 35 / 29 / 18 · 73: 32 / 31 /
+22 · 74: 31 / 34 / 29; pooled medians 32 / 29 / 22. A holds (4/5, ratio 29/22 = 1.32); B holds (4/5).
+All audit chains valid. Caveats recorded with the result: two of the eight seed wins are by a single
+task (seed 70 for A, seed 73 for B), and A clears 1.25 only on the pre-registered median — on means
+the ratio is 25.8 / 22.6 = 1.14, which would not — so "the curriculum alone produces the effect" is a
+weak pass, not a robust one.
 
 ### 3.6 Negative results retained
 
@@ -212,7 +220,9 @@ N = 4000 with tournament selection cuts 16-bit recovery by 31 % on held-out seed
 compute. (iii) Given that learner, open-ended generation beats a random stream at 12–16 bits by 1.40×
 ANNECS, having lost at 6–10 bits — the crossover is the result, not either endpoint alone.
 
-**What is not.** Whether the M3b advantage is curriculum or competence transfer (M3c, in flight).
+**What is not.** How much of the M3b advantage is curriculum rather than competence transfer: M3c
+says both contribute, but A's margin is thin (1.32 on medians, 1.14 on means). Whether an LLM can
+improve the learner itself (M7a, pre-registered 2026-10-01 in `docs/PROGRAM.md`, not yet run).
 Whether any of this holds outside drifting Boolean multiplexers — nothing here tests that. Whether the
 gain survives at widths beyond 16, where the learner would again become the bottleneck. And the
 efficiency result is bounded by what was tested: Opt-1 bounded *its four knobs*, not XCS, which Opt-2
