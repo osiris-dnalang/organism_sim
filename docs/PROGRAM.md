@@ -82,7 +82,7 @@ OACG; failing one ends that branch and is published.
 | M4 | **Library learning** — evolved DSL programs are abstracted into new primitives when they recur; the DSL grows | DreamCoder (Ellis et al. 2021); ADFs (Koza) | held-out task solve rate and description length before/after abstraction | no gain in solve rate on held-out families → abstraction adds nothing |
 | M5 | **Division of labour** — populations on the bus with the signalling result (18 % full protocols, 50 seeds) as baseline; tasks that require ≥ 2 agents | emergent communication; Lewis signalling | fraction of communication-dependent tasks solved; protocol injectivity rate | no rise over the 18 % baseline with structure (M1) present → communication is not helped by regulation |
 | M6 | **Physics as the open-ended environment** — hardware calibration drift as the task generator (the Flywheel Aim 3) | hardware-in-the-loop | re-convergence after `calibration_hash` changes, four arms | as pre-registered in `flywheel-2026/PREREGISTRATION.md` |
-| M7 | **Meta-evolution** — the learner's own operators and trigger profiles are genomes; selection on *learning speed* across task families with seeds disjoint from evaluation | AutoML-Zero (Real et al. 2020); evolved learning rules | learning-speed improvement of generation *g+1* over *g* on held-out families | no monotone improvement over 5 generations → the "self-improving learner" branch closes |
+| M7 | **Meta-evolution** — the learner's own operators and trigger profiles are genomes; selection on *learning speed* across task families with seeds disjoint from evaluation | AutoML-Zero (Real et al. 2020); evolved learning rules; LLM-guided program evolution (FunSearch 2023, AlphaEvolve 2025) — **M7a pre-registered 2026-10-01** | learning-speed improvement of generation *g+1* over *g* on held-out families | no monotone improvement over 5 generations → the "self-improving learner" branch closes |
 
 **M1 result (2026-09-21): FAIL on the false-alarm criterion.** Meta-evolution of the
 regulatory genome disabled detection and maximised injection (284 injections / 15k, 169
@@ -244,6 +244,69 @@ two of the eight seed wins are by a single task (seed 70 for A, 23 vs 22; seed 7
 weak pass, not a robust one; the width-matched final-distribution score (exploratory) had
 no scorable tasks for poet-fresh on seeds 70 and 74. What this changes: M3b's PASS is not
 only competence transfer; the curriculum carries part of it, and inheritance adds to it.
+
+### M7a — LLM-guided evolution of the learner's operators (pre-registered 2026-10-01)
+
+The first experiment on M7, unblocked by Substrate-Opt-2: with `PARAMS16` the 16-bit learner
+recovers in ≈ 6,000 trials/shift, so there is a learner fast enough to evolve. The mechanism
+is AlphaEvolve's (Novikov et al., Google DeepMind 2025; FunSearch, Romera-Paredes et al.
+2023): a language model proposes edits to source code, a fixed evaluator scores every
+proposal, and an evolutionary database chooses what the model sees next. The model only
+proposes; it never scores, and every proposal, response and score goes into a hash-chained
+ledger (`results/m7a/ledger.jsonl`).
+
+**What evolves.** Six of the learner's operators, now source code in
+`organism_sim/evolvable.py`: covering, GA parent selection, crossover, mutation, offspring
+initialisation, deletion votes. Matching, credit assignment, subsumption, specify, the GA
+period and N stay fixed. The starting program reproduces `RuleEngine` with `PARAMS16`
+exactly (rules, counters and RNG state; tested), so evolution starts from the learner it
+has to beat. Evolved code runs behind a sandbox whose guarantee is narrow: it cannot reach
+the task's ground truth or the probe set (no imports, no underscored names or attributes, an
+attribute allowlist, restricted builtins and numpy) and cannot write engine state directly.
+Output validation, a population ≤ N invariant and CPU caps handle the rest.
+
+**Evaluation cascade** (`experiments/m7_evolve.py`), tuning seeds 130–134, never used before:
+S1, the 6-bit family (gate: runs cleanly, median recovery ≤ 2× the seed program's); S2, the
+16-bit family at 45,000 trials with a shift every 15,000 on seeds 130–132 (the database
+fitness); S3, the Substrate-Opt metric exactly (120,000 trials, shift every 30,000, 95 % on 256
+probes, cap 30,000) on seeds 130–134, for the seed program and for any candidate whose S2 ties
+or beats the best so far, at most 10 runs. *Fitness prices compute* (the M1 rule): every
+candidate run is capped at 2× the seed program's CPU time on the same stage and seed.
+
+**Budget.** 60 proposals from qwen2.5:7b (local Ollama, CPU; temperature 0.8; digest recorded
+and checked every proposal), each with at most one repair round when the reply does not parse,
+fails the sandbox, or crashes in S1 (a slow S1 is a result and is not repaired). The prompt
+carries the current program, `PARAMS16`'s values, the attributes of each object, and up to two
+inspirations as diffs against the starting program: one of the three best by S2 is the parent
+with probability 0.6, else any program that passed S1; inspirations come from the five best.
+Sampler seed 7130. Measured before the commit: ≈ 5 min of model time per reply on this CPU,
+so ≈ 13–15 h with nothing else running. The prompt and parser were developed on two smoke
+proposals at toy stage sizes on tuning seed 130 (not results; never at full size).
+
+| verdict | condition (judge seeds 80–84, never used; winner and `PARAMS16` both run) |
+|---|---|
+| PASS | winner pooled median ≤ 0.85 × `PARAMS16`'s, winner < `PARAMS16` on ≥ 4/5, and winner CPU ≤ 2.0× |
+| PARTIAL | winner < `PARAMS16` on ≥ 4/5 and lower pooled median, not PASS |
+| FAIL | otherwise; also FAIL without judging if no evolved program beats the seed program on tuning-seed S3 |
+
+The ladder's M7 criterion ("no monotone improvement over 5 generations") assumes a generational
+search; an LLM-guided database search has no generations, so M7a is judged as Substrate-Opt was:
+a winner chosen on tuning seeds against the incumbent learner on fresh seeds.
+The winner is the evolved program with the lowest S3 score (ties by S2, then earliest).
+**If PASS:** M7b, pre-registered separately, runs AlphaEvolve's "no evolution" ablation (same
+budget, parent always the seed program, no inspirations) before any claim that evolution
+rather than repeated sampling produced the gain; the judged program becomes a candidate
+learner for the next 16-bit rung. **If FAIL:** at this model size and budget, LLM-guided
+operator evolution does not improve the 16-bit learner — consistent with AlphaEvolve's own
+ablation, where a small base model alone is markedly weaker. That closes this configuration,
+not M7. Reported, not judged: proposals that parsed, passed the sandbox and passed S1; the
+best-S2 curve over proposals; the winner's diff against the seed program; the compute ratio;
+`PARAMS16` on the judge seeds next to its Substrate-Opt-2 6,000.
+
+Caveats stated before the run: the model is told the task family (hidden multiplexer with
+drift), so a PASS is a result on this family, not a general learner improvement; the model's
+replies are not reproducible (temperature 0.8 on CPU), the evaluations are — every evolved
+program is in the ledger and re-scores identically.
 
 ## 4. What this is not
 
