@@ -9,3 +9,8 @@ dist/
 !results/*
 *.jsonl
 scaffold.md
+
+# Credentials never enter git or archives (Gate 0)
+.env
+.env.*
+*.env
